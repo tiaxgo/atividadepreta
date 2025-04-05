@@ -37,8 +37,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     color: white;
+    display: flex;
+    flex-direction: column;
   }
   
   /* Altura da seção 6 ajustada */
@@ -49,7 +50,7 @@
   /* Cores diferentes por seção (exemplo visual) */
   
   .section-1#granulado, .section-2#granulado, .section-3#granulado, .section-4#granulado, .section-5#granulado, .section-6#granulado {
-    background-image: url('src/img/granulado.png');
+    background-image: url('src/img/granuladomaior.png');
     background-size: cover;
     background-position: center;
   }
@@ -62,6 +63,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-attachment: fixed; /* Para efeito de paralaxe */
   }
   
   /* Overlay escuro por cima da imagem */
@@ -83,7 +85,7 @@
   
 
 
-  .section-1 { background-color: #af7949bf;}
+  .section-1 { background-color: #DED6CFBF;}
   .section-2 { background-color: #2ecc71; }
   .section-3 { background-color: #f1c40f; }
   .section-4 { background-color: #9b59b6; }
@@ -91,6 +93,93 @@
   .section-6 { background-color: #1abc9c; }
   .section-7 { background-color: #3498db; }
 
+  .apresentacao-section-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: #2ecc71;
+  }
+
+  .texto-1-section-1,
+  .texto-2-section-1 {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .texto-1-section-1 p,
+  .texto-2-section-1 h2{
+    width: 100%;
+  }
+
+.texto-2-section-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color:red;
+  }
+
+  /* section dois aqui embaixo */
+
+  .texto-2-section-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color:blue;
+    padding: 50px;
+  }
+  .conteiner-1-section-3 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color:rgb(0, 255, 42);
+  }
+  .conteiner-2-section-3 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color:rgb(195, 0, 255);
+  }
+  .bloco-1-conteiner-1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #e67e22;
+    font-size: 10px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .bloco-2-conteiner-1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #886f5a;
+    font-size: 10px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .bloco-1-conteiner-2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #c2bf1c;
+    font-size: 10px;
+    width: 100%;
+    padding: 20PX;
+  }
+
+  .bloco-2-conteiner-2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #c5c482;
+    font-size: 10px;
+    width: 100%;
+    padding: 20px;
+  }
+  
 
 
   /* Footer ocupa metade da tela e largura total */
