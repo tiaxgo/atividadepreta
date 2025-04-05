@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Header fixo */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Espaço reservado após o header */
+  main {
+    margin-top: 60px;
+  }
+  
+  /* Seções principais */
+  .section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  /* Altura da seção 6 ajustada */
+  .section-7 {
+    height: 50vh;
+  }
+  
+  /* Cores diferentes por seção (exemplo visual) */
+  .section-1 { background-color: #DED6CFBF;}
+  .section-1#granulado {
+    background-image: url('src/img/granulado.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .section-2 { background-color: #2ecc71; }
+  .section-3 { background-color: #f1c40f; }
+  .section-4 { background-color: #9b59b6; }
+  .section-5 { background-color: #e67e22; }
+  .section-6 { background-color: #1abc9c; }
+  .section-7 { background-color: #3498db; }
+  /* Footer ocupa metade da tela e largura total */
+  footer {
+    height: 50vh;
+    width: 100%;
+    background-color: #111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  
