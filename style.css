@@ -47,18 +47,52 @@
   }
   
   /* Cores diferentes por seção (exemplo visual) */
-  .section-1 { background-color: #DED6CFBF;}
-  .section-1#granulado {
+  
+  .section-1#granulado, .section-2#granulado, .section-3#granulado, .section-4#granulado, .section-5#granulado, .section-6#granulado {
     background-image: url('src/img/granulado.png');
     background-size: cover;
     background-position: center;
   }
+
+  .section-2, .section-4, .section-6 {
+    position: relative;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Overlay escuro por cima da imagem */
+  .section-2 .overlay, .section-4 .overlay, .section-6 .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(48, 48, 48, 0.24);
+    ; /* ajuste a opacidade aqui */
+    z-index: 1;
+  }
+  
+  /* Conteúdo da seção fica por cima do overlay */
+  .section-2 .content,.section-4 .content,.section-6 .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+
+
+  .section-1 { background-color: #af7949bf;}
   .section-2 { background-color: #2ecc71; }
   .section-3 { background-color: #f1c40f; }
   .section-4 { background-color: #9b59b6; }
   .section-5 { background-color: #e67e22; }
   .section-6 { background-color: #1abc9c; }
   .section-7 { background-color: #3498db; }
+
+
+
   /* Footer ocupa metade da tela e largura total */
   footer {
     height: 50vh;
