@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
   <header>
@@ -148,14 +150,87 @@
     <section class="section section-6" id="granulado">
       <div class="overlay"></div>
       <div class="content">
-        <h2>Seção 6 com Overlay</h2>
+        <div class="texto-1-section-6">
+          <h2>ALIE-SE</h2>
+          <p>SEJA PARTE DE UM MOVIMENTO QUE BUSCA REVOLUCIONAR AS RELAÇÕES ECONÔMICAS E FORTALECER A ECONOMIA NEGRA NO BRASIL.</p>
+          <p>ESSA É A SUA CHANCE DE FAZER HISTÓRIA ENQUANTO IMPULSIONA SEU NEGÓCIO! VAMOS CONSTRUIR JUNTOS UM ESPAÇO DE VISIBILIDADE E TRANSFORMAÇÃO.</p>
+          <div class="botao-seja-um-aliado"> 
+            <button>SEJA UMA ALIADO</button>
+          </div>
+        </div>
+
       </div>
     </section>
-    <section class="section section-7" id="granulado">Seção 7</section>
+    <section class="section section-7" id="granulado">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides (logos) -->
+          <div class="swiper-slide"><img src="src/img/logodevpixel.webp" alt="Logo 1" /></div>
+          <div class="swiper-slide"><img src="src/img/logo1.png" alt="Logo 2" /></div>
+          <div class="swiper-slide"><img src="src/img/logo2.png" alt="Logo 3" /></div>
+          <div class="swiper-slide"><img src="src/img/logo3.png" alt="Logo 4" /></div>
+          <div class="swiper-slide"><img src="src/img/logo4.png" alt="Logo 5" /></div>
+          <!-- Adicione mais logos aqui -->
+        </div>
+  
+        <!-- Botões de navegação -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+  
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 - Todos os direitos reservados</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="footer-links">
+        <a href="#granulado">INÍCIO</a>
+        <a href="#granulado">COMUNIDADE</a>
+        <a href="#granulado">ALIE-SE</a>
+        <a href="#granulado">BENEFÍCIOS</a>
+        <a href="#granulado">ENTENDA</a>
+      </div>
+      <div class="footer-links">
+        <a href="#granulado">PERGUNTAS FREQUENTES</a>
+        <a href="#granulado">TERMOS E CONDIÇÕES</a>
+        <a href="#granulado">POLÍTICA DE PRIVACIDADE</a>
+      </div>
+    <p>2025 © Atividade Preta LTDA - Todos os direitos reservados</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      slidesPerView: 3,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        },
+        1024: {
+          slidesPerView: 5
+        }
+      }
+    });
+</script>
+  
 </body>
 </html>
