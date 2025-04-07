@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Questrial&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Questrial&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -142,14 +141,15 @@ main {
 .apresentacao-section-1 {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+
   background-color: #2ecc71;
+  width: 100%;
 }
 
 .texto-1-section-1,
 .texto-2-section-1 {
   width: 50%;
-  padding: 20px;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,20 +160,34 @@ main {
 .texto-1-section-1 p,
 .texto-2-section-1 h2 {
   width: 100%;
+  color: #303030;
+ 
 }
 
 .texto-1-section-1 {
-  background-color: #cc8d2e;
-
-  padding: 20px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
   margin: 5px;
+  background-color: #cc8d2e;
+  text-decoration: underline;
+  text-decoration-color: #000; /* cor da linha */
+  text-decoration-thickness: 1px; /* espessura mais fina */
+  text-underline-offset: 6px; /* distância da linha até o texto */
+  text-align:left ;
+  padding: 0 50px 0 50px;
 }
 
 .texto-2-section-1 {
   background-color: #3498db;
-  font-size: 64px;
-  padding: 20px;
+  font-size: clamp(1rem, 3vw, 62px);
   margin: 5px;
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%; /* ou 1.5 */
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
 }
 
 .texto-2-section-2 {
