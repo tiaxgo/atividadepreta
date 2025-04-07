@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Questrial&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 body,
 html {
+  font-family: "Questrial", sans-serif;
   height: 100%;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
@@ -30,6 +33,13 @@ header {
 main {
   margin-top: 60px;
 }
+
+.questrial-regular {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Seções principais */
 .section {
@@ -150,6 +160,20 @@ main {
 .texto-1-section-1 p,
 .texto-2-section-1 h2 {
   width: 100%;
+}
+
+.texto-1-section-1 {
+  background-color: #cc8d2e;
+
+  padding: 20px;
+  margin: 5px;
+}
+
+.texto-2-section-1 {
+  background-color: #3498db;
+  font-size: 64px;
+  padding: 20px;
+  margin: 5px;
 }
 
 .texto-2-section-2 {
@@ -310,11 +334,20 @@ main {
 }
 
 .swiper {
+  height: 100%; /* aqui para alterar altura também move as mobinhas na vertical*/
   width: 90%;
   max-width: 1200px;
   margin: auto;
+  position: relative;
 }
 
+.swiper-pagination {
+  position: absolute; /* ou relative */
+  bottom: 20px; /* desce elas */
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 
 
 .swiper-slide {
@@ -337,8 +370,8 @@ main {
 .swiper-button-next,
 .swiper-button-prev {
   font-size: 24px;  /* diminui o tamanho */
-  color: #000;      /* cor */
-  scale: 0.8;        /* pode usar scale também */
+  color: #A8302A;      /* cor */
+  scale: 0.6;        /* pode usar scale também */
 }
 
 .swiper-pagination-bullet {
