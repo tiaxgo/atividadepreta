@@ -141,8 +141,6 @@ main {
 .apresentacao-section-1 {
   display: flex;
   flex-direction: row;
-
-  background-color: #2ecc71;
   width: 100%;
 }
 
@@ -170,7 +168,6 @@ main {
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
   margin: 5px;
-  background-color: #cc8d2e;
   text-decoration: underline;
   text-decoration-color: #000; /* cor da linha */
   text-decoration-thickness: 1px; /* espessura mais fina */
@@ -180,7 +177,6 @@ main {
 }
 
 .texto-2-section-1 {
-  background-color: #3498db;
   font-size: clamp(1rem, 3vw, 62px);
   margin: 5px;
   font-family: "Questrial", sans-serif;
@@ -190,12 +186,36 @@ main {
   letter-spacing: 0.14em; /* melhor usar em vez de % */
 }
 
+.apresentacao-botao-fique-sabendo{
+  margin-top: 100px;
+  height: 55px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.botao-fique-sabendo {
+  width: 300px;
+  background-color: #303030;
+  color: #DED6CF;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px 0px rgba(48, 48, 48, 0.4);
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  border: none;
+
+}
+
 .texto-2-section-2 {
   display: flex;
   flex-direction: row;
   gap: 30px;
   background-color: red;
 }
+
+
 
 /* section 3 aqui embaixo */
 .bloco-1-conteiner-1 {
