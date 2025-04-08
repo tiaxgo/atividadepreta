@@ -225,6 +225,11 @@ body {
   display: flex;
 }
 
+.image img {
+  height: 40px;     /* altura fixa */
+  width: auto;      /* largura proporcional */
+  display: block;   /* evita espaços extras em linha */
+}
 
 
 .texto-1-section-2 {
@@ -264,6 +269,7 @@ body {
   line-height: 40px;
   margin: 5px;
   text-align: center;
+  padding: 30px 0 2px 0;
 }
 
 .conteiner-1-section-2 p, .conteiner-2-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
