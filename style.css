@@ -128,15 +128,19 @@ body {
 }
 
 .section-4 {
-  background-color: #9b59b6;
+  background-color: #303030BF;
+  color: #DED6CF;
 }
 
 .section-5 {
-  background-color: #e67e22;
+  background-color: #ded6cf8f;
+  color: #303030;
 }
 
 .section-6 {
-  background-color: #1abc9c;
+  background-color: #303030BF;
+  color: #DED6CF;
+
 }
 
 .section-7 {
@@ -286,17 +290,18 @@ body {
   text-align: center;
 }
 
-/* section 3 aqui embaixo */
+/* section 3 aqui embaixo e demais que usam os mesmos ajustes*/
 
-.texto-1-section-3 h2 {
+.texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2 {
   font-family: "questrial", sans-serif;
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 64px); /* tamanho mínimo 1rem, cresce até 64px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
-  padding-bottom: 36px;
+  padding: 30px 0 20px 0;
+
 }
 
-.texto-1-section-3 h3 {
+.texto-1-section-3 h3, .texto-1-section-4 h3, .texto-1-section-5 h3 {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
@@ -304,14 +309,13 @@ body {
   padding-bottom: 20px;
 }
 
-.texto-1-section-3 {
+.texto-1-section-3, .texto-1-section-4, .texto-1-section-5 {
   text-align: center;
 }
 
 .bloco-1-conteiner-1 {
   display: flex;
   flex-direction: column;
-  background-color: #e67e22;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -320,7 +324,6 @@ body {
 .bloco-2-conteiner-1 {
   display: flex;
   flex-direction: column;
-  background-color: #886f5a;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -329,7 +332,6 @@ body {
 .bloco-1-conteiner-2 {
   display: flex;
   flex-direction: column;
-  background-color: #c2bf1c;
   font-size: 10px;
   width: 100%;
   padding: 20PX;
@@ -338,7 +340,6 @@ body {
 .bloco-2-conteiner-2 {
   display: flex;
   flex-direction: column;
-  background-color: #c5c482;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -348,7 +349,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: blue;
+
   padding: 50px;
 }
 
@@ -356,21 +357,18 @@ body {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  background-color: rgb(0, 255, 42);
 }
 
 .conteiner-2-section-3 {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  background-color: rgb(195, 0, 255);
 }
 
 /* aqui embaixo section 4*/
 .bloco-1-conteiner-1-section-4 {
   display: flex;
   flex-direction: column;
-  background-color: #e67e22;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -379,7 +377,6 @@ body {
 .bloco-2-conteiner-1-section-4 {
   display: flex;
   flex-direction: column;
-  background-color: #886f5a;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -388,7 +385,6 @@ body {
 .bloco-3-conteiner-1-section-4 {
   display: flex;
   flex-direction: column;
-  background-color: #fad504;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -398,7 +394,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: blue;
   padding: 50px;
 }
 
@@ -406,14 +401,13 @@ body {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  background-color: rgb(0, 255, 42);
 }
 
 /* aqui embaixo section 5*/
+
 .bloco-1-conteiner-1-section-5 {
   display: flex;
   flex-direction: column;
-  background-color: #e67e22;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -422,7 +416,6 @@ body {
 .bloco-2-conteiner-1-section-5 {
   display: flex;
   flex-direction: column;
-  background-color: #886f5a;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -431,7 +424,6 @@ body {
 .bloco-3-conteiner-1-section-5 {
   display: flex;
   flex-direction: column;
-  background-color: #fad504;
   font-size: 10px;
   width: 100%;
   padding: 20px;
@@ -441,7 +433,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: blue;
   padding: 50px;
 }
 
@@ -449,7 +440,6 @@ body {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  background-color: rgb(0, 255, 42);
 }
 
 .section-7 {
