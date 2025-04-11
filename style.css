@@ -176,7 +176,7 @@ body {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 32px;
   margin: 5px;
   text-decoration: underline;
   text-decoration-color: #000; /* cor da linha */
@@ -187,7 +187,7 @@ body {
 }
 
 .texto-2-section-1 {
-  font-size: clamp(1rem, 3vw, 62px);
+  font-size: 62px;
   margin: 5px;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
@@ -196,17 +196,30 @@ body {
   letter-spacing: 0.14em; /* melhor usar em vez de % */
 }
 
+
+button {
+  font-family: "Inconsolata", monospace;
+  font-size: 32px !important;
+}
 .apresentacao-botao-fique-sabendo{
   margin-top: 100px;
-  height: 55px;
+  height: 64px;
   width: 100%;
   display: flex;
   justify-content: center;
 
 }
 
+.div-botao-seja-um-aliado {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+
+
 .botao-fique-sabendo {
-  width: 300px;
+  width: 524px;
+  height: 64px;
   background-color: #303030;
   color: #DED6CF;
   padding: 10px 20px;
@@ -219,9 +232,11 @@ body {
 }
 
 .botao-seja-um-aliado {
-  width: 300px;
-  background-color: #303030;
-  color: #DED6CF;
+  width: 618px;
+  height: 64px;
+  font-size: 32px ;
+  background-color: #DED6CF;
+  color: #303030;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -254,7 +269,7 @@ body {
 
 
 .texto-1-section-2 {
-  font-size: clamp(1rem, 3vw, 36px); /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 64px; /* tamanho mínimo 1rem, cresce até 32px */
   letter-spacing: 0.14em; /* melhor usar em vez de % */
   padding-bottom: 160px;
 }
@@ -286,7 +301,7 @@ body {
   font-family: "Questrial", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 32px; /* tamanho mínimo 1rem, cresce até 32px */
   line-height: 40px;
   margin: 5px;
   text-align: center;
@@ -298,7 +313,7 @@ body {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: clamp(1rem, 3vw, 20px); /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 20px; /* tamanho mínimo 1rem, cresce até 32px */
   margin: 5px;
   line-height: 24px;
   text-align: center;
@@ -309,7 +324,7 @@ body {
 .texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
   font-family: "questrial", sans-serif;
   font-weight: 400;
-  font-size: clamp(1rem, 3vw, 64px); /* tamanho mínimo 1rem, cresce até 64px */
+  font-size: 64px; /* tamanho mínimo 1rem, cresce até 64px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
   padding: 30px 0 20px 0;
 
@@ -318,7 +333,7 @@ body {
 .texto-1-section-3 h3, .texto-1-section-4 h3, .texto-1-section-5 h3, .texto-1-section-6 h3 {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
-  font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 32px; /* tamanho mínimo 1rem, cresce até 32px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
   padding-bottom: 20px;
 }
@@ -457,7 +472,11 @@ body {
 }
 
 /* aqui embaixo section 6*/
-
+.section-6 .content .texto-1-section-6 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 
 .sublinhado {
   text-decoration: underline;
