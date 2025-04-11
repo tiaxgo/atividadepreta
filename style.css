@@ -64,7 +64,8 @@ body {
 .section-3#granulado,
 .section-4#granulado,
 .section-5#granulado,
-.section-6#granulado {
+.section-6#granulado,
+.section-7#granulado {
   background-image: url('src/img/granuladomaior.png');
   background-size: cover;
   background-position: center;
@@ -217,6 +218,19 @@ body {
 
 }
 
+.botao-seja-um-aliado {
+  width: 300px;
+  background-color: #303030;
+  color: #DED6CF;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px 0px rgba(48, 48, 48, 0.4);
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  border: none;
+
+}
+
 .content {
 
 }
@@ -292,7 +306,7 @@ body {
 
 /* section 3 aqui embaixo e demais que usam os mesmos ajustes*/
 
-.texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2 {
+.texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
   font-family: "questrial", sans-serif;
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 64px); /* tamanho mínimo 1rem, cresce até 64px */
@@ -301,7 +315,7 @@ body {
 
 }
 
-.texto-1-section-3 h3, .texto-1-section-4 h3, .texto-1-section-5 h3 {
+.texto-1-section-3 h3, .texto-1-section-4 h3, .texto-1-section-5 h3, .texto-1-section-6 h3 {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
@@ -442,6 +456,20 @@ body {
   gap: 30px;
 }
 
+/* aqui embaixo section 6*/
+
+
+.sublinhado {
+  text-decoration: underline;
+  text-underline-offset: 6px; /* diatancia entre texto e underline*/
+  text-decoration-thickness: 2px; /* espessura mais fina */
+}
+
+.image-footer {
+  width: 20px;
+  height: 20px;
+}
+
 .section-7 {
   padding: 40px 0;
   background-color: #eee;
@@ -499,15 +527,46 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #f00; /* cor quando ativa */
 }
+.footer-links-1, .footer-links-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 15px;
+  font-size: 24px;
+  font-weight: 400;
+  text-decoration: none;  
+}
+
+a {
+  color: inherit;           /* usa a cor do texto do elemento pai */
+  text-decoration: none;
+}
+
+.footer-logo {
+  padding-bottom: 30px;
+}
+
+.footer-content p {
+  padding-top: 35px;
+  font-size: 14px;
+}
 
 /* Footer ocupa metade da tela e largura total */
 footer {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0%;
+  line-height: 24px;
   height: 50vh;
   width: 100%;
-  background-color: #111;
-  color: white;
+  background-color: #303030;
+  color: #DED6CF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
+  text-align: center;
+
+
 }
