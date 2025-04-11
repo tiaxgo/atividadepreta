@@ -113,7 +113,7 @@ body {
 
 
 .section-1 {
-
+  position: relative;
   background-color: #DED6CFBF;
   
 }
@@ -152,6 +152,15 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.logo-canto-inferior-direito {
+  position: absolute;
+  right: 20px;   /* distância da borda direita */
+  bottom: 20px;  /* distância da borda inferior */
+  height: 60px;  /* ou o tamanho que desejar */
 }
 
 .texto-1-section-1,
@@ -493,6 +502,59 @@ button {
   padding: 40px 0;
   background-color: #eee;
 }
+
+/* aqui vai menu lateral*/
+.menu-lateral {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #2b2b2b;
+  width: 40px; /* largura fixa */
+  height: 270px; /* altura fixa */
+  padding: 20px 10px;
+  border-radius: 20px 0 0 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 2px solid #e0d7cd;
+  border-left: 2px solid #e0d7cd;
+  border-bottom: 2px solid #e0d7cd;
+
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-lateral li img {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(0.9);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-lateral li img:hover {
+  transform: scale(1.1);
+}
+
+.menu-lateral .logo img {
+  height: 50px;
+  margin-top: 15px;
+}
+
+
+
 
 .swiper {
   height: 100%; /* aqui para alterar altura também move as mobinhas na vertical*/
