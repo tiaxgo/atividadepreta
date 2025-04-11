@@ -112,7 +112,9 @@ body {
 
 
 .section-1 {
+
   background-color: #DED6CFBF;
+  
 }
 
 .section-2 {
@@ -121,7 +123,7 @@ body {
 }
 
 .section-3 {
-  background-color: #f1c40f;
+  background-color: #ded6cf8f;
   color: #303030;
 }
 
@@ -285,6 +287,27 @@ body {
 }
 
 /* section 3 aqui embaixo */
+
+.texto-1-section-3 h2 {
+  font-family: "questrial", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 64px); /* tamanho mínimo 1rem, cresce até 64px */
+  letter-spacing: -2.5%; /* melhor usar em vez de % */
+  padding-bottom: 36px;
+}
+
+.texto-1-section-3 h3 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 32px); /* tamanho mínimo 1rem, cresce até 32px */
+  letter-spacing: -2.5%; /* melhor usar em vez de % */
+  padding-bottom: 20px;
+}
+
+.texto-1-section-3 {
+  text-align: center;
+}
+
 .bloco-1-conteiner-1 {
   display: flex;
   flex-direction: column;
