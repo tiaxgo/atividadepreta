@@ -7,6 +7,7 @@
   <title>Landing Page</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
+  
 
 </head>
 
@@ -82,9 +83,10 @@
       </ul>
     </div>
     <!-- Modal -->
-<div id="formulario-modal" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar" onclick="document.getElementById('formulario-modal').style.display='none'">&times;</span>
+      <!-- formulario 1 -->
+      <div id="formulario-modal" class="modal" aria-hidden="true" aria-labelledby="titulo-cadastro">
+        <div class="conteudo-modal">
+          <button class="botao-fechar" aria-label="Fechar modal">&times;</button>
     
     <div class="imagem-cabecalho">
       <img src="src/img/img-fundo-formulario-1.jfif" alt="Imagem de cabeçalho" />
@@ -120,6 +122,43 @@
     </form>
   </div>
 </div>
+
+  <!-- formulario 2 -->
+<div id="modal-confirmacao" class="modal" aria-hidden="true" aria-labelledby="titulo-confirmacao">
+  <div class="conteudo-modal">
+    <button class="botao-fechar" aria-label="Fechar modal">&times;</button>
+    <div class="imagem-cabecalho">
+      <img src="src/img/agradecimento.jpg" alt="Imagem de cabeçalho" />
+      <h2 class="titulo-modal">SEJA AVISADO</h2>
+    </div>
+    <div class="conteudo-formulario">
+      <h2 id="titulo-confirmacao" class="titulo-modal">OBRIGADO</h2>
+      
+      <div class="mensagem-confirmacao">
+        <p>PARABÉNS, SEU CADASTRO DEU CERTO!</p>
+        <p>DEIXAREMOS VOCÊ POR DENTRO DE TODAS AS NOVIDADES QUE VÃO ACONTECER</p>
+        <p>POR AQUI, OBRIGADO PELA CONFIANÇA E POR ACREDITAR QUE ESTE MOVIMENTO</p>
+        <p>PODE REVOLUCIONAR A REALIDADE DA COMUNIDADE NEGRA BRASILEIRA.</p>
+      </div>
+      
+      <div class="redes-sociais">
+        <p>NOS ACOMPANHE NAS REDES SOCIAIS:</p>
+        <div class="icones-redes">
+          <!-- Ícones das redes sociais aqui -->
+        </div>
+      </div>
+      
+      <div class="indicacao">
+        <p>CONHECE ALGUÉM QUE POSSA SE INTERESSAR NESTE MOVIMENTO?</p>
+        <a href="#" class="link-indicacao">INDIQUE PARA NÓS CLICANDO AQUI</a>
+      </div>
+      
+      <div class="rodape-modal">
+        <p>atividade PRETA</p>
+      </div>
+    </div>
+  </div>
+</div>
     <section class="section section-1" id="granulado">
       <div class="apresentacao-section-1">
         <div class="texto-1-section-1">
@@ -130,7 +169,10 @@
         </div>
       </div>
       <div class="apresentacao-botao-fique-sabendo">
-        <button class="botao-fique-sabendo" onclick="document.getElementById('formulario-modal').style.display='block'">FIQUE SABENDO</button>
+<!-- Botão que abre o formulário de cadastro -->
+    <button class="botao-fique-sabendo" id="abrir-form-cadastro">
+  FIQUE SABENDO
+    </button>
       </div>
       <div class="logo-canto-inferior-direito">
         <svg width="31" height="51" viewBox="0 0 31 51" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -424,6 +466,7 @@
       </div>
       <p>2025 © Atividade Preta LTDA - Todos os direitos reservados</p>
   </footer>
+  <script src="caminho/para/modal.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper', {

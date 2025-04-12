@@ -276,6 +276,8 @@ button {
 
 }
 
+
+
 .image {
   width: 100%;
   height: auto;
@@ -671,6 +673,60 @@ button {
   background-color: #444;
 }
 
+/* aqui vai o formulario 2 */
+/* ADICIONE APENAS ESTAS NOVAS CLASSES */
+.conteudo-formulario {
+  padding: 30px;
+  text-align: center;
+}
+
+.mensagem-confirmacao p {
+  margin: 15px 0;
+  line-height: 1.5;
+  color: #000;
+}
+
+.redes-sociais {
+  margin: 25px 0;
+}
+
+.redes-sociais p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.icones-redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.indicacao {
+  margin: 25px 0;
+}
+
+.indicacao p {
+  margin-bottom: 10px;
+}
+
+.link-indicacao {
+  color: #000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.rodape-modal {
+  margin-top: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Animação (se não tiver uma similar) */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* abaixo estilização do carousel */
 .swiper {
   height: 100%; /* aqui para alterar altura também move as mobinhas na vertical*/
@@ -764,6 +820,292 @@ footer {
   justify-content: center;
   font-size: 1.2rem;
   text-align: center;
+}
 
+@media screen and (max-width: 767px) {
+  /* HEADER */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 60px;
+  }
 
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 0.7rem;
+  }
+
+  /* SECTION 1 */
+  .apresentacao-section-1 {
+    flex-direction: column;
+    padding: 5% 5%;
+    gap: 10px;
+  }
+
+  .texto-1-section-1,
+  .texto-2-section-1 {
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 5%;
+  }
+
+  .texto-1-section-1 {
+    font-size: 1rem;
+  }
+
+  .texto-2-section-1 {
+    font-size: 1.2rem;
+  }
+
+  .botao-fique-sabendo,
+  .botao-seja-um-aliado {
+    width: 90%;
+    font-size: 0.9rem !important;
+    padding: 8px 0;
+  }
+
+  /* SECTION 2 */
+  .texto-2-section-2 {
+    flex-direction: column;
+    padding: 0 5%;
+    font-size: 0.85rem;
+  }
+
+  /* SECTION 3 & 4 */
+  .section-3,
+  .section-4 {
+    padding: 5% 5%;
+  }
+
+  .texto-1-section-3 h2,
+  .texto-1-section-4 h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .texto-1-section-3 h3,
+  .texto-1-section-4 h3 {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .texto-2-section-3,
+  .texto-2-section-4 {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 5%;
+  }
+
+  .bloco-1-conteiner-1,
+  .bloco-2-conteiner-1,
+  .bloco-1-conteiner-2,
+  .bloco-2-conteiner-2 {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+
+  /* SECTION 5, 6, 7 */
+  .section-5,
+  .section-6,
+  .section-7 {
+    padding: 5% 5%;
+  }
+
+  .texto-1-section-5 h2,
+  .texto-1-section-6 h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .texto-1-section-5 h3,
+  .texto-1-section-6 h3 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  /* LOGO */
+  .logo-canto-inferior-direito {
+    position: static;
+    display: block;
+    height: 40px;
+    margin: 20px auto 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 30px 5%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  footer .footer-logo {
+    height: 30px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* HEADER */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    height: 70px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 0.9rem;
+  }
+
+  /* SECTION 1 */
+  .apresentacao-section-1 {
+    flex-direction: row;
+    padding: 6% 8%;
+    gap: 20px;
+  }
+
+  .texto-1-section-1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .texto-2-section-1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .botao-fique-sabendo,
+  .botao-seja-um-aliado {
+    width: 70%;
+    font-size: 1rem;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+
+  /* SECTION 2 */
+  .texto-2-section-2 {
+    flex-direction: column;
+    padding: 0 8%;
+    font-size: 1rem;
+  }
+
+  /* SECTION 3 */
+  .section-3 {
+    padding: 6% 8%;
+  }
+
+  .texto-1-section-3 h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .texto-1-section-3 h3 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .texto-2-section-3 {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 8%;
+  }
+
+  .bloco-1-conteiner-1,
+  .bloco-2-conteiner-1 {
+    width: 100%;
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  /* SECTION 4 (IGUAL À SECTION 5) */
+  .section-4 {
+    padding: 6% 8%;
+  }
+
+  .texto-1-section-4 h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .texto-1-section-4 h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .texto-2-section-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 8%;
+  }
+
+  .bloco-1-conteiner-2,
+  .bloco-2-conteiner-2 {
+    width: 100%;
+    padding: 20px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+
+  }
+
+  /* SECTION 5, 6, 7 */
+  .section-5,
+  .section-6,
+  .section-7 {
+    padding: 6% 8%;
+  }
+
+  .texto-1-section-5 h2,
+  .texto-1-section-6 h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .texto-1-section-5 h3,
+  .texto-1-section-6 h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* LOGO */
+  .logo-canto-inferior-direito {
+    height: 50px;
+    margin: 30px auto 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 8%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  footer .footer-logo {
+    height: 35px;
+    margin-top: 15px;
+  }
 }
