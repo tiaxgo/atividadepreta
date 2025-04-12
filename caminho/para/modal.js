@@ -1,10 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos dos modais
     const modalCadastro = document.getElementById('formulario-modal');
-    const modalIndicacao = document.getElementById('modal-indicacao'); // NOVO
+    const modalIndicacao = document.getElementById('modal-indicacao');// NOVO
+    const modalNovo = document.getElementById('id-do-novo-modal');
     const modalConfirmacao = document.getElementById('modal-confirmacao');
     const formCadastro = document.getElementById('granulado');
     const formIndicacao = document.getElementById('form-indicacao');
+    const modalConfirmacao2 = document.getElementById('modal-confirmacao-2');
+ 
+   
+
+    formIndicacao.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const estado = document.getElementById('estado');
+        const cidade = document.getElementById('cidade');
+      
+        if (!estado.value) {
+          estado.classList.add('campo-invalido');
+          alert('Por favor, selecione um estado.');
+          estado.focus();
+          return;
+        }
+      
+        if (!cidade.value) {
+          cidade.classList.add('campo-invalido');
+          alert('Por favor, selecione uma cidade.');
+          cidade.focus();
+          return;
+        }
+      
+        // Fecha o modal de indicação e abre o novo de confirmação
+        fecharModal(document.getElementById('modal-indicacao'));
+        abrirModal(modalConfirmacao2);
+      
+        // (Opcional) Limpa o formulário
+        formIndicacao.reset();
+      });
 
     // Função para abrir modal
     function abrirModal(modal) {
@@ -85,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     formIndicacao.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const estado = document.getElementById('estado');
+        /*const estado = document.getElementById('estado');
         const cidade = document.getElementById('cidade');
 
         if (!estado.value) {
@@ -100,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor, selecione uma cidade.');
             cidade.focus();
             return;
-        }
+        }*/
 
         // Aqui você pode enviar os dados via fetch ou outro método
 

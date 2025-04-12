@@ -103,15 +103,7 @@
       <label for="whatsapp">WhatsApp:</label>
       <input type="text" id="whatsapp" placeholder="(__) _____-____" />
 
-      <label for="estado">Estado:</label>
-      <select id="estado" required>
-        <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
-      </select>
-      
-      <label for="cidade">Cidade:</label>
-      <select id="cidade" required disabled>
-        <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
-      </select>
+
 
       <label for="comunidade">Comunidade:</label>
       <select id="comunidade" required>
@@ -163,6 +155,38 @@
   </div>
 </div>
 
+<!-- confirmação-2 -->
+<div id="modal-confirmacao-2" class="modal" aria-hidden="true" aria-labelledby="titulo-confirmacao-2">
+  <div class="conteudo-modal">
+    <button class="botao-fechar" aria-label="Fechar modal">&times;</button>
+    <div class="imagem-cabecalho">
+      <img src="src/img/img-fundo-obrigado.jfif" alt="Imagem de cabeçalho" />
+      <h2 class="titulo-modal">SEJA AVISADO</h2>
+    </div>
+    <div class="conteudo-formulario confirmacao-2">
+      <h2 id="titulo-confirmacao-2" class="titulo-modal">OBRIGADO</h2>
+      
+      <div class="mensagem-confirmacao">
+        <p>PARABÉNS, SUA INDICAÇÃO FOI ENVIADA!</p>
+        <p>VAMOS AVALIAR COM CARINHO CADA INICIATIVA SUGERIDA.</p>
+        <p>OBRIGADO POR FORTALECER ESSA REDE DE APOIO À COMUNIDADE NEGRA!</p>
+      </div>
+      
+      <div class="redes-sociais">
+        <p>ACOMPANHE NOSSAS NOVIDADES NAS REDES SOCIAIS:</p>
+        <div class="icones-redes">
+          <!-- Ícones das redes sociais aqui -->
+        </div>
+      </div>
+      
+      <div class="rodape-modal">
+        <p>atividade PRETA</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Modal de Formulário 3 -->
 <div id="modal-indicacao" class="modal" style="display: none;" aria-hidden="true">
   <div class="conteudo-modal modal-horizontal">
@@ -186,7 +210,7 @@
       </select>
 
       <label for="link">Link para conhecermos mais sobre sua indicação</label>
-      <input type="url" id="link" required>
+      <input type="url" id="link" >
 
       <label for="whatsapp">Whatsapp</label>
       <input type="text" id="whatsapp" required>
