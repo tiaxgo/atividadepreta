@@ -104,18 +104,20 @@
       <input type="text" id="whatsapp" placeholder="(__) _____-____" />
 
       <label for="estado">Estado:</label>
-      <select id="estado">
-        <option selected>SELECIONE UMA OPÇÃO</option>
+      <select id="estado" required>
+        <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
       </select>
-
+      
       <label for="cidade">Cidade:</label>
-      <select id="cidade">
-        <option selected>SELECIONE UMA OPÇÃO</option>
+      <select id="cidade" required disabled>
+        <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
       </select>
 
       <label for="comunidade">Comunidade:</label>
-      <select id="comunidade">
-        <option selected>SELECIONE UMA OPÇÃO</option>
+      <select id="comunidade" required>
+        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+        <option value="ALIADO">ALIADO - Empreendedores negros em busca de maior visibilidade e crescimento para seus negócios.</option>
+        <option value="ALIANTE">ALIANTE - Pessoas que buscam consumir em propriedades negras</option>
       </select>
 
       <button type="submit" class="botao-enviar">QUERO RECEBER AS NOVIDADES</button>
@@ -150,8 +152,9 @@
       
       <div class="indicacao">
         <p>CONHECE ALGUÉM QUE POSSA SE INTERESSAR NESTE MOVIMENTO?</p>
-        <a href="#" class="link-indicacao">INDIQUE PARA NÓS CLICANDO AQUI</a>
+        <a href="#" class="link-indicacao" id="abrir-modal-indicacao">INDIQUE PARA NÓS CLICANDO AQUI</a>
       </div>
+      
       
       <div class="rodape-modal">
         <p>atividade PRETA</p>
@@ -159,6 +162,43 @@
     </div>
   </div>
 </div>
+
+<!-- Modal de Formulário 3 -->
+<div id="modal-indicacao" class="modal" style="display: none;" aria-hidden="true">
+  <div class="conteudo-modal modal-horizontal">
+    <button class="botao-fechar" aria-label="Fechar modal" onclick="fecharModalIndicacao()">&times;</button>
+    <div class="imagem-cabecalho">
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=768&q=80" alt="Imagem de cabeçalho" />
+      <h2 class="titulo-modal">INDIQUE UM NEGÓCIO</h2>
+    </div>
+    <form class="formulario" id="form-indicacao">
+      <label for="nome">Nome do afroempreendimento</label>
+      <input type="text" id="nome" required>
+
+      <label for="estado">Estado</label>
+      <select id="estado" required>
+        <option value="">Selecione uma opção</option>
+      </select>
+
+      <label for="cidade">Cidade / Município</label>
+      <select id="cidade" required>
+        <option value="">Selecione uma opção</option>
+      </select>
+
+      <label for="link">Link para conhecermos mais sobre sua indicação</label>
+      <input type="url" id="link" required>
+
+      <label for="whatsapp">Whatsapp</label>
+      <input type="text" id="whatsapp" required>
+
+      <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
+    </form>
+  </div>
+</div>
+
+
+
+
     <section class="section section-1" id="granulado">
       <div class="apresentacao-section-1">
         <div class="texto-1-section-1">
@@ -171,7 +211,7 @@
       <div class="apresentacao-botao-fique-sabendo">
 <!-- Botão que abre o formulário de cadastro -->
     <button class="botao-fique-sabendo" id="abrir-form-cadastro">
-  FIQUE SABENDO
+          FIQUE SABENDO
     </button>
       </div>
       <div class="logo-canto-inferior-direito">

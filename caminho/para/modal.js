@@ -1,85 +1,159 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos dos modais
     const modalCadastro = document.getElementById('formulario-modal');
+    const modalIndicacao = document.getElementById('modal-indicacao'); // NOVO
     const modalConfirmacao = document.getElementById('modal-confirmacao');
-    const formCadastro = document.getElementById('granulado'); // ID do seu formulário
-  
+    const formCadastro = document.getElementById('granulado');
+    const formIndicacao = document.getElementById('form-indicacao');
+
     // Função para abrir modal
     function abrirModal(modal) {
-      modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
-  
+
     // Função para fechar modal
     function fecharModal(modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+
+        // Reseta o formulário quando fecha o modal de cadastro
+        if (modal === modalCadastro) {
+            formCadastro.reset();
+            document.getElementById('comunidade').classList.remove('campo-invalido');
+        }
+
+        // Reseta o formulário de indicação também
+        if (modal === modalIndicacao) {
+            formIndicacao.reset();
+        }
     }
-  
-    // Abrir modal de cadastro (ex: botão "FIQUE SABENDO")
-    // Substitua 'abrir-form-cadastro' pelo ID do seu botão
+
+    // ABRIR MODAL CADASTRO
     document.getElementById('abrir-form-cadastro').addEventListener('click', function() {
-      abrirModal(modalCadastro);
+        formCadastro.reset();
+        abrirModal(modalCadastro);
     });
-  
-    // Envio do formulário (botão "QUERO RECEBER AS NOVIDADES")
-    formCadastro.addEventListener('submit', function(e) {
-      e.preventDefault(); // Impede o envio padrão do formulário
-  /*
-      // Validação básica - adapte conforme necessário
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-  
-      if (!nome || !email) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return;
-      }*/
-  
-      // Fecha o modal de cadastro e abre o de confirmação
-      fecharModal(modalCadastro);
-      abrirModal(modalConfirmacao);
-  
-      // Aqui você pode adicionar o envio AJAX dos dados
-      // enviarDadosFormulario();
+
+    // ABRIR MODAL INDICAÇÃO (NOVO!)
+    document.getElementById('abrir-modal-indicacao').addEventListener('click', function(e) {
+        e.preventDefault();
+        carregarEstados(); // carrega os estados ao abrir o modal
+        abrirModal(modalIndicacao);
     });
-  
-    // Fechar modais ao clicar no "X"
+
+    // FECHAR com botão de fechar
     document.querySelectorAll('.botao-fechar').forEach(function(botao) {
-      botao.addEventListener('click', function() {
-        const modal = this.closest('.modal');
-        fecharModal(modal);
-      });
+        botao.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            fecharModal(modal);
+        });
     });
-  
-    // Fechar ao clicar fora do modal
+
+    // FECHAR clicando fora do conteúdo
     window.addEventListener('click', function(e) {
-      if (e.target.classList.contains('modal')) {
-        fecharModal(e.target);
-      }
+        if (e.target.classList.contains('modal')) {
+            fecharModal(e.target);
+        }
     });
-  
-    // Fechar com ESC
+
+    // FECHAR com tecla ESC
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const modaisAbertos = document.querySelectorAll('.modal[style="display: block;"]');
-        modaisAbertos.forEach(fecharModal);
-      }
+        if (e.key === 'Escape') {
+            const modaisAbertos = document.querySelectorAll('.modal[style="display: block;"]');
+            modaisAbertos.forEach(fecharModal);
+        }
     });
-  });
-  
-  // Função opcional para enviar dados
-  function enviarDadosFormulario() {
-    const formData = new FormData(document.getElementById('granulado'));
-    
-    fetch('sua-api-de-envio', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Sucesso:', data);
-    })
-    .catch(error => {
-      console.error('Erro:', error);
+
+    // SUBMISSÃO DO CADASTRO
+    formCadastro.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const comunidade = document.getElementById('comunidade');
+        if (!comunidade.value) {
+            comunidade.classList.add('campo-invalido');
+            alert('Por favor, selecione uma opção para Comunidade.');
+            comunidade.focus();
+            return;
+        }
+
+        fecharModal(modalCadastro);
+        abrirModal(modalConfirmacao);
     });
-  }
+
+    // SUBMISSÃO DA INDICAÇÃO (validação básica)
+    formIndicacao.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const estado = document.getElementById('estado');
+        const cidade = document.getElementById('cidade');
+
+        if (!estado.value) {
+            estado.classList.add('campo-invalido');
+            alert('Por favor, selecione um estado.');
+            estado.focus();
+            return;
+        }
+
+        if (!cidade.value) {
+            cidade.classList.add('campo-invalido');
+            alert('Por favor, selecione uma cidade.');
+            cidade.focus();
+            return;
+        }
+
+        // Aqui você pode enviar os dados via fetch ou outro método
+
+        alert('Indicação enviada com sucesso!');
+        fecharModal(modalIndicacao);
+    });
+});
+
+// ---------------------------
+// CARREGAR ESTADOS E CIDADES
+// ---------------------------
+
+function carregarEstados() {
+    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+        .then(response => response.json())
+        .then(estados => {
+            const estadoSelect = document.getElementById('estado');
+            while (estadoSelect.options.length > 1) {
+                estadoSelect.remove(1);
+            }
+
+            estados.forEach(estado => {
+                const option = document.createElement('option');
+                option.value = estado.sigla;
+                option.textContent = estado.nome;
+                estadoSelect.appendChild(option);
+            });
+
+            estadoSelect.disabled = false;
+        })
+        .catch(error => console.error('Erro ao carregar estados:', error));
+}
+
+document.getElementById('estado').addEventListener('change', function() {
+    const siglaEstado = this.value;
+    const cidadeSelect = document.getElementById('cidade');
+
+    cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
+    cidadeSelect.disabled = true;
+
+    if (siglaEstado) {
+        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios?orderBy=nome`)
+            .then(response => response.json())
+            .then(cidades => {
+                cidades.forEach(cidade => {
+                    const option = document.createElement('option');
+                    option.value = cidade.nome;
+                    option.textContent = cidade.nome;
+                    cidadeSelect.appendChild(option);
+                });
+
+                cidadeSelect.disabled = false;
+            })
+            .catch(error => console.error('Erro ao carregar cidades:', error));
+    }
+});
