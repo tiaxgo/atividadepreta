@@ -588,6 +588,19 @@ button {
   flex-direction: row;
 }
 
+.modal-confirmacao-2 {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
 .conteudo-modal {
   background-color: #e8dfd8;

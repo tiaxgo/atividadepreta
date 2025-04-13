@@ -156,28 +156,32 @@
 </div>
 
 <!-- confirmação-2 -->
-<div id="modal-confirmacao-2" class="modal" aria-hidden="true" aria-labelledby="titulo-confirmacao-2">
+<div id="modal-confirmacao-2" class="modal" aria-hidden="true" aria-labelledby="titulo-confirmacao">
   <div class="conteudo-modal">
     <button class="botao-fechar" aria-label="Fechar modal">&times;</button>
-    <div class="imagem-cabecalho">
-      <img src="src/img/img-fundo-obrigado.jfif" alt="Imagem de cabeçalho" />
-      <h2 class="titulo-modal">SEJA AVISADO</h2>
-    </div>
-    <div class="conteudo-formulario confirmacao-2">
-      <h2 id="titulo-confirmacao-2" class="titulo-modal">OBRIGADO</h2>
+ 
+    <div class="conteudo-formulario">
+      <h2 id="titulo-confirmacao" class="titulo-modal">OBRIGADO</h2>
       
       <div class="mensagem-confirmacao">
-        <p>PARABÉNS, SUA INDICAÇÃO FOI ENVIADA!</p>
-        <p>VAMOS AVALIAR COM CARINHO CADA INICIATIVA SUGERIDA.</p>
-        <p>OBRIGADO POR FORTALECER ESSA REDE DE APOIO À COMUNIDADE NEGRA!</p>
+        <p>PARABÉNS, SEU CADASTRO DEU CERTO!</p>
+        <p>DEIXAREMOS VOCÊ POR DENTRO DE TODAS AS NOVIDADES QUE VÃO ACONTECER</p>
+        <p>POR AQUI, OBRIGADO PELA CONFIANÇA E POR ACREDITAR QUE ESTE MOVIMENTO</p>
+        <p>PODE REVOLUCIONAR A REALIDADE DA COMUNIDADE NEGRA BRASILEIRA.</p>
       </div>
       
       <div class="redes-sociais">
-        <p>ACOMPANHE NOSSAS NOVIDADES NAS REDES SOCIAIS:</p>
+        <p>NOS ACOMPANHE NAS REDES SOCIAIS:</p>
         <div class="icones-redes">
           <!-- Ícones das redes sociais aqui -->
         </div>
       </div>
+      
+      <div class="indicacao">
+        <p>CONHECE ALGUÉM QUE POSSA SE INTERESSAR NESTE MOVIMENTO?</p>
+        <a href="#" class="link-indicacao" id="abrir-modal-indicacao">INDIQUE PARA NÓS CLICANDO AQUI</a>
+      </div>
+      
       
       <div class="rodape-modal">
         <p>atividade PRETA</p>
@@ -211,6 +215,26 @@
 
       <label for="link">Link para conhecermos mais sobre sua indicação</label>
       <input type="url" id="link" >
+
+      <label for="whatsapp">Whatsapp</label>
+      <input type="text" id="whatsapp" required>
+
+      <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- Modal de Formulário muito OBRIGADO DEPOIS DA INDICAÇÃO -->
+ <div id="modal-muito-obrigado" class="modal" style="display: none;" aria-hidden="true">
+  <div class="conteudo-modal modal-horizontal">
+    <button class="botao-fechar" aria-label="Fechar modal" onclick="fecharModalIndicacao()">&times;</button>
+    <div class="imagem-cabecalho">
+      <img src="src/img/logodevpixel.webp" alt="Imagem de cabeçalho" />
+      <h2 class="titulo-modal">INDIQUE UM NEGÓCIO</h2>
+    </div>
+    <form class="formulario" id="form-indicacao">
+
 
       <label for="whatsapp">Whatsapp</label>
       <input type="text" id="whatsapp" required>

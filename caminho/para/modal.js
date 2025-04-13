@@ -7,36 +7,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const formCadastro = document.getElementById('granulado');
     const formIndicacao = document.getElementById('form-indicacao');
     const modalConfirmacao2 = document.getElementById('modal-confirmacao-2');
- 
-   
+    const modalMuitoObrigado2= document.getElementById('modal-muito-obrigado');
 
     formIndicacao.addEventListener('submit', function(e) {
         e.preventDefault();
-
+    
         const estado = document.getElementById('estado');
         const cidade = document.getElementById('cidade');
-      
+
+    
         if (!estado.value) {
-          estado.classList.add('campo-invalido');
-          alert('Por favor, selecione um estado.');
-          estado.focus();
-          return;
+            estado.classList.add('campo-invalido');
+            alert('Por favor, selecione um estado.');
+            estado.focus();
+            return;
         }
-      
+    
         if (!cidade.value) {
-          cidade.classList.add('campo-invalido');
-          alert('Por favor, selecione uma cidade.');
-          cidade.focus();
-          return;
+            cidade.classList.add('campo-invalido');
+            alert('Por favor, selecione uma cidade.');
+            cidade.focus();
+            return;
         }
-      
-        // Fecha o modal de indicação e abre o novo de confirmação
+    
+
+    
+        // Fecha o modal de indicação
         fecharModal(document.getElementById('modal-indicacao'));
-        abrirModal(modalConfirmacao2);
-      
-        // (Opcional) Limpa o formulário
+        abrirModal(modalMuitoObrigado2); // Modal para ALIADOS
+        // Limpa o formulário
         formIndicacao.reset();
-      });
+    });
+    
 
     // Função para abrir modal
     function abrirModal(modal) {
@@ -98,26 +100,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // SUBMISSÃO DO CADASTRO
-    formCadastro.addEventListener('submit', function(e) {
-        e.preventDefault();
+// SUBMISSÃO DO CADASTRO
+formCadastro.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        const comunidade = document.getElementById('comunidade');
-        if (!comunidade.value) {
-            comunidade.classList.add('campo-invalido');
-            alert('Por favor, selecione uma opção para Comunidade.');
-            comunidade.focus();
-            return;
-        }
+    const comunidade = document.getElementById('comunidade');
+    if (!comunidade.value) {
+        comunidade.classList.add('campo-invalido');
+        alert('Por favor, selecione uma opção para Comunidade.');
+        comunidade.focus();
+        return;
+    }
 
-        fecharModal(modalCadastro);
-        abrirModal(modalConfirmacao);
-    });
+    // Fecha o modal de cadastro
+    
 
-    // SUBMISSÃO DA INDICAÇÃO (validação básica)
+    // Abre o modal correspondente
+    if (comunidade.value === 'ALIADO') {
+       fecharModal(modalCadastro); 
+       abrirModal(modalConfirmacao); // Modal para ALIADOS
+    } else if (comunidade.value === 'ALIANTE') {
+        fecharModal(modalCadastro); 
+        abrirModal(modalConfirmacao2); // Modal para ALIANTES
+    }
+});
+
+
+ /*    // SUBMISSÃO DA INDICAÇÃO (validação básica)
     formIndicacao.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        /*const estado = document.getElementById('estado');
+       const estado = document.getElementById('estado');
         const cidade = document.getElementById('cidade');
 
         if (!estado.value) {
@@ -132,13 +145,13 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor, selecione uma cidade.');
             cidade.focus();
             return;
-        }*/
+        }
 
         // Aqui você pode enviar os dados via fetch ou outro método
 
         alert('Indicação enviada com sucesso!');
         fecharModal(modalIndicacao);
-    });
+    });*/
 });
 
 // ---------------------------
@@ -189,3 +202,4 @@ document.getElementById('estado').addEventListener('change', function() {
             .catch(error => console.error('Erro ao carregar cidades:', error));
     }
 });
+
