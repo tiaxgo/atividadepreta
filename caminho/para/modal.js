@@ -7,8 +7,58 @@ document.addEventListener('DOMContentLoaded', function() {
     const formCadastro = document.getElementById('granulado');
     const formIndicacao = document.getElementById('form-indicacao');
     const modalConfirmacao2 = document.getElementById('modal-confirmacao-2');
+    const formConfirmacao2 = document.getElementById('form-confirmacao-2');
     const modalMuitoObrigado2= document.getElementById('modal-muito-obrigado');
+    const modalOpcaoSim = document.getElementById('modal-opcao-sim');
+    const modalOpcaoNao = document.getElementById('modal-opcao-nao');
+    const formOpcaoSim = document.getElementById('form-opcao-sim');
+    const formOpcaoNao = document.getElementById('form-opcao-nao');
+    const modalObrigadoEmpresa = document.getElementById('modal-obrigado-empresa');
+    const modalFaleConosco = document.getElementById('modal-fale-conosco');
+    const formFaleConosco = document.getElementById('form-fale-conosco');
+   
+    
+    
+    
+    formFaleConosco.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Aqui você pode adicionar a lógica para o envio do formulário de Fale Conosco
+        
+        fecharModal(modalFaleConosco); // Fecha o modal de Fale Conosco
+        abrirModal(modalMuitoObrigado2); // Abre o modal de agradecimento   
+        
+});
+    formOpcaoSim.addEventListener('submit', function(e) {
+        e.preventDefault();
+        fecharModal(modalOpcaoSim); // Fecha o modal de opção sim
+        abrirModal(modalObrigadoEmpresa); // Abre o modal de agradecimento para empresa
+    });
 
+    formOpcaoNao.addEventListener('submit', function(e) {
+        e.preventDefault();
+        fecharModal(modalOpcaoNao); // Fecha o modal de opção não
+        abrirModal(modalObrigadoEmpresa); // Abre o modal de agradecimento para aliados
+    });
+    
+    formConfirmacao2.addEventListener('submit', function(e) {   
+        e.preventDefault();
+
+
+        if (espaco.value === 'opcaosim') {
+            fecharModal(modalConfirmacao2); 
+            abrirModal(modalOpcaoSim); // Modal para ALIADOS
+         } else if (espaco.value === 'opcaonao') {
+             fecharModal(modalConfirmacao2); 
+             abrirModal(modalOpcaoNao); // Modal para ALIANTES
+         }  
+         
+         // Aqui você pode adicionar a lógica para o envio do formulário de confirmação 2
+        alert('Formulário de confirmação 2 enviado com sucesso!');
+        fecharModal(modalConfirmacao2);
+    });
+ 
+
+    
     formIndicacao.addEventListener('submit', function(e) {
         e.preventDefault();
     
@@ -67,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('abrir-form-cadastro').addEventListener('click', function() {
         formCadastro.reset();
         abrirModal(modalCadastro);
+    });
+
+    // ABRIR MODAL FORM FINALf orm-fale-conosco
+    document.getElementById('fale-conosco').addEventListener('click', function() {
+        abrirModal(modalFaleConosco);
     });
 
     // ABRIR MODAL INDICAÇÃO (NOVO!)
@@ -202,4 +257,3 @@ document.getElementById('estado').addEventListener('change', function() {
             .catch(error => console.error('Erro ao carregar cidades:', error));
     }
 });
-
