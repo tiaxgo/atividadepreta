@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos dos modais
     const modalCadastro = document.getElementById('formulario-modal');
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalObrigadoEmpresa = document.getElementById('modal-obrigado-empresa');
     const modalFaleConosco = document.getElementById('modal-fale-conosco');
     const formFaleConosco = document.getElementById('form-fale-conosco');
+
    
     
     
@@ -114,10 +116,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ABRIR MODAL CADASTRO
-    document.getElementById('abrir-form-cadastro').addEventListener('click', function() {
-        formCadastro.reset();
-        abrirModal(modalCadastro);
+    document.querySelectorAll('.abrir-form-cadastro').forEach(botao => {
+        botao.addEventListener('click', function() {
+            formCadastro.reset();
+            abrirModal(modalCadastro);
+        });
     });
+    
 
     // ABRIR MODAL FORM FINALf orm-fale-conosco
     document.getElementById('fale-conosco').addEventListener('click', function() {
@@ -125,10 +130,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ABRIR MODAL INDICAÇÃO (NOVO!)
-    document.getElementById('abrir-modal-indicacao').addEventListener('click', function(e) {
-        e.preventDefault();
+    document.querySelectorAll('.abrir-modal-indicacao').forEach(botao => {
+        botao.addEventListener('click', function() {
         carregarEstados(); // carrega os estados ao abrir o modal
         abrirModal(modalIndicacao);
+    })
     });
 
     // FECHAR com botão de fechar
