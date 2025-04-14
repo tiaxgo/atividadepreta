@@ -884,6 +884,15 @@ select.campo-invalido {
 
 }
 
+.texto-muito-obrigado {
+  font-family: "questrial", sans-serif;
+  color: #DED6CF;
+  top: 70%;
+  font-size: 47px;
+  font-weight: 400;
+  width: 100%;
+}
+
 
 /* abaixo estilização do carousel */
 .swiper {
