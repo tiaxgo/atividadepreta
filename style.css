@@ -586,6 +586,9 @@ button {
 .modal-horizontal {
   display: flex;
   flex-direction: row;
+  width: 1000px !important;
+  height: 640px;
+ 
 }
 
 .modal-confirmacao-2 {
@@ -604,7 +607,7 @@ button {
 
 .conteudo-modal {
   background-color: #e8dfd8;
-  max-width: 520px;
+  width: 520px;
   margin: auto;
   border-radius: 6px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
@@ -616,6 +619,7 @@ button {
 .imagem-cabecalho {
   position: relative;
   text-align: center;
+  background-color: #303030;
 }
 
 .imagem-cabecalho img {
@@ -652,6 +656,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  background-image: url('src/img/granuladomaior.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .formulario label {
@@ -771,6 +778,26 @@ button {
 
 }
 
+.img-indique-um-amg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #303030 !important;
+  opacity: 60%;
+}
+
+.texto-indique-um-negocio {
+  font-family: "questrial", sans-serif;
+  font-size: 44px;
+  top: 47%;
+  width: 470px;
+}
+
 /* Animação (se não tiver uma similar) */
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(-20px); }
@@ -844,7 +871,7 @@ select.campo-invalido {
   height: 277px; /* controle a altura que quiser exibir */
   overflow: hidden; /* esconde o que passa da altura */
   position: relative;
-  background-color: #303030;
+
 }
 
 .img-agradecimento {
@@ -854,8 +881,9 @@ select.campo-invalido {
   object-position: top; /* foca no topo da imagem */
   display: block;
   opacity: 80%;
-  background-color: #303030;
+
 }
+
 
 /* abaixo estilização do carousel */
 .swiper {
