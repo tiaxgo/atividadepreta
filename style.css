@@ -627,6 +627,7 @@ button {
   position: absolute;
   bottom: 15px;
   left: 50%;
+  top: 1%;
   transform: translateX(-50%);
   color: white;
   font-size: 32px;
