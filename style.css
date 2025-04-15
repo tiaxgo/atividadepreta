@@ -725,6 +725,8 @@ button {
   color: white;
   cursor: pointer;
   z-index: 1000;
+  background-color: transparent;
+  border: none;
 }
 
 .formulario {
@@ -756,7 +758,7 @@ button {
 
 .formulario input,
 .formulario select {
-  border: 2px solid #000;
+  font-family: 'Inconsolata', sans-serif;
   padding: 10px;
   font-size: 16px;
   background-color: transparent;
@@ -863,7 +865,7 @@ button {
 .campo-formulario input, #estado, #cidade, #comunidade {
   width: 80%;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 12px;
 }
 
 
