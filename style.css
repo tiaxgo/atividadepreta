@@ -167,6 +167,7 @@ nav a {
   background-color: #3498db;
 }
 
+
 .apresentacao-section-1 {
   display: flex;
   flex-direction: row;
@@ -591,6 +592,7 @@ button {
  
 }
 
+
 .modal-confirmacao-2 {
   display: flex;
   width: 200px;
@@ -616,6 +618,62 @@ button {
   position: relative;
 }
 
+.conteudo-modal-fale-conosco {
+  background-color: #DED6CF;
+  width: 1020px;
+  margin: auto;
+  border-radius: 6px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+
+}
+
+
+
+.label-mensagem {
+  display: flex;
+}
+
+.label-mensagem p {
+  text-align: start;
+  width: 17%;
+}
+
+.label-mensagem div {
+  width: 100%;
+}
+
+.label-nome {
+  display: flex;
+  width: 50%;
+}
+
+.label-nome p, .label-email p, .label-telefone p, .label-comunidade p {
+  width: 30%;
+}
+
+.label-nome div, .label-email div, .label-telefone div, .label-comunidade div {
+  width: 70%;
+}
+
+.label-email {
+  display: flex;
+  width: 50%;
+}
+
+.label-telefone {
+  display: flex;
+  width: 50%;
+}
+
+.label-comunidade {
+  display: flex;
+  width: 50%;
+}
+
+
 .imagem-cabecalho {
   position: relative;
   text-align: center;
@@ -625,6 +683,24 @@ button {
 .imagem-cabecalho img {
   width: 100%;
   display: block;
+}
+
+.divisao-modal {
+  width: 50%;
+}
+
+.form-horizontal{
+  width: 50%;
+}
+
+.texto-obrigado {
+  font-family: "questrial", sans-serif;
+  color: #DED6CF !important;
+  top: 10% !important;
+  font-size: 47px !important;
+  font-weight: 400 !important;
+  width: 100%;
+
 }
 
 .titulo-modal {
@@ -657,6 +733,15 @@ button {
   flex-direction: column;
   gap: 14px;
   background-image: url('src/img/granuladomaior.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.formulario-fale-conosco {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   background-size: cover;
   background-position: center;
 }
@@ -761,9 +846,26 @@ button {
   text-transform: uppercase;
 }
 
-.container-com-svgs {
-
+.campo-formulario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
+
+.campo-formulario label {
+  font-family: "Inconsolata", sans-serif;
+  width: 20%;
+  min-width: 100px;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.campo-formulario input, #estado, #cidade, #comunidade {
+  width: 80%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
 
 .svg-esquerda {
   position: absolute;
@@ -797,6 +899,55 @@ button {
   top: 47%;
   width: 470px;
 }
+
+.subtitulo-modal {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Formulário bot */
+
+.grupo-duplo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;  
+  text-align: start;
+
+}
+
+.campo-input {
+  background: #2f2f2f;
+  color: #fff;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 2px;
+
+}
+
+.campo-input input,
+.campo-input select,
+.campo-input textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+
+.icone {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 1rem;
+  color: #ded6cf;
+}
+
 
 /* Animação (se não tiver uma similar) */
 @keyframes aparecer {
@@ -947,6 +1098,11 @@ select.campo-invalido {
 .swiper-pagination-bullet-active {
   background-color: #f00; /* cor quando ativa */
 }
+
+.swiper-wrapper {
+  justify-content: center;
+}
+
 .footer-links-1, .footer-links-2 {
   display: flex;
   flex-direction: row;

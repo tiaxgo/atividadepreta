@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ABRIR MODAL INDICAÇÃO (NOVO!)
     document.querySelectorAll('.abrir-modal-indicacao').forEach(botao => {
         botao.addEventListener('click', function() {
-        carregarEstados(); // carrega os estados ao abrir o modal
+  
         abrirModal(modalIndicacao);
     })
     });
@@ -219,47 +219,42 @@ formCadastro.addEventListener('submit', function(e) {
 // CARREGAR ESTADOS E CIDADES
 // ---------------------------
 
-function carregarEstados() {
-    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
-        .then(response => response.json())
-        .then(estados => {
-            const estadoSelect = document.getElementById('estado');
-            while (estadoSelect.options.length > 1) {
-                estadoSelect.remove(1);
-            }
+let dadosEstados = [];
 
-            estados.forEach(estado => {
-                const option = document.createElement('option');
-                option.value = estado.sigla;
-                option.textContent = estado.nome;
-                estadoSelect.appendChild(option);
-            });
+fetch('estados-cidades.json')
+  .then(res => res.json())
+  .then(data => {
+    dadosEstados = data.estados;
 
-            estadoSelect.disabled = false;
-        })
-        .catch(error => console.error('Erro ao carregar estados:', error));
-}
+    const estadoSelect = document.getElementById('estado');
 
-document.getElementById('estado').addEventListener('change', function() {
-    const siglaEstado = this.value;
-    const cidadeSelect = document.getElementById('cidade');
+    dadosEstados.forEach(estado => {
+      const option = document.createElement('option');
+      option.value = estado.sigla;
+      option.textContent = estado.nome;
+      estadoSelect.appendChild(option);
+    });
+  });
 
-    cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
-    cidadeSelect.disabled = true;
+// Ao mudar o estado, popula as cidades
+document.getElementById('estado').addEventListener('change', function () {
+  const siglaSelecionada = this.value;
+  const cidadeSelect = document.getElementById('cidade');
+  
+  // Limpa as cidades anteriores
+  cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
+  cidadeSelect.disabled = true;
 
-    if (siglaEstado) {
-        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios?orderBy=nome`)
-            .then(response => response.json())
-            .then(cidades => {
-                cidades.forEach(cidade => {
-                    const option = document.createElement('option');
-                    option.value = cidade.nome;
-                    option.textContent = cidade.nome;
-                    cidadeSelect.appendChild(option);
-                });
+  const estadoSelecionado = dadosEstados.find(estado => estado.sigla === siglaSelecionada);
+  
+  if (estadoSelecionado) {
+    estadoSelecionado.cidades.forEach(cidade => {
+      const option = document.createElement('option');
+      option.value = cidade;
+      option.textContent = cidade;
+      cidadeSelect.appendChild(option);
+    });
 
-                cidadeSelect.disabled = false;
-            })
-            .catch(error => console.error('Erro ao carregar cidades:', error));
-    }
+    cidadeSelect.disabled = false;
+  }
 });
