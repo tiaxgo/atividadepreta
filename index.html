@@ -157,7 +157,7 @@
     </div>
       <div class="campo-formulario">
         <label for="estado">Estado:</label>
-        <select id="estado" required>
+        <select class="estado" required>
           <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
         </select>
       </div>
@@ -427,12 +427,14 @@
     </div>
   </div>
     <form class="formulario form-horizontal" id="form-opcao-sim">
-      <label for="nome">ESTADO:</label>
-      <input type="text" id="nome" required>
-    
-      <label for="nome">CIDADE:</label>
-      <input type="text" id="nome" required>
-
+      <label for="estado">Estado:</label>
+      <select class="estado" required>
+        <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
+      </select>
+        <label for="cidade">Cidade:</label>
+        <select class="cidade" required disabled>
+          <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
+        </select>
       
 
       <label for="share">COMPARTILHE COM A GENTE:</label>
@@ -565,14 +567,17 @@
       <label for="nome">Nome do afroempreendimento</label>
       <input type="text" id="nome" required>
 
-      <label for="estado">Estado</label>
-      <select id="estado" required>
-        <option value="">Selecione uma opção</option>
+      <label for="estado">Estado:</label>
+      <select class="estado" required>
+        <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
       </select>
-
+        <label for="cidade">Cidade:</label>
+        <select class="cidade" required disabled>
+          <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
+        </select>
       <label for="cidade">Cidade / Município</label>
       <select id="cidade" required>
-        <option value="">Selecione uma opção</option>
+        <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
       </select>
 
       <label for="link">Link para conhecermos mais sobre sua indicação</label>

@@ -226,35 +226,37 @@ fetch('estados-cidades.json')
   .then(data => {
     dadosEstados = data.estados;
 
-    const estadoSelect = document.getElementById('estado');
+    const estadoSelects = document.querySelectorAll('.estado');
 
-    dadosEstados.forEach(estado => {
-      const option = document.createElement('option');
-      option.value = estado.sigla;
-      option.textContent = estado.nome;
-      estadoSelect.appendChild(option);
+    estadoSelects.forEach(estadoSelect => {
+      dadosEstados.forEach(estado => {
+        const option = document.createElement('option');
+        option.value = estado.sigla;
+        option.textContent = estado.nome;
+        estadoSelect.appendChild(option.cloneNode(true));
+      });
+
+      // Escutador para mudar cidades de acordo com o estado selecionado
+      estadoSelect.addEventListener('change', function () {
+        const siglaSelecionada = this.value;
+        const cidadeSelect = this.parentElement.querySelector('.cidade');
+
+        // Limpa as cidades anteriores
+        cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
+        cidadeSelect.disabled = true;
+
+        const estadoSelecionado = dadosEstados.find(estado => estado.sigla === siglaSelecionada);
+
+        if (estadoSelecionado) {
+          estadoSelecionado.cidades.forEach(cidade => {
+            const option = document.createElement('option');
+            option.value = cidade;
+            option.textContent = cidade;
+            cidadeSelect.appendChild(option);
+          });
+
+          cidadeSelect.disabled = false;
+        }
+      });
     });
   });
-
-// Ao mudar o estado, popula as cidades
-document.getElementById('estado').addEventListener('change', function () {
-  const siglaSelecionada = this.value;
-  const cidadeSelect = document.getElementById('cidade');
-  
-  // Limpa as cidades anteriores
-  cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
-  cidadeSelect.disabled = true;
-
-  const estadoSelecionado = dadosEstados.find(estado => estado.sigla === siglaSelecionada);
-  
-  if (estadoSelecionado) {
-    estadoSelecionado.cidades.forEach(cidade => {
-      const option = document.createElement('option');
-      option.value = cidade;
-      option.textContent = cidade;
-      cidadeSelect.appendChild(option);
-    });
-
-    cidadeSelect.disabled = false;
-  }
-});
