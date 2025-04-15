@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
          }  
          
          // Aqui você pode adicionar a lógica para o envio do formulário de confirmação 2
-        alert('Formulário de confirmação 2 enviado com sucesso!');
+        
         fecharModal(modalConfirmacao2);
     });
  
