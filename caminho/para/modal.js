@@ -178,11 +178,11 @@ formCadastro.addEventListener('submit', function(e) {
 
     // Abre o modal correspondente
     if (comunidade.value === 'ALIADO') {
-       fecharModal(modalCadastro); 
-       abrirModal(modalConfirmacao); // Modal para ALIADOS
-    } else if (comunidade.value === 'ALIANTE') {
         fecharModal(modalCadastro); 
         abrirModal(modalConfirmacao2); // Modal para ALIANTES
+    } else if (comunidade.value === 'ALIANTE') {
+        fecharModal(modalCadastro); 
+        abrirModal(modalConfirmacao); // Modal para ALIADOS
     }
 });
 

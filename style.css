@@ -731,7 +731,7 @@ button {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+
   background-image: url('src/img/granuladomaior.png');
   background-size: cover;
   background-position: center;
@@ -1015,6 +1015,7 @@ select.campo-invalido {
   z-index: 999;
   height: 100px;
   font-size: 47px;
+  width: 500px;
 }
 
 .div-agradecimento {
