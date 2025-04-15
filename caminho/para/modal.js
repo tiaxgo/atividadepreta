@@ -64,24 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     formIndicacao.addEventListener('submit', function(e) {
         e.preventDefault();
     
-        const estado = document.getElementById('estado');
-        const cidade = document.getElementById('cidade');
 
-    
-        if (!estado.value) {
-            estado.classList.add('campo-invalido');
-            alert('Por favor, selecione um estado.');
-            estado.focus();
-            return;
-        }
-    
-        if (!cidade.value) {
-            cidade.classList.add('campo-invalido');
-            alert('Por favor, selecione uma cidade.');
-            cidade.focus();
-            return;
-        }
-    
 
     
         // Fecha o modal de indicação
@@ -229,6 +212,7 @@ fetch('estados-cidades.json')
     const estadoSelects = document.querySelectorAll('.estado');
 
     estadoSelects.forEach(estadoSelect => {
+      // Preenche os estados
       dadosEstados.forEach(estado => {
         const option = document.createElement('option');
         option.value = estado.sigla;
@@ -236,12 +220,20 @@ fetch('estados-cidades.json')
         estadoSelect.appendChild(option.cloneNode(true));
       });
 
-      // Escutador para mudar cidades de acordo com o estado selecionado
+      // Ao mudar o estado
       estadoSelect.addEventListener('change', function () {
         const siglaSelecionada = this.value;
-        const cidadeSelect = this.parentElement.querySelector('.cidade');
 
-        // Limpa as cidades anteriores
+        // Pega o .cidade dentro do mesmo <form>
+        const form = this.closest('form');
+        const cidadeSelect = form.querySelector('.cidade');
+
+        if (!cidadeSelect) {
+          console.warn('Select .cidade não encontrado!');
+          return;
+        }
+
+        // Limpa e desabilita
         cidadeSelect.innerHTML = '<option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>';
         cidadeSelect.disabled = true;
 
