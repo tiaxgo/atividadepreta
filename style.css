@@ -32,12 +32,14 @@ header {
 /* Espaço reservado após o header */
 main {
   margin-top: 60px;
+  margin: 0 auto;
 }
 
 body {
   font-family: "Questrial", sans-serif;
   font-weight: 400;
   font-style: normal;
+  margin: 0 auto;
 }
 
 nav {
@@ -1148,6 +1150,124 @@ footer {
   text-align: center;
 }
 
+
+
+
+/* AQUI*/
+
+.menudocelular {
+  display: noe;
+}
+
+
+.btn-abrir-menu i{
+  color: #DED6CF;
+  font-size: 30px;
+  padding-right: 10px;
+
+}
+
+.btn-abrir-menu {
+
+  color: #3498db;
+  display: none;
+  position:fixed;
+  z-index: 9999;
+
+}
+
+  .btn-abrir-menu  {
+      display: flex;
+      justify-content: end;
+      display: none;
+  }
+
+.bi {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+
+}
+.bi::before {
+  padding: 10px;
+}
+.menu-mobile {
+  background-color: #111010;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999999;
+  width: 0%;
+  overflow: hidden;
+  transition: .3s;
+}
+.menu-mobile.abrir-menu{
+  width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+  display: block;
+
+}
+/* PARTE DO MENU MOBILE */
+.menu-mobile nav ul{
+  text-align: right;
+}
+
+.menu-mobile nav ul li a{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 10px 20px 0px ;
+  text-align: right;
+  display: block;
+  
+}
+
+.menu-mobile .nav-mobile ul li.linkmobile {
+  padding: 20px;
+  display: block;
+}
+.menu-mobile nav ul li a:hover{
+  background-color: rgba(62, 108, 108, 0.768);
+  color: #03050c;
+}
+.menu-mobile .btn-fechar i{
+  color: rgba(62, 108, 108, 0.768);
+  font-size: 30px;
+}
+.menu-mobile .btn-fechar {
+  padding: 13px;
+}
+
+
+header nav.nav-mobile ul li {
+  list-style-type: none;
+
+}
+
+/* Esse nav-mobile foi pra ancora preencher todo espaço do menu*/
+.nav-mobile {
+  display: block;
+
+}
+.overlay-menu {
+  background-color: #000000b9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 88888;
+  display: none;
+}
+
+
+
+
+
+
 @media screen and (max-width: 767px) {
   /* HEADER */
   header {
@@ -1165,9 +1285,38 @@ footer {
     font-size: 0.7rem;
   }
 
+  main {   
+    padding-top: 60px;
+    overflow: hidden;
+    place-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .section {
+    min-height: 100vh; /* Garante que o contêiner tenha pelo menos 100% da altura da tela */
+    height: auto;
+
+  }
+
+  .btn-abrir-menu {
+    background-color: #A8302A;
+    color: #3498db;
+    position:fixed;
+    z-index: 9999;
+    display: block;
+  
+  }
+
+  .menudocelular {
+      display: block;;
+
+
+  }
+
   /* SECTION 1 */
   .apresentacao-section-1 {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 5% 5%;
     gap: 10px;
   }
@@ -1175,23 +1324,28 @@ footer {
   .texto-1-section-1,
   .texto-2-section-1 {
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: center;
     padding: 0 5%;
   }
 
-  .texto-1-section-1 {
-    font-size: 1rem;
+  .texto-1-section-1, .conteiner-1-section-2 p, .conteiner-2-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
+    font-size: 1.9rem;
   }
 
-  .texto-2-section-1 {
-    font-size: 1.2rem;
+  .texto-2-section-1, .texto-1-section-2, .texto-1-section-3 h2, .texto-1-section-4, .texto-1-section-5, .texto-1-section-6 {
+    font-size: 2rem;
   }
+
+  .texto-1-section-2 {
+    padding: 50px;
+  }
+  
 
   .botao-fique-sabendo,
   .botao-seja-um-aliado {
-    width: 90%;
-    font-size: 0.9rem !important;
+    width: 50%;
+    font-size: 22px !important;
     padding: 8px 0;
   }
 
@@ -1210,7 +1364,7 @@ footer {
 
   .texto-1-section-3 h2,
   .texto-1-section-4 h2 {
-    font-size: 1.3rem;
+    font-size: 3rem;
     text-align: center;
   }
 
@@ -1223,6 +1377,19 @@ footer {
 
   .texto-2-section-3,
   .texto-2-section-4 {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 5%;
+  }
+
+  .conteiner-1-section-2,
+  .conteiner-1-section-3,
+  .conteiner-2-section-3,
+  .conteiner-1-section-4,
+  .conteiner-2-section-4,
+  .conteiner-1-section-5,
+  .conteiner-2-section-5 {
+    display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 0 5%;
@@ -1246,14 +1413,14 @@ footer {
 
   .texto-1-section-5 h2,
   .texto-1-section-6 h2 {
-    font-size: 1.2rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 10px;
   }
 
   .texto-1-section-5 h3,
   .texto-1-section-6 h3 {
-    font-size: 0.8rem;
+    font-size: 1.9rem;
     text-align: center;
   }
 
@@ -1266,6 +1433,12 @@ footer {
   }
 
   /* FOOTER */
+  .footer-links-1, .footer-links-2 {
+    font-size: 13px;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
   footer {
     padding: 30px 5%;
     text-align: center;
