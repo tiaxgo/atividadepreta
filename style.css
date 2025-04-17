@@ -80,16 +80,15 @@ nav a {
 /* Cores diferentes por seção (exemplo visual) */
 
 .section-1#granulado,
-.section-2#granulado,
-.section-3#granulado,
-.section-4#granulado,
-.section-5#granulado,
-.section-6#granulado,
-.section-7#granulado,
+.section-2,
+.section-3,
+.section-4,
+.section-5,
+.section-6,
+.section-7,
 .formulario#granulado {
   background-image: url('src/img/granuladomaior.png');
-  background-size: cover;
-  background-position: center;
+
 }
 
 .section-2,
@@ -228,7 +227,7 @@ nav a {
 
 button {
   font-family: "Inconsolata", monospace;
-  font-size: 32px !important;
+  font-size: 28px !important;
 }
 .apresentacao-botao-fique-sabendo{
   margin-top: 100px;
@@ -1117,7 +1116,7 @@ select.campo-invalido {
 }
 
 .swiper-wrapper {
-  justify-content: center;
+  justify-content: none;
 }
 
 .footer-links-1, .footer-links-2 {
@@ -1184,7 +1183,7 @@ footer {
   color: #3498db;
   display: none;
   position:fixed;
-  z-index: 9999;
+  z-index: 99;
 
 }
 
@@ -1314,8 +1313,7 @@ header nav.nav-mobile ul li {
   .btn-abrir-menu {  
     background-color: #333;
     color: #DED6CF;
-    position:fixed;
-    z-index: 9999;
+
     display: block;
     right: 0%;
     top: 1px;
@@ -1604,6 +1602,10 @@ header nav.nav-mobile ul li {
 
   }
 
+  .menu-mobile nav ul li a:hover {
+    background-color: #DED6CF;
+    color: #03050c;
+}
 
   .nav-mobile {
     padding: 0  0 0;
