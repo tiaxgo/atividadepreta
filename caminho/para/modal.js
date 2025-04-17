@@ -274,20 +274,19 @@ fetch('estados-cidades.json')
   })
   
 
-  const script_do_google = 'https://script.google.com/macros/s/AKfycbzkiZok2T8K4G6H7v_SdMqs1C-4PbuEvXqe3pxrQs1qjlaolIYbS7VQBs9CJMWPhaEdxg/exec';
-  const dados_do_formulario = document.forms['formulario-contato'];
-  
-  dados_do_formulario.addEventListener('submit', function (e) {
-      e.preventDefault();
-  
-      fetch(script_do_google, { method: 'POST', body: new FormData(dados_do_formulario) })
-          .then(response => {
-              // Se os dados forem gravados corretamente, será enviada uma mensagem de sucesso
-              alert('Dados enviados com sucesso!', response);
-              dados_do_formulario.reset(); 
-          })
-          .catch(error => {
-              // Se houver erro no envio, a menssagem abaixo será exibida
-              console.error('Erro no envio dos dados!', error);
-          });
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw1N2Zw31-amsC4Z_vZcErgAY2swVF35slCAb8aoQ9Utq9Q0PT2lrOjbtdKVxcxQkv22g/exec';
+  const form = document.forms['formulario-contato'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        alert('Dados enviados com sucesso!');
+        form.reset();
+      })
+      .catch(error => {
+        alert('Erro ao enviar dados.');
+        console.error('Erro:', error);
+      });
   });
