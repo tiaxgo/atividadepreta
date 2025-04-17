@@ -1118,7 +1118,7 @@ select.campo-invalido {
 }
 
 .swiper-wrapper {
-  justify-content: none;
+  justify-content: center;
 }
 
 
@@ -1668,6 +1668,12 @@ header nav.nav-mobile ul li {
     min-height: 50vh;
   }
 
+  
+.swiper-wrapper {
+  justify-content: none;
+}
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1683,7 +1689,7 @@ header nav.nav-mobile ul li {
   nav {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 40px;
     font-size: 0.9rem;
   }
 
@@ -1845,4 +1851,9 @@ header nav.nav-mobile ul li {
     height: 35px;
     margin-top: 15px;
   }
+  
+.swiper-wrapper {
+  justify-content: none;
+}
+
 }
