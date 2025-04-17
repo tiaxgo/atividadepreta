@@ -1066,8 +1066,8 @@ select.campo-invalido {
 /* abaixo estilização do carousel */
 .swiper {
   height: 100%; /* aqui para alterar altura também move as mobinhas na vertical*/
-  width: 96%;
- 
+  width: 100%;
+  overflow: visible;
   margin: auto;
   position: relative;
 }
@@ -1120,6 +1120,8 @@ select.campo-invalido {
 .swiper-wrapper {
   justify-content: none;
 }
+
+
 
 .footer-links-1, .footer-links-2 {
   display: flex;
@@ -1625,6 +1627,13 @@ header nav.nav-mobile ul li {
     height: 40px;
   }
 
+  .swiper-slide img {
+    width: 80;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s;
+  }
+
   /* FOOTER */
   .footer-links-1, .footer-links-2 {
     font-size: 11px;
@@ -1649,6 +1658,14 @@ header nav.nav-mobile ul li {
 
   .menu-lateral {
     display: none;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: 120px;
+  }
+
+  .section-7 {
+    min-height: 50vh;
   }
 
 }
@@ -1770,9 +1787,7 @@ header nav.nav-mobile ul li {
   }
 
   /* SECTION 4 (IGUAL À SECTION 5) */
-  .section-4 {
 
-  }
 
   .texto-1-section-4 h2 {
 
