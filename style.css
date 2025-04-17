@@ -63,7 +63,6 @@ nav a {
 /* Seções principais */
 .section {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,32 +136,38 @@ nav a {
 .section-1 {
   position: relative;
   background-color: #DED6CFBF;
+  height: 672px;
   
 }
 
 .section-2 {
   background-color: #303030BF;
   color: #DED6CF;
+  height: 588px;
 }
 
 .section-3 {
   background-color: #ded6cf8f;
   color: #303030;
+  height: 872px;
 }
 
 .section-4 {
   background-color: #303030BF;
   color: #DED6CF;
+  height: 832px;
 }
 
 .section-5 {
   background-color: #ded6cf8f;
   color: #303030;
+  height: 824px;
 }
 
 .section-6 {
   background-color: #303030BF;
   color: #DED6CF;
+  height: 820px;
 
 }
 
@@ -177,6 +182,7 @@ nav a {
   width: 100%;
   padding-right: 60px;
   padding-left: 60px;
+  margin-top: 160px;
 }
 
 .logo-canto-inferior-direito {
@@ -218,7 +224,7 @@ nav a {
 }
 
 .texto-2-section-1 {
-  font-size: 42px;
+  font-size: 32px;
   margin: 5px;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
@@ -232,7 +238,7 @@ button {
   font-size: 28px !important;
 }
 .apresentacao-botao-fique-sabendo{
-  margin-top: 100px;
+  margin-top: 00px;
   height: 64px;
   width: 100%;
   display: flex;
