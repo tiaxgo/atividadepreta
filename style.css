@@ -304,7 +304,7 @@ button {
 .texto-1-section-2 {
   font-size: 64px; /* tamanho mínimo 1rem, cresce até 32px */
   letter-spacing: 0.14em; /* melhor usar em vez de % */
-  padding-bottom: 160px;
+  padding-bottom: 70px;
 }
 
 .texto-2-section-2 {
