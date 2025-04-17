@@ -1329,6 +1329,7 @@ header nav.nav-mobile ul li {
   .texto-1-section-1, .conteiner-1-section-2 p, .conteiner-2-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
     padding: 0;
     font-size: 15px;
+    margin: 0;
   }
 
   .texto-1-section-1{
@@ -1430,11 +1431,23 @@ header nav.nav-mobile ul li {
     padding: 5% 5%;
   }
 
+  .conteiner-1-section-5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 22px;
+
+  }
+
   .texto-1-section-5 h2,
   .texto-1-section-6 h2 {
     font-size: 25px;
     text-align: center;
     margin-bottom: 10px;
+  }
+
+  .bloco-3-conteiner-1-section-5 {
+    grid-column: span 2;
+  
   }
 
   .texto-1-section-5 h3  {
@@ -1472,7 +1485,7 @@ header nav.nav-mobile ul li {
   padding: 10px;
 }
 
-  .conteiner-1-section-2 h4, .conteiner-2-section-2 h4, .bloco-1-conteiner-1 h4, .bloco-2-conteiner-1 h4, .bloco-3-conteiner-1 h4, .bloco-1-conteiner-2 h4, .bloco-2-conteiner-2 h4, .bloco-1-conteiner-1-section-4 h4, .bloco-2-conteiner-1-section-4 h4, .bloco-3-conteiner-1-section-4 h4, .bloco-1-conteiner-1-section-5 h4, .bloco-2-conteiner-1-section-5 h4, .bloco-3-conteiner-1-section-5 h4 {
+  .conteiner-1-section-2 h4, .conteiner-2-section-2 h4, .bloco-1-conteiner-1 h4, .bloco-2-conteiner-1 h4, .bloco-3-conteiner-1 h4, .bloco-1-conteiner-2 h4, .bloco-2-conteiner-2 h4, .bloco-1-conteiner-1-section-4 h4, .bloco-2-conteiner-1-section-4 h4, .bloco-3-conteiner-1-section-4 h4, .bloco-3-conteiner-1-section-5 h4 {
     font-size: 20px;
     font-family: "Questrial", sans-serif;
     font-optical-sizing: auto;
@@ -1482,6 +1495,18 @@ header nav.nav-mobile ul li {
     padding: 15px 0 2px 0;
  
   }
+  .bloco-1-conteiner-1-section-5 h4, .bloco-2-conteiner-1-section-5 h4, .bloco-3-conteiner-1-section-5 h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0px;
+    text-align: center;
+ 
+  }
+
+  .bloco-1-conteiner-1-section-5, .bloco-2-conteiner-1-section-5, .bloco-3-conteiner-1-section-5 {
+    padding: 0px;
+  }
+
 
   /* LOGO */
   .logo-canto-inferior-direito {
