@@ -688,6 +688,17 @@ button {
   display: block;
 }
 
+.imagem-cabecalho-empresa img {
+  width: 100%;
+  display: block;
+}
+
+.imagem-cabecalho-empresa {
+  position: relative;
+  text-align: center;
+  background-color: #303030;
+}
+
 .divisao-modal {
   width: 50%;
 }
@@ -1530,6 +1541,62 @@ header nav.nav-mobile ul li {
 
   br {
     display: none;
+  }
+
+  .conteudo-modal {
+    width: 100%;
+  }
+
+  .imagem-cabecalho {
+    height: 180px;
+  }
+
+  .imagem-cabecalho-empresa {
+    position: relative;
+    text-align: center;
+    background-image: url('src/img/img-fundo-sobre-sua-empresa.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+  }
+
+  .imagem-cabecalho-empresa img {
+    width: 100%;
+    display: none;
+    height: 100%;
+
+  }
+
+  .modal-horizontal {
+    flex-direction: column;
+    width: 350px !important;
+    height: 640px;
+  }
+
+  .texto-indique-um-negocio {
+    font-size: 30px;
+    color: #DED6CF;
+  }
+
+  .texto-muito-obrigado {
+    font-size: 30px;
+  }
+
+  .obrigado {
+    width: 100%;
+    font-size: 30px;
+    padding-top: 10px;
+    color: #DED6CF;
+  }
+
+  .form-horizontal {
+    width: 100%;
+  }
+
+  .divisao-modal {
+    width: 100%;
   }
 
   /* FOOTER */
