@@ -80,17 +80,25 @@ nav a {
 
 /* Cores diferentes por seção (exemplo visual) */
 
-.section-1#granulado,
+
 .section-2,
-.section-3,
 .section-4,
-.section-5,
 .section-6,
 .section-7,
 .formulario#granulado {
   background-image: url('src/img/granuladomaior.png');
 
 }
+
+.section-1, .section-3, .section-5 {
+  background-image: url('src/img/testefundo.png');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(222, 214, 207, 0.75);
+
+}
+
+
 
 .section-2,
 .section-4,
@@ -115,9 +123,9 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(48, 48, 48, 0.24);
+  background-color: rgba(48, 48, 48, 1);
   ;
-  /* ajuste a opacidade aqui */
+  opacity: 0.75;/* ajuste a opacidade aqui */
   z-index: 1;
 }
 
@@ -129,6 +137,7 @@ nav a {
   z-index: 2;
   text-align: center;
   width: 100%;
+
 }
 
 
@@ -137,6 +146,7 @@ nav a {
   position: relative;
   background-color: #DED6CFBF;
   height: 672px;
+  margin-top: 144px;
   
 }
 
@@ -182,7 +192,6 @@ nav a {
   width: 100%;
   padding-right: 60px;
   padding-left: 60px;
-  margin-top: 160px;
 }
 
 .logo-canto-inferior-direito {
@@ -1309,7 +1318,6 @@ header nav.nav-mobile ul li {
   }
 
   main {   
-    padding-top: 40px;
     overflow: hidden;
     place-items: center;
     justify-content: center;
@@ -1320,6 +1328,10 @@ header nav.nav-mobile ul li {
     min-height: 100vh; /* Garante que o contêiner tenha pelo menos 100% da altura da tela */
     height: auto;
 
+  }
+
+  .section-1 {
+    margin-top: 44px;
   }
 
   .btn-abrir-menu {  
