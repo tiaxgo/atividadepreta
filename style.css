@@ -110,8 +110,8 @@ nav a {
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
-  padding-top: 60px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   /* Para efeito de paralaxe */
 }
 
@@ -1332,7 +1332,8 @@ header nav.nav-mobile ul li {
   }
 
   .section-1 {
-
+    margin-top: 60px;
+    padding-top: 60px;
   }
 
   .btn-abrir-menu {  
@@ -1373,8 +1374,9 @@ header nav.nav-mobile ul li {
     line-height: 30px;
   }
 
-  .texto-2-section-1, .texto-1-section-2, .texto-1-section-3 h2, .texto-1-section-4, .texto-1-section-5, .texto-1-section-6 {
-    font-size: 25px;
+  .texto-2-section-1 {
+
+   font-size: 25px;
   }
 
   .texto-1-section-2 {
@@ -1415,7 +1417,7 @@ header nav.nav-mobile ul li {
   }
 
   .texto-1-section-3 h2,
-  .texto-1-section-4 h2 {
+  .texto-1-section-4 h2, .texto-1-section-2 {
     font-size: 32px;
     text-align: center;
     padding: 35px 20px 15px 20px;
