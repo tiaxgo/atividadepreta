@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 
-    // ABRIR MODAL FORM FINALf orm-fale-conosco
+    // ABRIR MODAL FORM FINALf Form-fale-conosco
     document.getElementById('fale-conosco').addEventListener('click', function() {
         abrirModal(modalFaleConosco);
     });
@@ -274,19 +274,40 @@ fetch('estados-cidades.json')
   })
   
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw1N2Zw31-amsC4Z_vZcErgAY2swVF35slCAb8aoQ9Utq9Q0PT2lrOjbtdKVxcxQkv22g/exec';
-  const form = document.forms['formulario-contato'];
+    // ENVIO FORMULARIOS VIA AXIOS PARA GOOGLE SHEETS
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        alert('Dados enviados com sucesso!');
-        form.reset();
+  function configurarEnvioFormulario(nomeDoForm, scriptURL) {
+    const form = document.forms[nomeDoForm];
+  
+    if (!form) {
+      console.warn(`Formulário com nome "${nomeDoForm}" não encontrado.`);
+      return;
+    }
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+  
+      fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
       })
-      .catch(error => {
-        alert('Erro ao enviar dados.');
-        console.error('Erro:', error);
-      });
-  });
+        .then(response => {
+          alert('Dados enviados com sucesso!');
+          form.reset();
+        })
+        .catch(error => {
+          alert('Erro ao enviar dados.');
+          console.error('Erro:', error);
+        });
+    });
+  }
+  
+  // Exemplo de uso com primeiro formulário:
+  configurarEnvioFormulario(
+    'formulario-contato',
+    'https://script.google.com/macros/s/AKfycbw1N2Zw31-amsC4Z_vZcErgAY2swVF35slCAb8aoQ9Utq9Q0PT2lrOjbtdKVxcxQkv22g/exec'
+  );
+  configurarEnvioFormulario(    
+    'formulario-indicacao',
+    'https://script.google.com/macros/s/AKfycbxV9xm-o5jyzQtxL7svJXRBEFXoRIuilHb8xHftEyLGMzpD0sQewWYwR2KqJjlkVc-j/exec'
+  )

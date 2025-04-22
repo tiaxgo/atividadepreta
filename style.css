@@ -83,13 +83,15 @@ nav a {
 
 .section-2,
 .section-4,
-.section-6,
-.section-7{
-  background-image: url('src/img/granuladomaior.png');
+.section-6
+{
+  background-image: url('src/img/testefundopreto.png');
+  background-size: cover;
+  background-position: center;
 
 }
 
-.section-1, .section-3, .section-5 {
+.section-1, .section-3, .section-5, .section-7{
   background-image: url('src/img/testefundo.png');
   background-size: cover;
   background-position: center;
@@ -874,6 +876,10 @@ button {
   gap: 15px;
 }
 
+#form-indicacao {
+  width: 50%;
+}
+
 .indicacao {
   font-family: "inconsolata", sans-serif;
   font-size: 13px;
@@ -1067,20 +1073,27 @@ input::placeholder {
   opacity: 1; /* garante que o estilo seja visível em todos os browsers */
 }
 
-.campo-input-sobre textarea {
+.campo-input-sobre {
     
     background: transparent;
     color: #303030;
-    padding: 0.75rem;
+    padding: 0.15rem;
     display: flex;
     align-items: center;
     position: relative;
     border-radius: 2px;
     width: 100%;
     border: solid 2px #303030;
-    width: 441px;
+
     height: 110px;
 }
+
+  .campo-input-sobre textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    }
 
 .icone {
   position: absolute;
@@ -1432,6 +1445,16 @@ header nav.nav-mobile ul li {
     margin: 0 auto;
   }
 
+ 
+  .modal-indicacao {
+    height: auto;
+  }
+  
+  #form-indicacao {
+    width: 100%;
+   
+  }
+
   .section {
      /* Garante que o contêiner tenha pelo menos 100% da altura da tela */
     height: auto;
@@ -1683,6 +1706,7 @@ header nav.nav-mobile ul li {
 
   .conteudo-modal {
     width: 100%;
+
   }
 
   .imagem-cabecalho {
@@ -1710,8 +1734,15 @@ header nav.nav-mobile ul li {
   .modal-horizontal {
     flex-direction: column;
     width: 350px !important;
-    height: 640px;
+    height: auto;
   }
+
+  .campo-formulario-sobre div  {
+  width: 100% !important;
+  
+  }
+
+ 
 
   .texto-indique-um-negocio {
     font-size: 30px;

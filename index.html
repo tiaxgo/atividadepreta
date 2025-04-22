@@ -395,11 +395,25 @@
         <p>Selecione a opção que melhor se encaixa com seu negócio</p>
         <select id="segmento" >
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-          <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
-          </option>
-          <option value="" >2. Pequena (Até R$ 4,8 milhões ou até 49 funcionários)</option>
-          <option value="" >3. Média (Até R$ 300 milhões ou até 99 funcionários)</option>
-          <option value="" >4. Grande (Acima de R$ 300 milhões ou 100+ funcionários)</option>
+          <option value="" >Agricultura</option>
+          <option value="" >Pecuária</option>
+          <option value="" >Pesca</option>
+          <option value="" >Mineração</option>
+          <option value="" >Indústria manufatureira (automóveis, eletrônicos, roupas)</option>
+          <option value="" >Contrução civil</option>
+          <option value="" >Indústria química</option>
+          <option value="" >Comércio (Varejo e Atacado)</option>
+          <option value="" >Serviços Financeiros (bancos, seguros)</option>
+          <option value="" >Saúde (hospitais, clínicas)</option>
+          <option value="" >Educação</option>
+          <option value="" >Turismo e Hospitalidade</option>
+          <option value="" >Tecnologia da informação</option>
+          <option value="" >Pesquisa e Desenvolvimento</option>
+          <option value="" >Consultoria</option>
+          <option value="" >Mídia e comunicação</option>
+          <option value="" >Serviços sociais</option>
+          <option value="" >Saúde e bem-estar</option>
+          <option value="" >Esducação Superior</option>
         </select>
       </div>
 
@@ -483,8 +497,8 @@
         <div class="campo-formulario-sobre">
           <label for="cidade">CIDADE | MUNICÍPIO:</label>
           <p>Após indicar o Estado, selecione uma das opções a seguir</p>
-          <select class="cidade" required disabled>
-            <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <select class="cidade" required >
+            <option value="" selected  hidden>SELECIONE UMA OPÇÃO</option>
           </select>
         </div>
       
@@ -561,31 +575,35 @@
         <p>MARAVILHA, ENTENDEMOS QUE SEU EMPREENDIMENTO É VIRTUAL.</p>
         <p>PARA FINALIZAR, NOS DIGA QUAL O PRINCIPAL SEGMENTO DA SUA EMPRESA DIGITAL E TAMBÉM O QUE ACHOU DO ATIVIDADE PRETA ATÉ AGORA.</p>
       </div>
-      <label for="nome">SEGMENTO DIGITAL:</label>
-      <p>Selecione uma das opções a seguir</p>
-      <select id="" >
-        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-        <option value="" >1. E-commerce</option>
-        <option value="" >2. Infroprodutos</option>
-        <option value="" >3. Serviços digitais</option>
-        <option value="" >4. Marketing e afiliados</option>
-        <option value="" >5. Produção de conteúdo digital</option>
-        <option value="" >6. SaaS (Software as a Service)</option>
-        <option value="" >7. Marketplaces</option>
-        <option value="" >8. FinTechs</option>
-        <option value="" >9. Desenvolvimento desoftware e aplicativos</option>
-        <option value="" >10. Gestão de comunidade</option>
-        <option value="" >11. Tecnologia da informação (TI)</option>
-        <option value="" >12. Educação Digital</option>
-        <option value="" >13. Outro</option>
+      <div class="campo-formulario-sobre">
+        <label for="nome">SEGMENTO DIGITAL:</label>
+        <p>Selecione uma das opções a seguir</p>
+        <select id="" >
+          <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <option value="" >1. E-commerce</option>
+          <option value="" >2. Infroprodutos</option>
+          <option value="" >3. Serviços digitais</option>
+          <option value="" >4. Marketing e afiliados</option>
+          <option value="" >5. Produção de conteúdo digital</option>
+          <option value="" >6. SaaS (Software as a Service)</option>
+          <option value="" >7. Marketplaces</option>
+          <option value="" >8. FinTechs</option>
+          <option value="" >9. Desenvolvimento desoftware e aplicativos</option>
+          <option value="" >10. Gestão de comunidade</option>
+          <option value="" >11. Tecnologia da informação (TI)</option>
+          <option value="" >12. Educação Digital</option>
+          <option value="" >13. Outro</option>
         
-      </select>
+        </select>
+      </div>
 
-      <label for="share">COMPARTILHE COM A GENTE:</label>
-      <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
-      <div class="campo-input full">
-        <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" required=""></textarea>
-        <i class="icone">✎</i>
+      <div class="campo-formulario-sobre">
+        <label for="share">COMPARTILHE COM A GENTE:</label>
+        <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
+        <div class="campo-input-sobre full">
+          <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" required=""></textarea>
+          <i class="icone">✎</i>
+        </div>
       </div>
 
       <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
@@ -643,25 +661,44 @@
             
       </div>
     </div>
-    <form class="formulario" id="form-indicacao">
-      <label for="nome">Nome do afroempreendimento</label>
-      <input type="text" id="nome" required>
+    <form class="formulario" id="form-indicacao" method="post" name="formulario-indicacao">
+      <div class="mensagem-confirmacao">
+        <h2>NOS INDIQUE AFROEMPREENDEDORES</h2>
+        <p>CONHECE ALGUM AFROEMPREENDEDOR QUE GOSTARIA DE CONHECER A PROPOSTA DO ATIVIDADE PRETA? NOS INDIQUE!</p>
+      </div>
+      <div class="campo-formulario-sobre">
+        <label for="nome">NOME DO AFROEMPREENDIMENTO:</label>
+        <p>Informe o nome do empreendedor ou empresa da sua indicação.</p>
+        <input type="text" id="nome" required>
+      </div>
 
-      <label for="estado">Estado:</label>
-      <select class="estado" required>
-        <option value="" selected disabled hidden>SELECIONE UM ESTADO</option>
-      </select>
-        <label for="cidade">Cidade:</label>
-        <select class="cidade" required disabled>
-          <option value="" selected disabled hidden>SELECIONE UMA CIDADE</option>
+      <div class="campo-formulario-sobre">
+        <label for="estado">ESTADO:</label>
+        <p>Selecione o estado da sua indicação</p>
+        <select class="estado" required>
+          <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
         </select>
+      </div>
+        <div class="campo-formulario-sobre">
+          <label for="cidade">CIDADE | MUNICÍPIO:</label>
+          <p>Após selecionar o estado, selecione a cidade ou município da sua indicação</p>
+          <select class="cidade" required>
+            <option value="" selected >SELECIONE UMA CIDADE</option>
+          </select>
+        </div>
 
 
-      <label for="link">Link para conhecermos mais sobre sua indicação</label>
-      <input type="url" id="link" >
+      <div class="campo-formulario-sobre">
+        <label for="link">LINK PARA CONHECERMOS MAIS SOBRE SUA INDICAÇÃO:</label>
+        <p>Instagram, site, portfólio ou outra página relevante</p>
+        <input type="url" id="link" >
+      </div>
 
-      <label for="whatsapp">Whatsapp</label>
-      <input type="text" id="whatsapp" required>
+      <div class="campo-formulario-sobre">
+        <label for="whatsapp">WHATSAPP:</label>
+        <p>Nos informe o telefone de contato da sua indicação</p>
+        <input type="text" id="whatsapp" required>
+      </div>
 
       <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
     </form>
@@ -863,27 +900,6 @@
 
   </div>
 </div>
-
-<!-- Modal SOBRE SUA EMPRESA - SE ALIADO -->
-
-<div id="modal-sobre-sua-empresa" class="modal" style="display: none;" aria-hidden="true">
-  <div class="conteudo-modal modal-horizontal">
-    <button class="botao-fechar" aria-label="Fechar modal" onclick="fecharModalIndicacao()">&times;</button>
-    <div class="imagem-cabecalho">
-      <img src="src/img/logo1.png" alt="Imagem de cabeçalho" />
-      <h2 class="titulo-modal">INDIQUE UM NEGÓCIO</h2>
-    </div>
-    <form class="formulario" id="form-indicacao">
-      <label for="nome">Nome do afroempreendimento</label>
-      <input type="text" id="nome" required>
-
-
-      <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
-    </form>
-  </div>
-</div>
-
-
 
     <section class="section section-1" id="granulado">
       <div class="apresentacao-section-1">
