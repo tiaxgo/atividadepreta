@@ -109,13 +109,14 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   background-attachment: fixed;
+  padding-top: 60px;
+  padding-bottom: 50px;
   /* Para efeito de paralaxe */
 }
 
 /* Overlay escuro por cima da imagem */
-.section-2 .overlay,
+/*.section-2 .overlay,
 .section-4 .overlay,
 .section-6 .overlay {
   position: absolute;
@@ -125,10 +126,9 @@ nav a {
   height: 100%;
   background-color: rgba(48, 48, 48, 1);
   ;
-  opacity: 0.75;/* ajuste a opacidade aqui */
+  opacity: 0.75;/* ajuste a opacidade aqui 
   z-index: 1;
-}
-
+}/*
 /* Conteúdo da seção fica por cima do overlay */
 .section-2 .content,
 .section-4 .content,
@@ -1325,14 +1325,14 @@ header nav.nav-mobile ul li {
   }
 
   .section {
-    min-height: 100vh; /* Garante que o contêiner tenha pelo menos 100% da altura da tela */
+     /* Garante que o contêiner tenha pelo menos 100% da altura da tela */
     height: auto;
     scroll-margin-top: 60px;
 
   }
 
   .section-1 {
-    margin-top: 60px;
+
   }
 
   .btn-abrir-menu {  
@@ -1563,7 +1563,8 @@ header nav.nav-mobile ul li {
     position: static;
     display: block;
     height: 40px;
-    margin: 20px auto 0;
+    margin: 20px;
+    margin-bottom: 50px;
   }
 
   br {
@@ -1724,6 +1725,11 @@ header nav.nav-mobile ul li {
   br {
     display: none;
   }
+
+  .section-1 {
+    margin-top: 60px;
+  }
+
 
   .texto-1-section-1 p {
     font-size: 30px;
