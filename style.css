@@ -935,10 +935,15 @@ button {
 }
 
 .subtitulo-modal {
-  font-size: 0.85rem;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: #303030; /* cor da linha */
+  text-decoration-thickness: 1px; /* espessura mais fina */
+  text-underline-offset: 6px; /* distância da linha até o texto */
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #333;
+  color: #303030;
   margin-bottom: 2rem;
   text-align: left;
 }
@@ -947,11 +952,20 @@ button {
 
 /* Formulário bot */
 
-.titulo-form-fale-com-a-gente h2 {
-  text-align: left;
-  width: 100%;
+.enviar-form {
+ 
+  margin-left: 130px;
 }
 
+.titulo-form-fale {
+  font-family: "questrial", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  top: 47%;
+  width: 470px;
+  text-align: left;
+}
 
 .grupo-duplo {
   display: flex;
