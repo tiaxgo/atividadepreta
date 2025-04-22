@@ -646,6 +646,7 @@ button {
   overflow: hidden;
   font-family: 'Arial', sans-serif;
   position: relative;
+  padding: 10px 30px 10px 30px;
 
 }
 
@@ -671,10 +672,17 @@ button {
 
 .label-nome p, .label-email p, .label-telefone p, .label-comunidade p {
   width: 30%;
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  transform: translateY(40%);
+
 }
 
 .label-nome div, .label-email div, .label-telefone div, .label-comunidade div {
-  width: 70%;
+  width: 324px;
+  height: 54px;
 }
 
 .label-email {
@@ -772,12 +780,14 @@ button {
 }
 
 .formulario-fale-conosco {
-  padding: 30px;
+  padding: 2px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   background-size: cover;
   background-position: center;
+  height: 510px;
+
 }
 
 .formulario label {
@@ -954,7 +964,7 @@ button {
 
 .enviar-form {
  
-  margin-left: 130px;
+  margin-left: 135px;
 }
 
 .titulo-form-fale {
@@ -992,10 +1002,25 @@ button {
   flex: 1;
   background: transparent;
   border: none;
-  color: #fff;
-
+  color: #DED6CF;
+  font-family: "Inconsolata", monospace;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
   outline: none;
 }
+
+.campo-input textarea::placeholder {
+  color: #DED6CF /* muda a cor */
+
+}
+
+input::placeholder {
+  color: #DED6CF; /* mesma cor dos ícones para harmonizar */
+
+  opacity: 1; /* garante que o estilo seja visível em todos os browsers */
+}
+
 
 
 .icone {
@@ -1018,12 +1043,11 @@ select {
   width: 100%;
   padding: 12px;
   border: 2px solid #000;
-
   font-size: 16px; /* Tamanho da fonte */
   text-transform: uppercase; /* Converte texto para maiúsculas */
   background-color: #fff;
   color: #000;
-  margin-bottom: 15px;
+
   appearance: none; /* Remove estilo padrão do navegador */
   -webkit-appearance: none;
   -moz-appearance: none;
