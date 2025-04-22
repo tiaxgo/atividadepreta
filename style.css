@@ -754,7 +754,7 @@ button {
   left: 50%;
   top: 1%;
   transform: translateX(-50%);
-  color: white;
+  color: #DED6CF;
   font-size: 32px;
   font-weight: 300;
   text-shadow: 1px 1px 2px #000;
@@ -903,6 +903,39 @@ button {
   margin-bottom: 1rem;
 }
 
+.campo-formulario-sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.campo-formulario-sobre input {
+  width: 100%;
+}
+
+.campo-formulario-sobre label {
+  font-family: "Inconsolata", sans-serif;
+  width: 100%;
+  min-width: 100px;
+  font-weight: 700;
+  font-size: 11.77px;
+  
+}
+
+.campo-formulario-sobre p {
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  letter-spacing: 0.10em; /* melhor usar em vez de % */
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+
+.campo-formulario-sobre textarea {}
+
+
 .campo-formulario label {
   font-family: "Inconsolata", sans-serif;
   width: 20%;
@@ -915,6 +948,9 @@ button {
   width: 80%;
 }
 
+.enviar-from-sobre {
+  margin-top: 3px;
+}
 
 .svg-esquerda {
   position: absolute;
@@ -1026,7 +1062,20 @@ input::placeholder {
   opacity: 1; /* garante que o estilo seja visível em todos os browsers */
 }
 
-
+.campo-input-sobre textarea {
+    
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 2px;
+    width: 100%;
+    border: solid 2px #303030;
+    width: 441px;
+    height: 110px;
+}
 
 .icone {
   position: absolute;

@@ -361,49 +361,59 @@
       </div>
     </div>
     <form class="formulario form-horizontal" id="form-confirmacao-2">
-      <div class="texto-form">      
-          <h3>VENHA FORTALECER O MOVIMENTO</h3>
+      <div class="texto-form  mensagem-confirmacao">      
+          <h2>VENHA FORTALECER O MOVIMENTO!</h2>
           <p>ESTAMOS QUASE LÁ! NOS CONTE UM POUCO MAIS SOBRE O SUA EMPRESA PARA QUE POSSAMOS CRIAR UM ESPAÇO QUE REALMENTE REPRESENTA A SUA MARCA DENTRO DO ATIVIDADE PRETA</p>
       </div>
-      <label for="nome">NOME DA EMPRESA:</label>
-      <p>Como aparece em redes sociais, contratos ou materiais de divulgação</p>
-      <input type="text" id="nome" required>
+      <div class="campo-formulario-sobre">
+        <label for="nome">NOME DA EMPRESA:</label>
+        <p>Como aparece em redes sociais, contratos ou materiais de divulgação</p>
+        <input type="text" id="nome" required>
+      </div>
     
-      <label for="nome">LINK PARA CONHECER MAIS SOBRE SUA EMPPRESA:</label>
-      <p>Instagram, site, portfólio ou outra página relevante</p>
-      <input type="text" id="nome" required>
+      <div class="campo-formulario-sobre">
+        <label for="nome">LINK PARA CONHECER MAIS SOBRE SUA EMPPRESA:</label>
+        <p>Instagram, site, portfólio ou outra página relevante</p>
+        <input type="text" id="nome" required>
+      </div>
 
-      <label for="porte">PORTE DA EMPRESA:</label>
-      <p>Selecione a opção que melhor se encaixa com seu negócio</p>
-      <select id="porte" >
-        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-        <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
-        </option>
-        <option value="" >2. Pequena (Até R$ 4,8 milhões ou até 49 funcionários)</option>
-        <option value="" >3. Média (Até R$ 300 milhões ou até 99 funcionários)</option>
-        <option value="" >4. Grande (Acima de R$ 300 milhões ou 100+ funcionários)</option>
-      </select>
+      <div class="campo-formulario-sobre">
+        <label for="porte">PORTE DA EMPRESA:</label>
+        <p>Selecione a opção que melhor se encaixa com seu negócio</p>
+        <select id="porte" >
+          <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
+          </option>
+          <option value="" >2. Pequena (Até R$ 4,8 milhões ou até 49 funcionários)</option>
+          <option value="" >3. Média (Até R$ 300 milhões ou até 99 funcionários)</option>
+          <option value="" >4. Grande (Acima de R$ 300 milhões ou 100+ funcionários)</option>
+        </select>
+      </div>
       
-      <label for="segmento">SEGMENTO DA SUA EMPRESA:</label>
-      <p>Selecione a opção que melhor se encaixa com seu negócio</p>
-      <select id="segmento" >
-        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-        <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
-        </option>
-        <option value="" >2. Pequena (Até R$ 4,8 milhões ou até 49 funcionários)</option>
-        <option value="" >3. Média (Até R$ 300 milhões ou até 99 funcionários)</option>
-        <option value="" >4. Grande (Acima de R$ 300 milhões ou 100+ funcionários)</option>
-      </select>
+      <div class="campo-formulario-sobre">
+        <label for="segmento">SEGMENTO DA SUA EMPRESA:</label>
+        <p>Selecione a opção que melhor se encaixa com seu negócio</p>
+        <select id="segmento" >
+          <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
+          </option>
+          <option value="" >2. Pequena (Até R$ 4,8 milhões ou até 49 funcionários)</option>
+          <option value="" >3. Média (Até R$ 300 milhões ou até 99 funcionários)</option>
+          <option value="" >4. Grande (Acima de R$ 300 milhões ou 100+ funcionários)</option>
+        </select>
+      </div>
 
-      <label for="espaco">SUA EMPRESA TEM UM ESPAÇO FÍSICO?</label>
-      <p>Selecione uma das opções a seguir</p>
-      <select id="espaco" >
-        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-        <option value="opcaosim" >Sim</option>
-        <option value="opcaonao" >Não</option>
-      </select>
+      <div class="campo-formulario-sobre">
+        <label for="espaco">SUA EMPRESA TEM UM ESPAÇO FÍSICO?</label>
+        <p>Selecione uma das opções a seguir</p>
+        <select id="espaco" >
+          <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <option value="opcaosim" >Sim</option>
+          <option value="opcaonao" >Não</option>
+        </select>
+      </div>
 
-      <button type="submit" class="botao-enviar">CONFIRMAR INFORMAÇÕES</button>
+      <button type="submit" class="botao-enviar enviar-from-sobre">CONFIRMAR INFORMAÇÕES</button>
     </form>
 
   </div>
@@ -459,29 +469,36 @@
     </div>
   </div>
     <form class="formulario form-horizontal" id="form-opcao-sim">
-      <div class="texto-form">     
-      <h3>VENHA FORTALECER O MOVIMENTO!</h3>
+      <div class="texto-form  mensagem-confirmacao">     
+      <h2>VENHA FORTALECER O MOVIMENTO!</h2>
       <p>ESTAMOS NA RETA FINAL, POR FAVOR, INDIQUE O ENDEREÇO DA SUA EMPRESA E NOS DIGA O QUE ACHOU ATÉ AGORA.</p>
       </div>
-      <label for="estado">Estado:</label>
-      <p>Selecione uma das opções a seguir</p>
-      <select class="estado" required>
-        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
-      </select>
-        <label for="cidade">CIDADE | MUNICÍPIO:</label>
-        <p>Após indicar o Estado, selecione uma das opções a seguir</p>
-        <select class="cidade" required disabled>
+      <div class="campo-formulario-sobre">
+        <label for="estado">Estado:</label>
+        <p>Selecione uma das opções a seguir</p>
+        <select class="estado" required>
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
         </select>
+      </div>
+        <div class="campo-formulario-sobre">
+          <label for="cidade">CIDADE | MUNICÍPIO:</label>
+          <p>Após indicar o Estado, selecione uma das opções a seguir</p>
+          <select class="cidade" required disabled>
+            <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          </select>
+        </div>
       
 
 
-        <label for="share">COMPARTILHE COM A GENTE:</label>
-        <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
-        <div class="campo-input full">
-          <textarea placeholder="" rows="4" required=""></textarea>
-          <i class="icone">✎</i>
+        <div class="campo-formulario-sobre">
+          <label for="share">COMPARTILHE COM A GENTE:</label>
+          <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
+          <div class="campo-input-sobre full">
+            <textarea placeholder="" rows="4" required=""></textarea>
+            <i class="icone">✎</i>
+          </div>
         </div>
+
 
       <button type="submit" class="botao-enviar">FINALIZAR CADASTRO</button>
     </form>
@@ -539,10 +556,33 @@
     </div>
   </div>
     <form class="formulario form-horizontal" id="form-opcao-nao">
+      <div  class="mensagem-confirmacao">
+        <h2>VENHA FORTALECER O MOVIMENTO!</h2>
+        <p>MARAVILHA, ENTENDEMOS QUE SEU EMPREENDIMENTO É VIRTUAL.</p>
+        <p>PARA FINALIZAR, NOS DIGA QUAL O PRINCIPAL SEGMENTO DA SUA EMPRESA DIGITAL E TAMBÉM O QUE ACHOU DO ATIVIDADE PRETA ATÉ AGORA.</p>
+      </div>
       <label for="nome">SEGMENTO DIGITAL:</label>
-      <input type="text" id="nome" required>
+      <p>Selecione uma das opções a seguir</p>
+      <select id="" >
+        <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+        <option value="" >1. E-commerce</option>
+        <option value="" >2. Infroprodutos</option>
+        <option value="" >3. Serviços digitais</option>
+        <option value="" >4. Marketing e afiliados</option>
+        <option value="" >5. Produção de conteúdo digital</option>
+        <option value="" >6. SaaS (Software as a Service)</option>
+        <option value="" >7. Marketplaces</option>
+        <option value="" >8. FinTechs</option>
+        <option value="" >9. Desenvolvimento desoftware e aplicativos</option>
+        <option value="" >10. Gestão de comunidade</option>
+        <option value="" >11. Tecnologia da informação (TI)</option>
+        <option value="" >12. Educação Digital</option>
+        <option value="" >13. Outro</option>
+        
+      </select>
 
       <label for="share">COMPARTILHE COM A GENTE:</label>
+      <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
       <div class="campo-input full">
         <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" required=""></textarea>
         <i class="icone">✎</i>
