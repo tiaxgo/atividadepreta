@@ -84,8 +84,7 @@ nav a {
 .section-2,
 .section-4,
 .section-6,
-.section-7,
-.formulario#granulado {
+.section-7{
   background-image: url('src/img/granuladomaior.png');
 
 }
@@ -679,6 +678,13 @@ button {
   transform: translateY(40%);
 
 }
+.label-mensagem p {
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  margin-top: 10px;
+}
 
 .label-nome div, .label-email div, .label-telefone div, .label-comunidade div {
   width: 324px;
@@ -762,7 +768,7 @@ button {
   right: 16px;
   font-size: 28px;
   font-weight: bold;
-  color: white;
+  color: #DED6CF;
   cursor: pointer;
   z-index: 1000;
   background-color: transparent;
@@ -773,8 +779,7 @@ button {
   padding: 30px;
   display: flex;
   flex-direction: column;
-
-  background-image: url('src/img/granuladomaior.png');
+  background-image: url('src/img/testefundo.png');
   background-size: cover;
   background-position: center;
 }
@@ -830,7 +835,7 @@ button {
 /* aqui vai o formulario 2 */
 /* ADICIONE APENAS ESTAS NOVAS CLASSES */
 .conteudo-formulario {
-  background-image: url('src/img/granuladomaior.png');
+  background-image: url('src/img/testefundo.png');
   background-size: cover;
   background-position: center;
   padding: 30px;
