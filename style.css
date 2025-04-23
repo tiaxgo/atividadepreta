@@ -100,6 +100,10 @@ nav a {
 }
 
 
+.section-2 {
+  padding-top: 135px !important;
+}
+
 
 .section-2,
 .section-4,
@@ -109,7 +113,7 @@ nav a {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 80px 0 80px 0;
   background-attachment: fixed;
 
   /* Para efeito de paralaxe */
@@ -160,7 +164,8 @@ nav a {
 .section-3 {
   background-color: #ded6cf8f;
   color: #303030;
-  height: 872px;
+  height: 726px;
+  padding-bottom: 80px;
 }
 
 .section-4 {
@@ -419,9 +424,7 @@ button {
 .texto-2-section-3 {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-
-  padding: 50px;
+  padding: 0px 100px 0px 100px;
 }
 
 .conteiner-1-section-3 {
