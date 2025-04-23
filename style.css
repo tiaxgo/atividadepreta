@@ -69,7 +69,7 @@ nav a {
   color: white;
   display: flex;
   flex-direction: column;
-  scroll-margin-top: 144px; /* altura do seu header fixo */
+  scroll-margin-top: 100px; /* altura do seu header fixo */
   padding-top: 80px;
 }
 
@@ -111,8 +111,7 @@ nav a {
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
-  padding-top: 40px;
-  padding-bottom: 60px;
+
   /* Para efeito de paralaxe */
 }
 
@@ -360,6 +359,10 @@ button {
 
 /* section 3 aqui embaixo e demais que usam os mesmos ajustes*/
 
+.texto-1-section-3 h2 {
+  padding-bottom: 40px !important;
+}
+
 .texto-1-section-2 h2, .texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
   font-family: "questrial", sans-serif;
   font-weight: 400;
@@ -372,7 +375,7 @@ button {
 .texto-1-section-3 h3, .texto-1-section-4 h3, .texto-1-section-5 h3, .texto-1-section-6 h3 {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
-  font-size: 32px; /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 24px; /* tamanho mínimo 1rem, cresce até 32px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
   padding-bottom: 20px;
 }
