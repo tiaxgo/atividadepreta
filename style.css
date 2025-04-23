@@ -19,7 +19,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 144px;
+  height: 100px;
   background-color: #333;
   color: white;
   display: flex;
@@ -53,10 +53,11 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #DED6CF;
+  color: rgba(222, 214, 207, 1);
   font-family: "Inconsolata", monospace;
   font-size: 20px;
-  letter-spacing: 0.01em; /* melhor usar em vez de % */
+  letter-spacing: 0.10em; /* melhor usar em vez de % */
+  font-weight: 400;
 }
 
 
@@ -65,12 +66,11 @@ nav a {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
   display: flex;
   flex-direction: column;
   scroll-margin-top: 144px; /* altura do seu header fixo */
-  
+  padding-top: 80px;
 }
 
 /* Altura da seção 6 ajustada */
@@ -147,8 +147,9 @@ nav a {
   position: relative;
   background-color: #DED6CFBF;
   height: 672px;
-  margin-top: 144px;
-  
+  margin-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .section-2 {
@@ -248,7 +249,7 @@ button {
   font-size: 28px !important;
 }
 .apresentacao-botao-fique-sabendo{
-  margin-top: 50px;
+  margin-top: 95px;
   height: 64px;
   width: 100%;
   display: flex;
@@ -311,11 +312,6 @@ button {
 }
 
 /* verificar se tem algum h2 pra ele e excluir se tiver mudou pra <p>*/
-.texto-1-section-2 {
-  font-size: 64px; /* tamanho mínimo 1rem, cresce até 32px */
-  letter-spacing: 0.14em; /* melhor usar em vez de % */
-  padding-bottom: 70px;
-}
 
 .texto-2-section-2 {
   display: flex;
@@ -344,33 +340,32 @@ button {
 }
 
 .conteiner-1-section-2 h4, .conteiner-2-section-2 h4, .bloco-1-conteiner-1 h4, .bloco-2-conteiner-1 h4, .bloco-3-conteiner-1 h4, .bloco-1-conteiner-2 h4, .bloco-2-conteiner-2 h4, .bloco-1-conteiner-1-section-4 h4, .bloco-2-conteiner-1-section-4 h4, .bloco-3-conteiner-1-section-4 h4, .bloco-1-conteiner-1-section-5 h4, .bloco-2-conteiner-1-section-5 h4, .bloco-3-conteiner-1-section-5 h4 {
-  font-size: 20px;
+  font-size: 24px;
   font-family: "Questrial", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 32px; /* tamanho mínimo 1rem, cresce até 32px */
   line-height: 40px;
   text-align: center;
-  padding: 30px 0 2px 0;
+  padding: 30px 0 15px 0;
 }
 
-.conteiner-1-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
+.conteiner-2-section-2 p, .conteiner-1-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 20px; /* tamanho mínimo 1rem, cresce até 32px */
+  font-size: 16px; /* tamanho mínimo 1rem, cresce até 32px */
   line-height: 24px;
   text-align: center;
 }
 
 /* section 3 aqui embaixo e demais que usam os mesmos ajustes*/
 
-.texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
+.texto-1-section-2 h2, .texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
   font-family: "questrial", sans-serif;
   font-weight: 400;
-  font-size: 64px; /* tamanho mínimo 1rem, cresce até 64px */
+  font-size: 40px; /* tamanho mínimo 1rem, cresce até 64px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
-  padding: 30px 0 20px 0;
+  padding: 0px 0 80px 0;
 
 }
 
@@ -609,6 +604,7 @@ button {
   flex-direction: row;
   width: 1000px !important;
   height: 640px;
+  margin: 0 auto;
  
 }
 
@@ -1416,8 +1412,57 @@ header nav.nav-mobile ul li {
   display: none;
 }
 
+.imagem-fale-obrigado img {
+  object-fit: cover;
+  width: 100%;
+  height: 512px;
+
+}
+
+#modal-fale-obrigado {
+  width: 100%;
+  padding: 50px;
+
+}
+
+#conteudo-obrigado {
+  padding: 0px;
+  height: 510px;
+}
 
 
+.text-fale-obrigado {
+  position: absolute;
+  top: 4%;
+  left: 65%;
+  color: rgba(48, 48, 48, 1);
+}
+
+.text-fale-obrigado h2 {
+  font-family: 'questrial', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 20%;
+  line-height: 150%;
+
+}
+
+
+
+
+.text-fale-obrigado p {
+  margin-top: 40px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 6px; /* diatancia entre texto e underline*/
+  text-decoration-thickness: 1px; /* espessura mais fina */
+  letter-spacing: 14%;
+  line-height: 150%;
+  position: absolute;
+
+}
 
 
 
@@ -1547,7 +1592,7 @@ header nav.nav-mobile ul li {
     padding: 0% 0%;
   }
 
-  .texto-1-section-3 h2,
+ .texto-1-section-2 h2 .texto-1-section-3 h2,
   .texto-1-section-4 h2, .texto-1-section-2 {
     font-size: 32px;
     text-align: center;

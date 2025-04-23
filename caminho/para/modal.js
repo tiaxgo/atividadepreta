@@ -18,11 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalFaleConosco = document.getElementById('modal-fale-conosco');
     const formFaleConosco = document.getElementById('form-fale-conosco');
     const espaco = document.getElementById('espaco');
+    const modalObrigadoFale= document.getElementById('modal-fale-obrigado');
 
 
+    modalObrigadoFale.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Aqui você pode adicionar a lógica para o envio do formulário de Fale Conosco
 
-   
+      abrirModal(modalObrigadoFale); // Abre o modal de agradecimento   
     
+    });
     
     
     formFaleConosco.addEventListener('submit', function(e) {
@@ -30,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aqui você pode adicionar a lógica para o envio do formulário de Fale Conosco
         
         fecharModal(modalFaleConosco); // Fecha o modal de Fale Conosco
-        abrirModal(modalMuitoObrigado2); // Abre o modal de agradecimento   
+        abrirModal(modalObrigadoFale); // Abre o modal de agradecimento   
         
-});
+      });
     formOpcaoSim.addEventListener('submit', function(e) {
         e.preventDefault();
         fecharModal(modalOpcaoSim); // Fecha o modal de opção sim
