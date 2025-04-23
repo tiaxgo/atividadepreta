@@ -321,6 +321,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  padding-top: 36px;
 
 }
 .conteiner-2-section-2 {
@@ -350,7 +351,7 @@ button {
   font-weight: 400;
   line-height: 40px;
   text-align: center;
-  padding: 30px 0 15px 0;
+  padding: 24px 0 8px 0;
 }
 
 .conteiner-2-section-2 p, .conteiner-1-section-2 p, .bloco-1-conteiner-1 p, .bloco-2-conteiner-1 p, .bloco-3-conteiner-1 p, .bloco-1-conteiner-2 p, .bloco-2-conteiner-2 p, .bloco-1-conteiner-1-section-4 p, .bloco-2-conteiner-1-section-4 p, .bloco-3-conteiner-1-section-4 p, .bloco-1-conteiner-1-section-5 p, .bloco-2-conteiner-1-section-5 p, .bloco-3-conteiner-1-section-5 p {
@@ -365,7 +366,7 @@ button {
 /* section 3 aqui embaixo e demais que usam os mesmos ajustes*/
 
 .texto-1-section-3 h2 {
-  padding-bottom: 40px !important;
+  padding-bottom: 24px !important;
 }
 
 .texto-1-section-2 h2, .texto-1-section-3 h2, .texto-1-section-4 h2, .texto-1-section-5 h2, .texto-1-section-6 h2{
@@ -373,7 +374,7 @@ button {
   font-weight: 400;
   font-size: 40px; /* tamanho mínimo 1rem, cresce até 64px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
-  padding: 0px 0 80px 0;
+  padding: 0px 0 24px 0;
 
 }
 
@@ -382,7 +383,7 @@ button {
   font-weight: 400;
   font-size: 24px; /* tamanho mínimo 1rem, cresce até 32px */
   letter-spacing: -2.5%; /* melhor usar em vez de % */
-  padding-bottom: 20px;
+  padding-bottom: 64px;
 }
 
 .texto-1-section-3, .texto-1-section-4, .texto-1-section-5 {
