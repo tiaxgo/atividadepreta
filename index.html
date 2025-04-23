@@ -368,19 +368,19 @@
       <div class="campo-formulario-sobre">
         <label for="nome">NOME DA EMPRESA:</label>
         <p>Como aparece em redes sociais, contratos ou materiais de divulgação</p>
-        <input type="text" id="nome" required>
+        <input type="text" id="nome" name="nome">
       </div>
     
       <div class="campo-formulario-sobre">
         <label for="nome">LINK PARA CONHECER MAIS SOBRE SUA EMPPRESA:</label>
         <p>Instagram, site, portfólio ou outra página relevante</p>
-        <input type="text" id="nome" required>
+        <input type="text" id="nome" name="link">
       </div>
 
       <div class="campo-formulario-sobre">
         <label for="porte">PORTE DA EMPRESA:</label>
         <p>Selecione a opção que melhor se encaixa com seu negócio</p>
-        <select id="porte" >
+        <select id="porte" name="porte">
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
           <option value="" >1. Micro (micro (Até R$ 360 mil ou até 9 funcionários))
           </option>
@@ -393,7 +393,7 @@
       <div class="campo-formulario-sobre">
         <label for="segmento">SEGMENTO DA SUA EMPRESA:</label>
         <p>Selecione a opção que melhor se encaixa com seu negócio</p>
-        <select id="segmento" >
+        <select id="segmento" name="segmento">
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
           <option value="" >Agricultura</option>
           <option value="" >Pecuária</option>
@@ -420,7 +420,7 @@
       <div class="campo-formulario-sobre">
         <label for="espaco">SUA EMPRESA TEM UM ESPAÇO FÍSICO?</label>
         <p>Selecione uma das opções a seguir</p>
-        <select id="espaco" >
+        <select id="espaco" name="espaco">
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
           <option value="opcaosim" >Sim</option>
           <option value="opcaonao" >Não</option>
@@ -490,14 +490,14 @@
       <div class="campo-formulario-sobre">
         <label for="estado">Estado:</label>
         <p>Selecione uma das opções a seguir</p>
-        <select class="estado" required>
+        <select class="estado" name="estado">
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
         </select>
       </div>
         <div class="campo-formulario-sobre">
           <label for="cidade">CIDADE | MUNICÍPIO:</label>
           <p>Após indicar o Estado, selecione uma das opções a seguir</p>
-          <select class="cidade" required >
+          <select class="cidade" name="cidade" >
             <option value="" selected  hidden>SELECIONE UMA OPÇÃO</option>
           </select>
         </div>
@@ -508,7 +508,7 @@
           <label for="share">COMPARTILHE COM A GENTE:</label>
           <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
           <div class="campo-input-sobre full">
-            <textarea placeholder="" rows="4" required=""></textarea>
+            <textarea placeholder="" rows="4" required="" name="compartilhe"></textarea>
             <i class="icone">✎</i>
           </div>
         </div>

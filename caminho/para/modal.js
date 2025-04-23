@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalObrigadoEmpresa = document.getElementById('modal-obrigado-empresa');
     const modalFaleConosco = document.getElementById('modal-fale-conosco');
     const formFaleConosco = document.getElementById('form-fale-conosco');
+    const espaco = document.getElementById('espaco');
+
+
 
    
     
@@ -44,8 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     formConfirmacao2.addEventListener('submit', function(e) {   
         e.preventDefault();
-
-
+    
+        // 1. Armazena os dados do form principal
+        const formData = new FormData(this);
+        sessionStorage.setItem('dadosFormPrincipal', JSON.stringify(Object.fromEntries(formData)));
+    
+        // 2. Fecha o modal principal (sem abrir outros modais)
         if (espaco.value === 'opcaosim') {
             fecharModal(modalConfirmacao2); 
             abrirModal(modalOpcaoSim); // Modal para ALIADOS
@@ -53,10 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
              fecharModal(modalConfirmacao2); 
              abrirModal(modalOpcaoNao); // Modal para ALIANTES
          }  
-         
-         // Aqui você pode adicionar a lógica para o envio do formulário de confirmação 2
-        
-        fecharModal(modalConfirmacao2);
+     
     });
  
 
@@ -274,40 +278,125 @@ fetch('estados-cidades.json')
   })
   
 
-    // ENVIO FORMULARIOS VIA AXIOS PARA GOOGLE SHEETS
+// ==============================================
+// FUNÇÕES GERAIS
+// ==============================================
 
-  function configurarEnvioFormulario(nomeDoForm, scriptURL) {
+/**
+ * Configura envio para forms SIMPLES (antigos)
+ * @param {string} nomeDoForm - ID do formulário (atributo 'name' ou 'id')
+ * @param {string} scriptURL - URL do Google Apps Script
+ */
+function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     const form = document.forms[nomeDoForm];
-  
     if (!form) {
-      console.warn(`Formulário com nome "${nomeDoForm}" não encontrado.`);
+      console.warn(`Formulário "${nomeDoForm}" não encontrado.`);
       return;
     }
   
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-  
-      fetch(scriptURL, {
-        method: 'POST',
-        body: new FormData(form)
-      })
-        .then(response => {
-          alert('Dados enviados com sucesso!');
-          form.reset();
-        })
-        .catch(error => {
-          alert('Erro ao enviar dados.');
-          console.error('Erro:', error);
-        });
+      enviarFormulario(this, scriptURL);
     });
   }
   
-  // Exemplo de uso com primeiro formulário:
+  /**
+   * Envia dados para o Google Sheets (usado por TODOS os forms)
+   * @param {HTMLFormElement} form - Elemento do formulário
+   * @param {string} url - URL do script
+   */
+  function enviarFormulario(form, url) {
+    const formData = new FormData(form);
+  
+    // Para modais secundários: combina com dados do form principal
+    if (form.name === 'form-opcao-sim' || form.name === 'form-opcao-nao') {
+      const dadosPrincipal = JSON.parse(sessionStorage.getItem('dadosFormPrincipal'));
+      if (dadosPrincipal) {
+        for (const key in dadosPrincipal) {
+          if (!formData.has(key)) {
+            formData.append(key, dadosPrincipal[key]);
+          }
+        }
+      }
+    }
+  
+    fetch(url, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Erro no servidor');
+      return response.json();
+    })
+    .then(data => {
+      alert('Dados salvos com sucesso!');
+      form.reset();
+      
+      // Limpa storage e fecha modal (apenas para forms secundários)
+      if (form.name === 'form-opcao-sim' || form.name === 'form-opcao-nao') {
+        sessionStorage.removeItem('dadosFormPrincipal');
+        fecharModal(form.closest('.modal'));
+      }
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+      alert('Falha ao enviar. Tente novamente.');
+    });
+  }
+  
+  // ==============================================
+  // CONFIGURAÇÃO DOS FORMULÁRIOS
+  // ==============================================
+  
+  // Forms ANTIGOS (funcionam como antes)
   configurarEnvioFormulario(
     'formulario-contato',
     'https://script.google.com/macros/s/AKfycbw1N2Zw31-amsC4Z_vZcErgAY2swVF35slCAb8aoQ9Utq9Q0PT2lrOjbtdKVxcxQkv22g/exec'
   );
-  configurarEnvioFormulario(    
+  
+  configurarEnvioFormulario(
     'formulario-indicacao',
     'https://script.google.com/macros/s/AKfycbxV9xm-o5jyzQtxL7svJXRBEFXoRIuilHb8xHftEyLGMzpD0sQewWYwR2KqJjlkVc-j/exec'
-  )
+  );
+  
+  // NOVO FORM PRINCIPAL (form-confirmacao-2)
+  document.forms['form-confirmacao-2']?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // 1. Armazena dados do form principal
+    const formData = new FormData(this);
+    sessionStorage.setItem('dadosFormPrincipal', JSON.stringify(Object.fromEntries(formData)));
+    
+    // 2. Abre modal baseado na seleção "espaco"
+    const espacoValue = document.getElementById('espaco').value;
+    if (espacoValue === 'opcaosim') {
+      fecharModal(this.closest('.modal'));
+      abrirModal(document.getElementById('modal-opcao-sim'));
+    } else if (espacoValue === 'opcaonao') {
+      fecharModal(this.closest('.modal'));
+      abrirModal(document.getElementById('modal-opcao-nao'));
+    }
+  });
+  
+  // Forms SECUNDÁRIOS (Sim/Não) - Usam a função geral
+  configurarEnvioFormulario(
+    'form-opcao-sim',
+    'https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec'
+  );
+  
+  configurarEnvioFormulario(
+    'form-opcao-nao',
+    'https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec'
+  );
+  
+  // ==============================================
+  // FUNÇÕES AUXILIARES (MODAIS)
+  // ==============================================
+  
+  function abrirModal(modal) {
+    if (modal) modal.style.display = 'block';
+  }
+  
+  function fecharModal(modal) {
+    if (modal) modal.style.display = 'none';
+  }
