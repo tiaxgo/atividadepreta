@@ -1,0 +1,18 @@
+{
+    "segmentosDigitais": [
+      { "value": "E-commerce", "label": "1. E-commerce" },
+      { "value": "Infoprodutos", "label": "2. Infoprodutos" },
+      { "value": "Serviços digitais", "label": "3. Serviços digitais" },
+      { "value": "Marketing e afiliados", "label": "4. Marketing e afiliados" },
+      { "value": "Produção de conteúdo digital", "label": "5. Produção de conteúdo digital" },
+      { "value": "SaaS (Software as a Service)", "label": "6. SaaS (Software as a Service)" },
+      { "value": "Marketplaces", "label": "7. Marketplaces" },
+      { "value": "FinTechs", "label": "8. FinTechs" },
+      { "value": "Desenvolvimento desoftware e aplicativos", "label": "9. Desenvolvimento desoftware e aplicativos" },
+      { "value": "Gestão de comunidade", "label": "10. Gestão de comunidade" },
+      { "value": "Tecnologia da informação (TI)", "label": "11. Tecnologia da informação (TI)" },
+      { "value": "Educação Digital", "label": "12. Educação Digital" },
+      { "value": "Outro", "label": "13. Outro" }
+    ]
+  }
+  
