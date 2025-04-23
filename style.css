@@ -158,7 +158,8 @@ nav a {
 .section-2 {
   background-color: #303030BF;
   color: #DED6CF;
-  height: 588px;
+  height: 468px;
+  padding-top: 85px !important;
 }
 
 .section-3 {
