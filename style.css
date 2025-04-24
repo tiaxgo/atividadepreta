@@ -33,6 +33,7 @@ header {
 main {
   margin-top: 60px;
   margin: 0 auto;
+  max-width: 1440px;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
   font-weight: 400;
   font-style: normal;
   margin: 0 auto;
+  background-color: #ded6cf;
 }
 
 nav {
