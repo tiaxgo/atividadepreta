@@ -1519,6 +1519,7 @@ header nav.nav-mobile ul li {
     height: auto;
     scroll-margin-top: 60px;
     padding: 60px 10px;
+  
 
   }
 
@@ -2042,6 +2043,10 @@ header nav.nav-mobile ul li {
 
   br {
     display: none;
+  }
+
+  .section {
+    height: auto;
   }
 
   .section-1 {
