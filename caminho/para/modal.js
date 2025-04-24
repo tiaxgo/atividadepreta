@@ -405,3 +405,42 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   function fecharModal(modal) {
     if (modal) modal.style.display = 'none';
   }
+
+
+
+
+
+  // LOGICA PRA TELEFONE
+  function aplicarMascaraTelefone(input) {
+    input.addEventListener('input', function (e) {
+      let cursor = input.selectionStart;
+      let valor = e.target.value.replace(/\D/g, '');
+
+      if (valor.length > 11) valor = valor.slice(0, 11);
+
+      let formatado = "";
+
+      if (valor.length > 0) {
+        formatado += `(${valor.slice(0, 2)}`;
+      }
+      if (valor.length >= 3) {
+        formatado += `) ${valor.slice(2, 3)}`;
+      }
+      if (valor.length >= 4) {
+        formatado += ` ${valor.slice(3, 7)}`;
+      }
+      if (valor.length >= 8) {
+        formatado += `-${valor.slice(7)}`;
+      } else if (valor.length > 7) {
+        formatado += `-${valor.slice(7)}`;
+      }
+
+      e.target.value = formatado;
+
+      // Ajusta posição do cursor pra não pular
+      input.setSelectionRange(cursor, cursor);
+    });
+  }
+
+  // Aplica em todos os inputs com a classe 'campo-telefone'
+  document.querySelectorAll('.campo-telefone').forEach(aplicarMascaraTelefone);

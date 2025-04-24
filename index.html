@@ -168,15 +168,15 @@
     <form class="formulario" id="granulado" method="post" action="" name="formulario-contato">
       <div class="campo-formulario">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" />
+        <input type="text" id="nome" name="nome" required/>
       </div>
       <div class="campo-formulario">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email"/>
+        <input type="email" id="email" name="email"required/>
       </div>
     <div class="campo-formulario">
         <label for="whatsapp">WhatsApp:</label>
-        <input type="text" id="whatsapp" placeholder="(__) _____-____"  name="whatsapp"/>
+        <input type="text" id="whatsapp" placeholder="(__) _____-____"  name="whatsapp" class="campo-telefone" required/>
     </div>
       <div class="campo-formulario">
         <label for="estado">Estado:</label>
@@ -268,11 +268,13 @@
       <div class="redes-sociais">
         <p>NOS ACOMPANHE NAS REDES SOCIAIS:</p>
         <div class="icones-redes">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 19.7778C2 11.3978 2 7.20667 4.60444 4.60444C7.20889 2.00222 11.3978 2 19.7778 2H24.2222C32.6022 2 36.7933 2 39.3956 4.60444C41.9978 7.20889 42 11.3978 42 19.7778V24.2222C42 32.6022 42 36.7933 39.3956 39.3956C36.7911 41.9978 32.6022 42 24.2222 42H19.7778C11.3978 42 7.20667 42 4.60444 39.3956C2.00222 36.7911 2 32.6022 2 24.2222V19.7778Z" stroke="#303030" stroke-width="4"/>
-            <path d="M33.3332 11.9993C33.3332 12.7357 32.7362 13.3327 31.9998 13.3327C31.2635 13.3327 30.6665 12.7357 30.6665 11.9993C30.6665 11.263 31.2635 10.666 31.9998 10.666C32.7362 10.666 33.3332 11.263 33.3332 11.9993Z" fill="black" stroke="#303030" stroke-width="4"/>
-            <path d="M22.0002 28.6673C25.6821 28.6673 28.6668 25.6825 28.6668 22.0007C28.6668 18.3188 25.6821 15.334 22.0002 15.334C18.3183 15.334 15.3335 18.3188 15.3335 22.0007C15.3335 25.6825 18.3183 28.6673 22.0002 28.6673Z" stroke="#303030" stroke-width="4"/>
-            </svg>
+          <a href="https://www.instagram.com/atividade.preta/#" target="_blank">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <path d="M2 19.7778C2 11.3978 2 7.20667 4.60444 4.60444C7.20889 2.00222 11.3978 2 19.7778 2H24.2222C32.6022 2 36.7933 2 39.3956 4.60444C41.9978 7.20889 42 11.3978 42 19.7778V24.2222C42 32.6022 42 36.7933 39.3956 39.3956C36.7911 41.9978 32.6022 42 24.2222 42H19.7778C11.3978 42 7.20667 42 4.60444 39.3956C2.00222 36.7911 2 32.6022 2 24.2222V19.7778Z" stroke="#303030" stroke-width="4"/>
+              <path d="M33.3332 11.9993C33.3332 12.7357 32.7362 13.3327 31.9998 13.3327C31.2635 13.3327 30.6665 12.7357 30.6665 11.9993C30.6665 11.263 31.2635 10.666 31.9998 10.666C32.7362 10.666 33.3332 11.263 33.3332 11.9993Z" fill="black" stroke="#303030" stroke-width="4"/>
+              <path d="M22.0002 28.6673C25.6821 28.6673 28.6668 25.6825 28.6668 22.0007C28.6668 18.3188 25.6821 15.334 22.0002 15.334C18.3183 15.334 15.3335 18.3188 15.3335 22.0007C15.3335 25.6825 18.3183 28.6673 22.0002 28.6673Z" stroke="#303030" stroke-width="4"/>
+              </svg>
+          </a>
             
         </div>
       </div>
@@ -509,7 +511,7 @@
           <label for="share">COMPARTILHE COM A GENTE:</label>
           <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
           <div class="campo-input-sobre full">
-            <textarea placeholder="" rows="4" required="" name="compartilhe"></textarea>
+            <textarea placeholder="" rows="4"  name="compartilhe"></textarea>
             <i class="icone">✎</i>
           </div>
         </div>
@@ -588,7 +590,7 @@
         <label for="share">COMPARTILHE COM A GENTE:</label>
         <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
         <div class="campo-input-sobre full">
-          <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" name="compartilhe" required=""></textarea>
+          <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" name="compartilhe"></textarea>
           <i class="icone">✎</i>
         </div>
       </div>
@@ -684,7 +686,7 @@
       <div class="campo-formulario-sobre">
         <label for="whatsapp">WHATSAPP:</label>
         <p>Nos informe o telefone de contato da sua indicação</p>
-        <input type="text" id="whatsapp" name="whatsapp" required>
+        <input type="text" class="campo-telefone" id="whatsapp" name="whatsapp" required>
       </div>
 
       <button type="submit" class="botao-enviar">ENVIAR INDICAÇÃO</button>
@@ -848,11 +850,13 @@
       <div class="redes-sociais">
         <p>NOS ACOMPANHE NAS REDES E FIQUE POR DENTRO DE TUDO!</p>
         <div class="icones-redes">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 19.7778C2 11.3978 2 7.20667 4.60444 4.60444C7.20889 2.00222 11.3978 2 19.7778 2H24.2222C32.6022 2 36.7933 2 39.3956 4.60444C41.9978 7.20889 42 11.3978 42 19.7778V24.2222C42 32.6022 42 36.7933 39.3956 39.3956C36.7911 41.9978 32.6022 42 24.2222 42H19.7778C11.3978 42 7.20667 42 4.60444 39.3956C2.00222 36.7911 2 32.6022 2 24.2222V19.7778Z" stroke="#303030" stroke-width="4"/>
-            <path d="M33.3332 11.9993C33.3332 12.7357 32.7362 13.3327 31.9998 13.3327C31.2635 13.3327 30.6665 12.7357 30.6665 11.9993C30.6665 11.263 31.2635 10.666 31.9998 10.666C32.7362 10.666 33.3332 11.263 33.3332 11.9993Z" fill="black" stroke="#303030" stroke-width="4"/>
-            <path d="M22.0002 28.6673C25.6821 28.6673 28.6668 25.6825 28.6668 22.0007C28.6668 18.3188 25.6821 15.334 22.0002 15.334C18.3183 15.334 15.3335 18.3188 15.3335 22.0007C15.3335 25.6825 18.3183 28.6673 22.0002 28.6673Z" stroke="#303030" stroke-width="4"/>
-            </svg>
+          <a href="https://www.instagram.com/atividade.preta/#" target="_blank">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 19.7778C2 11.3978 2 7.20667 4.60444 4.60444C7.20889 2.00222 11.3978 2 19.7778 2H24.2222C32.6022 2 36.7933 2 39.3956 4.60444C41.9978 7.20889 42 11.3978 42 19.7778V24.2222C42 32.6022 42 36.7933 39.3956 39.3956C36.7911 41.9978 32.6022 42 24.2222 42H19.7778C11.3978 42 7.20667 42 4.60444 39.3956C2.00222 36.7911 2 32.6022 2 24.2222V19.7778Z" stroke="#303030" stroke-width="4"/>
+              <path d="M33.3332 11.9993C33.3332 12.7357 32.7362 13.3327 31.9998 13.3327C31.2635 13.3327 30.6665 12.7357 30.6665 11.9993C30.6665 11.263 31.2635 10.666 31.9998 10.666C32.7362 10.666 33.3332 11.263 33.3332 11.9993Z" fill="black" stroke="#303030" stroke-width="4"/>
+              <path d="M22.0002 28.6673C25.6821 28.6673 28.6668 25.6825 28.6668 22.0007C28.6668 18.3188 25.6821 15.334 22.0002 15.334C18.3183 15.334 15.3335 18.3188 15.3335 22.0007C15.3335 25.6825 18.3183 28.6673 22.0002 28.6673Z" stroke="#303030" stroke-width="4"/>
+              </svg>
+          </a>
             
         </div>
       </div>
@@ -1195,7 +1199,7 @@
             <label class="label-telefone">
               <p>TELEFONE:</p>
               <div class="campo-input">
-                <input type="text" placeholder="(__) _ ____-____" required />
+                <input type="text" class="campo-telefone" placeholder="(__) _ ____-____" required />
                 <i class="icone"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.87183 13.7438C2.87183 13.6349 2.91505 13.5306 2.99199 13.4537C3.06893 13.3767 3.17328 13.3335 3.28208 13.3335H6.15388C6.26268 13.3335 6.36703 13.3767 6.44397 13.4537C6.52091 13.5306 6.56413 13.6349 6.56413 13.7438C6.56413 13.8526 6.52091 13.9569 6.44397 14.0338C6.36703 14.1108 6.26268 14.154 6.15388 14.154H3.28208C3.17328 14.154 3.06893 14.1108 2.99199 14.0338C2.91505 13.9569 2.87183 13.8526 2.87183 13.7438Z" fill="#DED6CF"/>
                   <path d="M3.21641 0H6.21949C6.65846 0 7.02359 -2.29249e-08 7.32308 0.0246154C7.63487 0.0492307 7.92697 0.105026 8.20349 0.246154C8.62815 0.462499 8.9734 0.807751 9.18974 1.23241C9.33087 1.50892 9.38667 1.80103 9.41128 2.11282C9.4359 2.41231 9.4359 2.77744 9.4359 3.21641V12.7836C9.4359 13.2226 9.4359 13.5877 9.41128 13.8872C9.38667 14.199 9.33087 14.4911 9.18974 14.7676C8.97361 15.1921 8.62866 15.5374 8.20431 15.7538C7.92697 15.895 7.63487 15.9508 7.32308 15.9754C7.02359 16 6.65846 16 6.22031 16H3.21641C2.77744 16 2.41231 16 2.11282 15.9754C1.80103 15.9508 1.50892 15.895 1.23241 15.7538C0.808001 15.5379 0.462778 15.1933 0.246154 14.7692C0.105026 14.4919 0.0492309 14.1998 0.0246156 13.888C1.72701e-07 13.5885 0 13.2234 0 12.7844V3.21641C0 2.77744 1.72701e-07 2.41231 0.0246156 2.11282C0.0492309 1.80103 0.105026 1.50892 0.246154 1.23241C0.462499 0.807751 0.807751 0.462499 1.23241 0.246154C1.50892 0.105026 1.80103 0.0492307 2.11282 0.0246154C2.41231 -2.29249e-08 2.77744 0 3.21641 0ZM2.21292 1.25128C1.97744 1.27015 1.86503 1.30462 1.79118 1.34236C1.59788 1.44074 1.44074 1.59788 1.34236 1.79118C1.30462 1.86503 1.27015 1.97744 1.25128 2.21292C1.23159 2.45579 1.23077 2.77087 1.23077 3.24103V12.759C1.23077 13.2283 1.23077 13.5442 1.25128 13.7863C1.27015 14.0226 1.30462 14.135 1.34236 14.2088C1.44082 14.4025 1.59754 14.5592 1.79118 14.6576C1.86503 14.6954 1.97744 14.7298 2.21292 14.7487C2.45579 14.7684 2.77087 14.7692 3.24103 14.7692H6.19487C6.66421 14.7692 6.9801 14.7692 7.22215 14.7487C7.45846 14.7298 7.57087 14.6954 7.64554 14.6576C7.83853 14.5591 7.99537 14.402 8.09354 14.2088C8.13128 14.135 8.16574 14.0226 8.18462 13.7863C8.20431 13.5442 8.20513 13.2283 8.20513 12.759V3.24103C8.20513 2.77169 8.20513 2.45579 8.18462 2.21292C8.16574 1.97744 8.13128 1.86503 8.09354 1.79118C7.99537 1.598 7.83853 1.44088 7.64554 1.34236C7.57087 1.30462 7.45846 1.27015 7.22297 1.25128C7.04903 1.23882 6.8747 1.23253 6.70031 1.23241L6.59856 1.53846C6.51241 1.7961 6.46892 1.92574 6.38933 2.02092C6.31901 2.10504 6.22875 2.1702 6.12677 2.21046C6.01026 2.25641 5.87405 2.25641 5.60164 2.25641H3.83426C3.56185 2.25641 3.42564 2.25641 3.30913 2.21046C3.20724 2.17043 3.11698 2.10556 3.04656 2.02174C2.96697 1.92574 2.92349 1.7961 2.83733 1.53764L2.73559 1.23241C2.5612 1.23253 2.38687 1.23882 2.21292 1.25128Z" fill="#DED6CF"/>
@@ -1223,7 +1227,7 @@
           <label class="label-mensagem">
             <p>MENSAGEM:</p>
             <div class="campo-input full">
-              <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" required></textarea>
+              <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" ></textarea>
               <i class="icone"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17H4.42846L17 4.42846L13.5711 1L1 13.5715V17Z" stroke="#DED6CF" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M10.1426 4.42822L13.571 7.85668" stroke="#DED6CF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1263,7 +1267,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
-        <div class="image"><svg width="85" height="60" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="image"><svg width="65" height="40" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.1776 17.1426H0.399902V47.961H6.1776V42.1947C12.7751 42.0778 15.0003 39.9349 15.0003 33.7791V25.5193C15.0003 19.3634 12.7751 17.1426 6.1776 17.1426ZM9.18356 33.818C9.18356 36.0388 8.4028 36.4284 6.1776 36.4284V22.9478C8.4028 22.9478 9.18356 23.3374 9.18356 25.5582V33.818Z" fill="#DED6CF"/>
           <path d="M21.5589 17.1426H15.7812V40.87H21.5589V35.3765C23.7841 35.3765 24.5648 35.7661 24.5648 37.9869V40.87H30.3426V39.1168C30.3426 36.2336 29.4447 34.6362 27.4927 33.818C29.2885 32.4933 30.3426 30.3115 30.3426 26.9219V25.5193C30.3426 19.3634 28.1564 17.1426 21.5589 17.1426ZM24.5648 26.9608C24.5648 29.1816 23.7841 29.5712 21.5589 29.5712V22.9088C23.7841 22.9088 24.5648 23.2985 24.5648 25.5193V26.9608Z" fill="#DED6CF"/>
           <path d="M31.1622 47.9999H39.6335V42.1947H36.9789V35.4544H39.6335V29.6881H36.9789V22.9478H39.6335V17.1426H31.1622V47.9999Z" fill="#DED6CF"/>
@@ -1288,9 +1292,10 @@
       <div class="footer-links-1">
         <a href="index.html">INÍCIO</a>
         <a href="#section-comunidade">COMUNIDADE</a>
-        <a href="#section-alie-se">ALIE-SE</a>
-        <a href="#section-beneficios">BENEFÍCIOS</a>
+        <a href="#section-pilares">PILARES</a>
         <a href="#section-entenda">ENTENDA</a>
+        <a href="#section-beneficios">BENEFÍCIOS</a>
+        <a href="#section-alie-se">ALIE-SE</a>
       </div>
       <div class="footer-links-2">
         <a href="https://iridescent-mango-c18.notion.site/Termos-e-Condi-es-de-Uso-Atividade-Preta-707794be6ff44b6287e22b073d2e932a">PERGUNTAS FREQUENTES</a>

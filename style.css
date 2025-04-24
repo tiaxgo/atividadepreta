@@ -733,6 +733,7 @@ button {
 .imagem-cabecalho-empresa img {
   width: 100%;
   display: block;
+  object-position: bottom;
 }
 
 .imagem-cabecalho-empresa {
@@ -949,7 +950,9 @@ button {
   margin-top: 7px;
 }
 
-.campo-formulario-sobre textarea {}
+.campo-formulario-sobre textarea {
+
+}
 
 
 .campo-formulario label {
@@ -1073,13 +1076,17 @@ button {
 }
 
 .campo-input textarea::placeholder {
-  color: #DED6CF /* muda a cor */
+
 
 }
 
 input::placeholder {
   color: #DED6CF; /* mesma cor dos ícones para harmonizar */
+  opacity: 1; /* garante que o estilo seja visível em todos os browsers */
+}
 
+.campo-formulario input::placeholder {
+  color: #303030; /* mesma cor dos ícones para harmonizar */
   opacity: 1; /* garante que o estilo seja visível em todos os browsers */
 }
 
@@ -1277,10 +1284,14 @@ select.campo-invalido {
   gap: 60px;
   justify-content: center;
   align-items: center;
-  padding: 15px 0 15px;
-  font-size: 24px;
+
+  font-size: 16px;
   font-weight: 400;
   text-decoration: none;  
+}
+
+.footer-links-2 {
+  padding-top: 15px;
 }
 
 a {
@@ -1297,12 +1308,17 @@ a {
   font-size: 14px;
 }
 
+.footer-content{
+  padding-top: 64px;
+  padding-bottom: 50px;
+}
+
 /* Footer ocupa metade da tela e largura total */
 footer {
   font-family: "Inconsolata", monospace;
   letter-spacing: 0%;
   line-height: 24px;
-  height: 50vh;
+  height: 304px;
   width: 100%;
   background-color: #303030;
   color: #DED6CF;
@@ -2045,6 +2061,10 @@ header nav.nav-mobile ul li {
     display: none;
   }
 
+  .div-botao-seja-um-aliado {
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
   .section {
     height: auto;
   }
