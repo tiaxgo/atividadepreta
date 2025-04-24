@@ -41,7 +41,7 @@ body {
   font-weight: 400;
   font-style: normal;
   margin: 0 auto;
-  background-color: #ded6cf;
+  background-color: #DED6CF;
 }
 
 nav {
@@ -1222,21 +1222,12 @@ select.campo-invalido {
 
 /* abaixo estilização do carousel */
 .swiper {
-  height: 100%; /* aqui para alterar altura também move as mobinhas na vertical*/
   width: 100%;
-  overflow: visible;
+  max-width: 1200px;
+  height: 160px;
   margin: auto;
   position: relative;
 }
-
-.swiper-pagination {
-  position: absolute; /* ou relative */
-  bottom: 20px; /* desce elas */
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
 
 .swiper-slide {
   display: flex;
@@ -1255,29 +1246,20 @@ select.campo-invalido {
   transform: scale(1.05);
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  font-size: 24px;  /* diminui o tamanho */
-  color: #A8302A;      /* cor */
-  scale: 0.6;        /* pode usar scale também */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #A8302A;
+  scale: 0.6;
 }
 
 .swiper-pagination-bullet {
-
   background-color: #00000063;
-  width: 10px;
-  height: 10px;
   opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #f00; /* cor quando ativa */
+  background-color: #f00;
 }
-
-.swiper-wrapper {
-  justify-content: center;
-}
-
 
 
 .footer-links-1, .footer-links-2 {

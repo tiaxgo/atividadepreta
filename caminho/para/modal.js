@@ -406,7 +406,79 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     if (modal) modal.style.display = 'none';
   }
 
-
+  document.getElementById('form-fale-conosco').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Criar objeto FormData
+    const formData = new FormData(this);
+    
+    // Obter todos os valores
+    const dados = {
+      nome: formData.get('nome'),
+      email: formData.get('email'),
+      telefone: formData.get('campoTelefone'),
+      comunidade: formData.get('comunidade'),
+      mensagem: formData.get('mensagem')
+    };
+    
+    // Limpar telefone (remover caracteres não numéricos)
+    dados.telefone = dados.telefone.replace(/\D/g, '');
+    
+    // Validar campos obrigatórios
+    if (!dados.comunidade) {
+      alert('Por favor, selecione uma comunidade');
+      return;
+    }
+    
+    console.log('Dados do formulário:', dados);
+    
+    // Aqui você pode enviar os dados para o servidor
+    enviarDados(dados);
+  });
+  
+  async function enviarDados(dados) {
+    try {
+      const url = 'https://script.google.com/macros/s/AKfycby3aqb28cJak4shtjVHgPfIkUpMYjUtiYDMMQhcodcst8EKNYV3HNOALBKRBdruW3sT1A/exec';
+      
+      // Converter para FormData para garantir compatibilidade
+      const formData = new URLSearchParams();
+      formData.append('nome', dados.nome || '');
+      formData.append('email', dados.email || '');
+      formData.append('campoTelefone', dados.telefone || '');
+      formData.append('comunidade', dados.comunidade || '');
+      formData.append('mensagem', dados.mensagem || '');
+  
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString()
+      });
+  
+      const text = await response.text();
+      let data = {};
+      
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (e) {
+        console.warn('Resposta não é JSON válido:', text);
+      }
+  
+      if (!response.ok) {
+        throw new Error(data.message || `Erro HTTP: ${response.status}`);
+      }
+  
+      console.log('Resposta completa do servidor:', data);
+      alert(data.message || 'Mensagem enviada com sucesso!');
+      return true;
+      
+    } catch (error) {
+      console.error('Erro detalhado:', error);
+      alert('Erro ao enviar: ' + (error.message || 'Verifique o console para mais detalhes'));
+      return false;
+    }
+  }
 
 
 
