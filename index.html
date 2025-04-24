@@ -364,7 +364,7 @@
             
       </div>
     </div>
-    <form class="formulario form-horizontal" id="form-confirmacao-2" name="form-confirmacao-2" method="POST" action="https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec" >
+    <form class="formulario form-horizontal" id="form-confirmacao-2" name="form-confirmacao-2" method="POST">
       <div class="texto-form  mensagem-confirmacao">      
           <h2>VENHA FORTALECER O MOVIMENTO!</h2>
           <p>ESTAMOS QUASE LÁ! NOS CONTE UM POUCO MAIS SOBRE O SUA EMPRESA PARA QUE POSSAMOS CRIAR UM ESPAÇO QUE REALMENTE REPRESENTA A SUA MARCA DENTRO DO ATIVIDADE PRETA</p>
@@ -574,19 +574,39 @@
           
     </div>
   </div>
-    <form class="formulario form-horizontal" id="form-opcao-nao" name="form-opcao-nao" method="POST" action="https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec">
+    <form class="formulario form-horizontal" id="form-opcao-nao" name="form-opcao-nao" method="POST" >
+      <div  class="mensagem-confirmacao">
+        <h2>VENHA FORTALECER O MOVIMENTO!</h2>
+        <p>MARAVILHA, ENTENDEMOS QUE SEU EMPREENDIMENTO É VIRTUAL.</p>
+        <p>PARA FINALIZAR, NOS DIGA QUAL O PRINCIPAL SEGMENTO DA SUA EMPRESA DIGITAL E TAMBÉM O QUE ACHOU DO ATIVIDADE PRETA ATÉ AGORA.</p>
+      </div>
       <div  class="mensagem-confirmacao">
         <h2>VENHA FORTALECER O MOVIMENTO!</h2>
         <p>MARAVILHA, ENTENDEMOS QUE SEU EMPREENDIMENTO É VIRTUAL.</p>
         <p>PARA FINALIZAR, NOS DIGA QUAL O PRINCIPAL SEGMENTO DA SUA EMPRESA DIGITAL E TAMBÉM O QUE ACHOU DO ATIVIDADE PRETA ATÉ AGORA.</p>
       </div>
       <div class="campo-formulario-sobre">
-        <label for="estado">Estado:</label>
+        <label for="digital">SEGMENTO DIGITAL:</label>
         <p>Selecione uma das opções a seguir</p>
-        <select class="estado" name="estado">
+        <select id="digital" name="digital" >
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
+          <option value="E-commerce" >1. E-commerce</option>
+          <option value="Infoprodutos" >2. Infoprodutos</option>
+                    <option value="Serviços digitais" >3. Serviços digitais</option>
+          <option value="Marketing e afiliados" >4. Marketing e afiliados</option>
+          <option value="Produção de conteúdo digital" >5. Produção de conteúdo digital</option>
+          <option value="SaaS (Software as a Service)" >6. SaaS (Software as a Service)</option>
+          <option value="Marketplaces" >7. Marketplaces</option>
+          <option value="FinTechs" >8. FinTechs</option>
+          <option value="Desenvolvimento desoftware e aplicativos" >9. Desenvolvimento desoftware e aplicativos</option>
+          <option value="Gestão de comunidade" >10. Gestão de comunidade</option>
+          <option value="Tecnologia da informação (TI)" >11. Tecnologia da informação (TI)</option>
+          <option value="Educação Digital" >12. Educação Digital</option>
+          <option value="Outro" >13. Outro</option>
+        
         </select>
       </div>
+
 
       <div class="campo-formulario-sobre">
         <label for="share">COMPARTILHE COM A GENTE:</label>
@@ -1163,7 +1183,7 @@
         <button class="botao-fechar" aria-label="Fechar modal">&times;</button>
     
        
-        <form class="formulario-fale-conosco" id="form-fale-conosco">
+        <form class="formulario-fale-conosco" id="form-fale-conosco" method="POST">
            <h2 class="titulo-form-fale">FALE COM A GENTE</h2>
            <p class="subtitulo-modal">PREENCHA AS INFORMAÇÕES E ENVIE SUA MENSAGEM PARA NOSSO E-MAIL.</p>
     
