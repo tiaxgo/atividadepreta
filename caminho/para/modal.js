@@ -21,23 +21,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalObrigadoFale= document.getElementById('modal-fale-obrigado');
 
 
+  
+
     modalObrigadoFale.addEventListener('submit', function(e) {
       e.preventDefault();
-      // Aqui você pode adicionar a lógica para o envio do formulário de Fale Conosco
+      // Aqui você pode adicionar a lógica para o envio do formulário ObrigadoFale
 
       abrirModal(modalObrigadoFale); // Abre o modal de agradecimento   
     
     });
     
     
-    formFaleConosco.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Aqui você pode adicionar a lógica para o envio do formulário de Fale Conosco
-        
-        fecharModal(modalFaleConosco); // Fecha o modal de Fale Conosco
-        abrirModal(modalObrigadoFale); // Abre o modal de agradecimento   
-        
-      });
+    formFaleConosco.addEventListener('submit', async function(e) { 
+      e.preventDefault();
+      
+
+
+          fecharModal(modalFaleConosco);
+
+       
+
+    });
+
     formOpcaoSim.addEventListener('submit', function(e) {
         e.preventDefault();
         fecharModal(modalOpcaoSim); // Fecha o modal de opção sim
@@ -394,178 +399,26 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     'https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec'
   );
   
-// FORMULÁRIO PRINCIPAL (form-confirmacao-2)
-document.forms['form-confirmacao-2']?.addEventListener('submit', function(event) {
-  event.preventDefault();
+  // ==============================================
+  // FUNÇÕES AUXILIARES (MODAIS)
+  // ==============================================
   
-  // 1. Armazena dados do form principal
-  const formData = new FormData(this);
-  const dados = {
-    nome: formData.get('nome'),
-    link: formData.get('link'),
-    porte: formData.get('porte'),
-    segmento: formData.get('segmento'),
-    espaco: formData.get('espaco')
-  };
-  
-  // Validar campos obrigatórios
-  if (!dados.porte || !dados.segmento || !dados.espaco) {
-    alert('Por favor, preencha todos os campos obrigatórios');
-    return;
+  function abrirModal(modal) {
+    if (modal) modal.style.display = 'block';
   }
   
-  console.log('Dados do formulário principal:', dados);
-  sessionStorage.setItem('dadosFormPrincipal', JSON.stringify(dados));
-  
-  // 2. Redireciona baseado na seleção "espaco"
-  if (dados.espaco === 'opcaosim') {
-    fecharModal(this.closest('.modal'));
-    abrirModal(document.getElementById('modal-opcao-sim'));
-  } else if (dados.espaco === 'opcaonao') {
-    fecharModal(this.closest('.modal'));
-    abrirModal(document.getElementById('modal-opcao-nao'));
+  function fecharModal(modal) {
+    if (modal) modal.style.display = 'none';
   }
-});
-
-// FORMULÁRIO OPÇÃO SIM
-document.getElementById('form-opcao-sim')?.addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  // 1. Obter dados do form secundário
-  const formData = new FormData(this);
-  const dadosSecundarios = {
-    estado: formData.get('estado'),
-    cidade: formData.get('cidade'),
-    compartilhe: formData.get('compartilhe')
-  };
-  
-  // 2. Combinar com dados do principal
-  const dadosPrincipal = JSON.parse(sessionStorage.getItem('dadosFormPrincipal') || {});
-  const dadosCompletos = {...dadosPrincipal, ...dadosSecundarios};
-  
-  console.log('Dados completos (opção sim):', dadosCompletos);
-  enviarDadosConfirmacao(dadosCompletos);
-});
-
-// FORMULÁRIO OPÇÃO NÃO
-document.getElementById('form-opcao-nao')?.addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  // 1. Obter dados do form secundário
-  const formData = new FormData(this);
-  const dadosSecundarios = {
-    digital: formData.get('digital')?.toString().trim() || '', // Novo campo digital
-    compartilhe: formData.get('compartilhe')
-  };
-  
-  // 2. Combinar com dados do principal
-  const dadosPrincipal = JSON.parse(sessionStorage.getItem('dadosFormPrincipal') || {});
-  const dadosCompletos = {...dadosPrincipal, ...dadosSecundarios};
-  
-  console.log('Dados completos (opção não):', dadosCompletos);
-  enviarDadosConfirmacao(dadosCompletos);
-});
-
-// FUNÇÃO DE ENVIO (MANTIDA COMO NO SEU CÓDIGO ORIGINAL)
-async function enviarDadosConfirmacao(dados) {
-  try {
-    const url = 'https://script.google.com/macros/s/AKfycbxfI5MZ0DpTYOMEIW95vW5fhrdvxTD2zy_PkWCbmLEzWnZotKRjD-K9fCJR_cpVL-jgqg/exec';
-    
-    // Converter para FormData para garantir compatibilidade
-    const formData = new URLSearchParams();
-    for (const key in dados) {
-      formData.append(key, dados[key] || '');
-    }
-
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: formData.toString()
-    });
-
-    const text = await response.text();
-    let data = {};
-    
-    try {
-      data = text ? JSON.parse(text) : {};
-    } catch (e) {
-      console.warn('Resposta não é JSON válido:', text);
-    }
-
-    if (!response.ok) {
-      throw new Error(data.message || `Erro HTTP: ${response.status}`);
-    }
-
-    console.log('Resposta completa do servidor:', data);
-    alert(data.message || 'Formulário enviado com sucesso!');
-    
-    // Limpar storage e fechar modal após envio bem-sucedido
-    sessionStorage.removeItem('dadosFormPrincipal');
-    fecharModal(document.querySelector('.modal[style="display: block;"]'));
-    
-    return true;
-    
-  } catch (error) {
-    console.error('Erro detalhado:', error);
-    alert('Erro ao enviar: ' + (error.message || 'Verifique o console para mais detalhes'));
-    return false;
-  }
-}
-
-// FUNÇÕES AUXILIARES (MODAIS) - MANTIDAS COMO NO SEU CÓDIGO
-function abrirModal(modal) {
-  if (modal) modal.style.display = 'block';
-}
-
-function fecharModal(modal) {
-  if (modal) modal.style.display = 'none';
-}
 
 
-  document.getElementById('form-fale-conosco').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Criar objeto FormData
-    const formData = new FormData(this);
-    
-    // Obter todos os valores
-    const dados = {
-      nome: formData.get('nome'),
-      email: formData.get('email'),
-      telefone: formData.get('campoTelefone'),
-      comunidade: formData.get('comunidade'),
-      mensagem: formData.get('mensagem')
-    };
-    
-    // Limpar telefone (remover caracteres não numéricos)
-    dados.telefone = dados.telefone.replace(/\D/g, '');
-    
-    // Validar campos obrigatórios
-    if (!dados.comunidade) {
-      alert('Por favor, selecione uma comunidade');
-      return;
-    }
-    
-    console.log('Dados do formulário:', dados);
-    
-    // Aqui você pode enviar os dados para o servidor
-    enviarDadosFaleConosco(dados);
-  });
-  
+
   async function enviarDadosFaleConosco(dados) {
     try {
-      const url = 'https://script.google.com/macros/s/AKfycby3aqb28cJak4shtjVHgPfIkUpMYjUtiYDMMQhcodcst8EKNYV3HNOALBKRBdruW3sT1A/exec';
+      const url = 'https://script.google.com/macros/s/AKfycbx8kk7BNVUrfVPeNSuY7YJ5YW64Ug5fOuNMUrZkpYnTMD6Cze6yMjMKlWMnF3VGdBXRzw/exec';
       
-      // Converter para FormData para garantir compatibilidade
-      const formData = new URLSearchParams();
-      formData.append('nome', dados.nome || '');
-      formData.append('email', dados.email || '');
-      formData.append('campoTelefone', dados.telefone || '');
-      formData.append('comunidade', dados.comunidade || '');
-      formData.append('mensagem', dados.mensagem || '');
-  
+      // Criar URLSearchParams (formato que o Google Apps Script geralmente espera)
+ 
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -573,64 +426,32 @@ function fecharModal(modal) {
         },
         body: formData.toString()
       });
-  
-      const text = await response.text();
-      let data = {};
       
-      try {
-        data = text ? JSON.parse(text) : {};
-      } catch (e) {
-        console.warn('Resposta não é JSON válido:', text);
+      const result = await response.json();
+      console.log('Resposta:', result);
+      
+      if (result.status === 'success') {
+        return true; // Indica sucesso
+      } else {
+        throw new Error(result.error || 'Erro desconhecido');
       }
-  
-      if (!response.ok) {
-        throw new Error(data.message || `Erro HTTP: ${response.status}`);
-      }
-  
-      console.log('Resposta completa do servidor:', data);
-      alert(data.message || 'Mensagem enviada com sucesso!');
-      return true;
       
     } catch (error) {
-      console.error('Erro detalhado:', error);
-      alert('Erro ao enviar: ' + (error.message || 'Verifique o console para mais detalhes'));
-      return false;
+      console.error('Erro no envio:', error);
+      throw error; // Rejeita a promise para ser tratada no chamador
     }
   }
+  
 
 
+  function cadastrarUsuario() {
+    event.preventDefault()
+    let url = "https://script.google.com/macros/s/AKfycbx8kk7BNVUrfVPeNSuY7YJ5YW64Ug5fOuNMUrZkpYnTMD6Cze6yMjMKlWMnF3VGdBXRzw/exec"
+    let nome = document.getElementById("nome").value
+    let email = document.getElementById("email").value
+    let telefone = document.getElementById("campoTelefone").value
+    let comunidade = document.getElementById("comunidade").value
+    let mensagem = document.getElementById("mensagem").value
 
-  // LOGICA PRA TELEFONE
-  function aplicarMascaraTelefone(input) {
-    input.addEventListener('input', function (e) {
-      let cursor = input.selectionStart;
-      let valor = e.target.value.replace(/\D/g, '');
-
-      if (valor.length > 11) valor = valor.slice(0, 11);
-
-      let formatado = "";
-
-      if (valor.length > 0) {
-        formatado += `(${valor.slice(0, 2)}`;
-      }
-      if (valor.length >= 3) {
-        formatado += `) ${valor.slice(2, 3)}`;
-      }
-      if (valor.length >= 4) {
-        formatado += ` ${valor.slice(3, 7)}`;
-      }
-      if (valor.length >= 8) {
-        formatado += `-${valor.slice(7)}`;
-      } else if (valor.length > 7) {
-        formatado += `-${valor.slice(7)}`;
-      }
-
-      e.target.value = formatado;
-
-      // Ajusta posição do cursor pra não pular
-      input.setSelectionRange(cursor, cursor);
-    });
+    console.log(nome, email, telefone, comunidade, mensagem)
   }
-
-  // Aplica em todos os inputs com a classe 'campo-telefone'
-  document.querySelectorAll('.campo-telefone').forEach(aplicarMascaraTelefone);
