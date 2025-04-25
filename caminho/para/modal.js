@@ -34,12 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     formFaleConosco.addEventListener('submit', async function(e) { 
       e.preventDefault();
-      
 
-
-          fecharModal(modalFaleConosco);
-
-       
+        fecharModal(modalFaleConosco);
+        abrirModal(modalObrigadoFale); // Abre o modal de agradecimento  
 
     });
 
@@ -63,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionStorage.setItem('dadosFormPrincipal', JSON.stringify(Object.fromEntries(formData)));
     
         // 2. Fecha o modal principal (sem abrir outros modais)
-        if (espaco.value === 'opcaosim') {
+        if (espaco.value === 'sim') {
             fecharModal(modalConfirmacao2); 
             abrirModal(modalOpcaoSim); // Modal para ALIADOS
-         } else if (espaco.value === 'opcaonao') {
+         } else if (espaco.value === 'não') {
              fecharModal(modalConfirmacao2); 
              abrirModal(modalOpcaoNao); // Modal para ALIANTES
          }  
@@ -158,17 +155,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // SUBMISSÃO DO CADASTRO
-// SUBMISSÃO DO CADASTRO
-formCadastro.addEventListener('submit', function(e) {
-    e.preventDefault();
+    formCadastro.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    const comunidade = document.getElementById('comunidade');
-    if (!comunidade.value) {
-        comunidade.classList.add('campo-invalido');
-        alert('Por favor, selecione uma opção para Comunidade.');
-        comunidade.focus();
-        return;
-    }
+        const comunidade = document.getElementById('comunidade');
+        if (!comunidade.value) {
+            comunidade.classList.add('campo-invalido');
+            alert('Por favor, selecione uma opção para Comunidade.');
+            comunidade.focus();
+            return;
+        }
 
     // Fecha o modal de cadastro
     
@@ -181,7 +177,7 @@ formCadastro.addEventListener('submit', function(e) {
         fecharModal(modalCadastro); 
         abrirModal(modalConfirmacao); // Modal para ALIADOS
     }
-});
+    });
 
 
  /*    // SUBMISSÃO DA INDICAÇÃO (validação básica)
@@ -361,42 +357,53 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   // Forms ANTIGOS (funcionam como antes)
   configurarEnvioFormulario(
     'formulario-contato',
-    'https://script.google.com/macros/s/AKfycbw1N2Zw31-amsC4Z_vZcErgAY2swVF35slCAb8aoQ9Utq9Q0PT2lrOjbtdKVxcxQkv22g/exec'
+    'https://script.google.com/macros/s/AKfycbx3C65U50bRO6vETRXRdbxHGiQ0cbjNaMf9SIkAR6QjLliv1ORHdA76B7TN2Q5TWe-leA/exec'
   );
   
   configurarEnvioFormulario(
     'formulario-indicacao',
-    'https://script.google.com/macros/s/AKfycbxV9xm-o5jyzQtxL7svJXRBEFXoRIuilHb8xHftEyLGMzpD0sQewWYwR2KqJjlkVc-j/exec'
+    'https://script.google.com/macros/s/AKfycbwG9fMvLFRHABUJcFQXcO-WA-Ej-VWg7oaKGS3XDZ5opzMOvwy2_3lvfA3QHZycso5L/exec'
   );
   
+  configurarEnvioFormulario(
+    'form-fale-conosco',
+    'https://script.google.com/macros/s/AKfycbzG396FDDvdAEXmpBlu-wSaAr8zZKLF-4kvUwgWPk7O_60HQ-itronfN05H2P2lvCHR/exec'
+  );
+  
+
+
   // NOVO FORM PRINCIPAL (form-confirmacao-2)
   document.forms['form-confirmacao-2']?.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+  
+    console.log('Form recebido:', this);
+    console.log('É um formulário HTML?', this instanceof HTMLFormElement);
+  
     // 1. Armazena dados do form principal
     const formData = new FormData(this);
     sessionStorage.setItem('dadosFormPrincipal', JSON.stringify(Object.fromEntries(formData)));
-    
+  
     // 2. Abre modal baseado na seleção "espaco"
     const espacoValue = document.getElementById('espaco').value;
-    if (espacoValue === 'opcaosim') {
+    if (espacoValue === 'sim') {
       fecharModal(this.closest('.modal'));
       abrirModal(document.getElementById('modal-opcao-sim'));
-    } else if (espacoValue === 'opcaonao') {
+    } else if (espacoValue === 'nao') {
       fecharModal(this.closest('.modal'));
       abrirModal(document.getElementById('modal-opcao-nao'));
     }
   });
   
+  
   // Forms SECUNDÁRIOS (Sim/Não) - Usam a função geral
   configurarEnvioFormulario(
     'form-opcao-sim',
-    'https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec'
+    'https://script.google.com/macros/s/AKfycbwyV6VevjLpGYdMugJg7WhyRRGopXIQxfbCTzrynDUWVPrp_FGzL1P9by6R-gj9Qok/exec'
   );
   
   configurarEnvioFormulario(
     'form-opcao-nao',
-    'https://script.google.com/macros/s/AKfycbxJL8EvG1nxZUz-m5P2Y2ybF7HYi7sjJzFbmAdnDoUcqk2ikl0U2wyduuzqaoAZhP1b2Q/exec'
+    'https://script.google.com/macros/s/AKfycbwyV6VevjLpGYdMugJg7WhyRRGopXIQxfbCTzrynDUWVPrp_FGzL1P9by6R-gj9Qok/exec'
   );
   
   // ==============================================
@@ -412,46 +419,3 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   }
 
 
-
-  async function enviarDadosFaleConosco(dados) {
-    try {
-      const url = 'https://script.google.com/macros/s/AKfycbx8kk7BNVUrfVPeNSuY7YJ5YW64Ug5fOuNMUrZkpYnTMD6Cze6yMjMKlWMnF3VGdBXRzw/exec';
-      
-      // Criar URLSearchParams (formato que o Google Apps Script geralmente espera)
- 
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString()
-      });
-      
-      const result = await response.json();
-      console.log('Resposta:', result);
-      
-      if (result.status === 'success') {
-        return true; // Indica sucesso
-      } else {
-        throw new Error(result.error || 'Erro desconhecido');
-      }
-      
-    } catch (error) {
-      console.error('Erro no envio:', error);
-      throw error; // Rejeita a promise para ser tratada no chamador
-    }
-  }
-  
-
-
-  function cadastrarUsuario() {
-    event.preventDefault()
-    let url = "https://script.google.com/macros/s/AKfycbx8kk7BNVUrfVPeNSuY7YJ5YW64Ug5fOuNMUrZkpYnTMD6Cze6yMjMKlWMnF3VGdBXRzw/exec"
-    let nome = document.getElementById("nome").value
-    let email = document.getElementById("email").value
-    let telefone = document.getElementById("campoTelefone").value
-    let comunidade = document.getElementById("comunidade").value
-    let mensagem = document.getElementById("mensagem").value
-
-    console.log(nome, email, telefone, comunidade, mensagem)
-  }
