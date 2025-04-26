@@ -1080,9 +1080,8 @@
                 </svg>
                 </div>
               <h4>SEJA ENCONTRADO</h4>
-              <p>CONECTE-SE COM UMA REDE DE CONSUMIDORES <br>
-                QUE VALORIZAM NEGÓCIOS PRETOS.
-              </p>
+              <p>ATRAIA NOVOS CLIENTES QUE VALORIZAM NEGÓCIOS PRETOS E QUEREM FORTALECER A COMUNIDADE, IMPULSIONANDO SEU
+                CRESCIMENTO.</p>
                 <p class="text-light">IMPULSIONE SEU CRESCIMENTO AMPLIANDO SEU ALCANCE,
                   <br>AUMENTANDO SUAS VENDAS E FORTALECENDO SUA MARCA COM
                   <br>O PODER DA NOSSA COMUNIDADE
@@ -1179,7 +1178,6 @@
 
       </div>
     </section>
-
     <section class="section section-7" id="granulado">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -1195,7 +1193,6 @@
           <div class="swiper-slide"><img src="src/img/ofunke-logo.png" alt="Slide 10" /></div>
           <div class="swiper-slide"><img src="src/img/impactapretas-logo.png" alt="Slide 11" /></div>
           <div class="swiper-slide"><img src="src/img/ofunke-logo.png" alt="Slide 12" /></div>
-          </div>
          
         <!-- Botões -->
         <div class="swiper-button-prev"></div>
@@ -1393,38 +1390,45 @@
   <script src="caminho/para/modal.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.mySwiper', {
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      slidesPerView: 3,
-      spaceBetween: 20,
-      speed: 1000,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        1024: {
-          slidesPerView: 5,
-        }
+    // Inicializa o Swiper
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLargeScreen = window.innerWidth >= 1024; // 1024px ou mais = notebook/desktop  
+      const swiper = new Swiper('.mySwiper',{
+            loop: true,
+            autoplay: isLargeScreen ? false : {
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            slidesPerView: 3,
+            spaceBetween: 20,
+            speed: 1000,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 3
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 7
+                }
+            }
+        });
+      /*    // Agora depois de inicializar, checa o tamanho da tela:
+      if (window.innerWidth >= 1024) {
+        swiper.autoplay.stop(); // ← apenas para telas grandes, para o autoplay!
       }
+        */
     });
-  });
 
   </script>
 
