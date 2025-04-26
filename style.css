@@ -221,7 +221,7 @@ nav a {
 }
 
 .texto-1-section-1 p,
-.texto-2-section-1 h2 {
+.texto-2-section-1 h3 {
   width: 100%;
   color: #303030;
  
@@ -241,13 +241,13 @@ nav a {
   padding: 0 50px 0 50px;
 }
 
-.texto-2-section-1 {
-  font-size: 32px;
+.texto-2-section-1 h3 {
+  font-size: 64px;
   margin: 5px;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
-  line-height: 250%; /* ou 1.5 */
-  letter-spacing: 0.14em; /* melhor usar em vez de % */
+  line-height: 150%; /* ou 1.5 */
+  letter-spacing: 0.14rem; /* melhor usar em vez de % */
 }
 
 
@@ -404,7 +404,7 @@ button {
   flex-direction: column;
   font-size: 10px;
   width: 100%;
-  padding: 20px;
+  padding: 0 20px 0  20px;
 }
 
 .bloco-2-conteiner-1 {
@@ -412,7 +412,7 @@ button {
   flex-direction: column;
   font-size: 10px;
   width: 100%;
-  padding: 20px;
+  padding: 0 20px 0  20px;
 }
 
 .bloco-1-conteiner-2 {
@@ -420,7 +420,7 @@ button {
   flex-direction: column;
   font-size: 10px;
   width: 100%;
-  padding: 20PX;
+  padding: 64px 20px 0  20px;
 }
 
 .bloco-2-conteiner-2 {
@@ -428,7 +428,7 @@ button {
   flex-direction: column;
   font-size: 10px;
   width: 100%;
-  padding: 20px;
+  padding: 64px 20px 0  20px;
 }
 
 .texto-2-section-3 {
@@ -864,6 +864,16 @@ button {
   color: #000;
 }
 
+#titulo-muito-obrigado h2 {
+  margin: 15px 0 0 0;
+
+}
+
+.paragrafo-muito-obrigado {
+  margin: 0 0 0 0 !important;
+
+}
+
 .mensagem-confirmacao h2 {
   font-family: "questrial", sans-serif;
   margin: 15px 0;
@@ -986,6 +996,21 @@ button {
 
 }
 
+.svg-esquerda-enviado{
+
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+}
+
+.svg-direita-enviado {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+}
+
 .img-indique-um-amg {
   width: 100%;
   height: auto;
@@ -1081,6 +1106,8 @@ button {
 
 
 }
+
+
 
 input::placeholder {
   color: #DED6CF; /* mesma cor dos ícones para harmonizar */
@@ -1436,20 +1463,29 @@ header nav.nav-mobile ul li {
 #modal-fale-obrigado {
   width: 100%;
   padding: 50px;
+  
 
 }
 
 #conteudo-obrigado {
   padding: 0px;
   height: 510px;
+  content: "";
 }
-
-
+.imagem-fale-obrigado{
+  position: absolute;
+  inset: 0; /* atalho pra top/left/right/bottom: 0 */
+  background-color: white;
+  opacity: 0.7; /* controla o “esbranquiçado” */
+  z-index: 1;
+  pointer-events: none; /* pra não bloquear interações */
+}
 .text-fale-obrigado {
   position: absolute;
   top: 4%;
   left: 65%;
   color: rgba(48, 48, 48, 1);
+  z-index: 3;
 }
 
 .text-fale-obrigado h2 {
@@ -1465,6 +1501,7 @@ header nav.nav-mobile ul li {
 
 
 .text-fale-obrigado p {
+  width: 270px;
   margin-top: 40px;
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
@@ -2063,7 +2100,7 @@ header nav.nav-mobile ul li {
     text-align: center;
   }
   
-  .texto-2-section-1 h2 {
+  .texto-2-section-1 h3 {
     font-size: 52px;
   }
 
