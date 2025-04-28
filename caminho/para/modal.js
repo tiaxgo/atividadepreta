@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
         // Fecha o modal de indicação
+        fecharModal(modalCadastro);
         fecharModal(document.getElementById('modal-indicacao'));
         abrirModal(modalMuitoObrigado2); // Modal para ALIADOS
         // Limpa o formulário
@@ -313,6 +314,8 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
    */
   function enviarFormulario(form, url) {
     const formData = new FormData(form);
+    // Todos os modais (independente de qual está aberto)
+    const todosModais = document.querySelectorAll('.modal');
   
     // Para modais secundários: combina com dados do form principal
     if (form.name === 'form-opcao-sim' || form.name === 'form-opcao-nao') {
@@ -335,8 +338,8 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
       return response.json();
     })
     .then(data => {
-      alert('Dados salvos com sucesso!');
-      form.reset();
+      /*alert('Dados salvos com sucesso!');
+      form.reset();*/
       
       // Limpa storage e fecha modal (apenas para forms secundários)
       if (form.name === 'form-opcao-sim' || form.name === 'form-opcao-nao') {
@@ -346,7 +349,9 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     })
     .catch(error => {
       console.error('Erro:', error);
-      alert('Falha ao enviar. Tente novamente.');
+      alert('Falha ao enviar. Por favor, Tente novamente.');
+        // Fechar todos os modais em caso de erro
+        todosModais.forEach(modal => fecharModal(modal)); // Fecha todos os modais
     });
   }
   
@@ -367,7 +372,7 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   
   configurarEnvioFormulario(
     'form-fale-conosco',
-    'https://script.google.com/macros/s/AKfycbzJEicaAvM-wdS3eg-vM2WMUZnaOHrwrgANIYMUKzrY7Q8y6QSrghLzZepaSbq24N1QLA/exec'
+    'https://script.google.com/macros/s/AKfycbzG396FDDvdAEXmpBlu-wSaAr8zZKLF-4kvUwgWPk7O_60HQ-itronfN05H2P2lvCHR/exec'
   );
   
 
@@ -419,3 +424,40 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   }
 
 
+  document.querySelectorAll('.campoTelefone').forEach(function(input) {
+    input.addEventListener('input', function(e) {
+        // Remove tudo que não é número
+        let value = this.value.replace(/\D/g, '');
+        
+        // Limita a 11 dígitos (DDD + 9 números)
+        if (value.length > 11) {
+            value = value.substring(0, 11);
+        }
+        
+        // Aplica a máscara: (00) 00000-0000
+        let formattedValue = '';
+        if (value.length > 0) {
+            formattedValue = `(${value.substring(0, 2)}`;
+        }
+        if (value.length > 2) {
+            formattedValue += `) ${value.substring(2, 7)}`;
+        }
+        if (value.length > 7) {
+            formattedValue += `-${value.substring(7, 11)}`;
+        }
+        
+        this.value = formattedValue;
+    });
+
+    // Permite apagar sem "pular" caracteres fixos
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && this.value.length > 0) {
+            // Se o último caractere é um símbolo da máscara, remove ele também
+            const lastChar = this.value.slice(-1);
+            if ([')', ' ', '-'].includes(lastChar)) {
+                e.preventDefault();
+                this.value = this.value.slice(0, -1);
+            }
+        }
+    });
+});

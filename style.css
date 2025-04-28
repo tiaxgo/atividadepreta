@@ -249,7 +249,7 @@ nav a {
 
 button {
   font-family: "Inconsolata", monospace;
-  font-size: 32px !important;
+  font-size: 32px ;
 }
 .apresentacao-botao-fique-sabendo{
   margin-top: 95px;
@@ -276,7 +276,7 @@ button {
   background-color: #303030;
   color: #DED6CF;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 32px !important;
   cursor: pointer;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);
 
@@ -840,7 +840,7 @@ button {
 .botao-enviar {
   background-color: #222;
   color: #DED6CF;
-  font-size: 16px;
+  font-size: 24px;
   padding: 14px;
   border: none;
   cursor: pointer;
@@ -1560,7 +1560,12 @@ header nav.nav-mobile ul li {
   width: 120px;
   height: 120px;
   object-fit: cover;
+  transition: transform 0.9s ease; /* Transição suave */
 
+}
+
+.imagem-carousel img:hover {
+  transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
 }
 
 @media screen and (max-width: 767px) {
@@ -1665,6 +1670,8 @@ header nav.nav-mobile ul li {
     font-size: 23px !important;
     padding: 8px 0;
   }
+
+
 
   /* SECTION 2 */
   .texto-2-section-2 {
@@ -1834,8 +1841,8 @@ header nav.nav-mobile ul li {
     position: static;
     display: block;
     height: 40px;
-    margin: 20px;
-    margin-bottom: 50px;
+    margin: 60px 0px 40px 0px;
+
   }
 
   br {
@@ -1963,7 +1970,7 @@ header nav.nav-mobile ul li {
   }
 
   .menu-lateral {
-    display: non;
+    display: none;
   }
 
   .formulario-fale-conosco {
