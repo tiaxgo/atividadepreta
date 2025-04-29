@@ -466,15 +466,30 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
 
 
 function abrirInstagram(event) {
-  event.preventDefault(); // Impede o comportamento padrão do link
+  event.preventDefault();
+
+  // Variável para controlar o timeout
+  let timeoutId;
+
+  // Verifica se a página perdeu o foco (sinal de que o app foi aberto)
+  const handleVisibilityChange = () => {
+    if (document.visibilityState === 'visible') {
+      // Se a página voltou a ter foco antes do timeout, cancela o aviso
+      clearTimeout(timeoutId);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    }
+  };
 
   // Tenta abrir o app do Instagram
   window.location = "instagram://user?username=atividade.preta";
 
-  // Mostrar mensagem de redirecionamento ou abrir o link diretamente
-  setTimeout(function () {
+  // Configura o timeout e o listener de visibilidade
+  timeoutId = setTimeout(() => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
     if (window.confirm("Não conseguimos abrir o app do Instagram. Gostaria de abrir o link no navegador?")) {
       window.open("https://www.instagram.com/atividade.preta/", "_blank");
     }
   }, 1500);
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
 }

@@ -1015,19 +1015,23 @@ button {
 
 }
 
-.svg-esquerda-enviado{
-
+.svg-esquerda-enviado {
   position: absolute;
-  right: 10px;
+  left: 10px;
   top: 10px;
-
+  z-index: 99999;
 }
 
 .svg-direita-enviado {
   position: absolute;
   right: 10px;
   bottom: 10px;
+  z-index: 9999;
 
+}
+
+.botao-fechar-enviado {
+  color: rgba(48, 48, 48, 1);
 }
 
 .img-indique-um-amg {
@@ -1588,6 +1592,9 @@ header nav.nav-mobile ul li {
   display: none;
 }
 
+#svg-desk-none {
+  display: none;
+}
 
 
 @media screen and (max-width: 767px) {
@@ -1614,7 +1621,10 @@ header nav.nav-mobile ul li {
     margin: 0 auto;
   }
 
- 
+  #svg-desk-none {
+    display: block;
+  }
+
   .modal-indicacao {
     height: auto;
   }
