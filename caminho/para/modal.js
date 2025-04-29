@@ -278,14 +278,7 @@ fetch('estados-cidades.json')
       menu.classList.add('abrir-menu')
   })
   
-  menu.addEventListener('click',()=>{
-      menu.classList.remove('abrir-menu')
-  })
-  
-  overlay.addEventListener('click',()=>{
-      menu.classList.remove('abrir-menu')
-  })
-  
+
 
 // ==============================================
 // FUNÇÕES GERAIS

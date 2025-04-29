@@ -1121,12 +1121,6 @@ button {
   outline: none;
 }
 
-.campo-input textarea::placeholder {
-
-
-}
-
-
 
 input::placeholder {
   color: #DED6CF; /* mesma cor dos ícones para harmonizar */
