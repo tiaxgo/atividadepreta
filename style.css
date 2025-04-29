@@ -1447,6 +1447,7 @@ footer {
 .menu-mobile .nav-mobile ul li.linkmobile {
   padding: 20px;
   display: block;
+
 }
 .menu-mobile nav ul li a:hover{
   background-color: rgba(62, 108, 108, 0.768);
@@ -1468,7 +1469,9 @@ header nav.nav-mobile ul li {
 
 /* Esse nav-mobile foi pra ancora preencher todo espaço do menu*/
 .nav-mobile {
-  display: block;
+  display: flex;
+  flex-direction: column;
+
 
 }
 .overlay-menu {
@@ -1634,6 +1637,9 @@ header nav.nav-mobile ul li {
   .section-1 {
     margin-top: 60px;
     padding-top: 10px;
+  }
+  .menu-mobile nav ul li a#navd-para-margin {
+    margin-bottom: 120px;
   }
 
   .btn-abrir-menu {  
@@ -1972,6 +1978,7 @@ header nav.nav-mobile ul li {
 
   .nav-mobile {
     padding: 0  0 0;
+    gap: 10px;
   }
 
   .navd {

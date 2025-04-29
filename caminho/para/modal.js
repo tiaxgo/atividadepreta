@@ -120,8 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     // ABRIR MODAL FORM FINALf Form-fale-conosco
-    document.getElementById('fale-conosco').addEventListener('click', function() {
+    document.querySelectorAll('.fale-conosco').forEach(botao => {
+      botao.addEventListener('click', function() {
         abrirModal(modalFaleConosco);
+      });
     });
 
     // ABRIR MODAL INDICAÇÃO (NOVO!)
@@ -461,3 +463,18 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
         }
     });
 });
+
+
+function abrirInstagram(event) {
+  event.preventDefault(); // Impede o comportamento padrão do link
+
+  // Tenta abrir o app do Instagram
+  window.location = "instagram://user?username=atividade.preta";
+
+  // Mostrar mensagem de redirecionamento ou abrir o link diretamente
+  setTimeout(function () {
+    if (window.confirm("Não conseguimos abrir o app do Instagram. Gostaria de abrir o link no navegador?")) {
+      window.open("https://www.instagram.com/atividade.preta/", "_blank");
+    }
+  }, 1500);
+}
