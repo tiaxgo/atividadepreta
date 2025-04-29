@@ -372,7 +372,7 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   
   configurarEnvioFormulario(
     'form-fale-conosco',
-    'https://script.google.com/macros/s/AKfycbzG396FDDvdAEXmpBlu-wSaAr8zZKLF-4kvUwgWPk7O_60HQ-itronfN05H2P2lvCHR/exec'
+    'https://script.google.com/macros/s/AKfycbxhBGXUw8J7p2O_4LE120S54To6RxT5JE8B6GeHeXgmTiR6G1ta4LIB1tpa1boB8NC8jQ/exec'
   );
   
 

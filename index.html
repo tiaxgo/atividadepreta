@@ -190,7 +190,7 @@
       
       <div class="campo-formulario">
         <label for="cidade">Cidade:</label>
-        <select class="cidade" name="cidade">
+        <select class="cidade" name="cidade" required>
           <option value="" >SELECIONE UMA CIDADE</option>
         </select>
       </div>
@@ -506,7 +506,7 @@
         <div class="campo-formulario-sobre">
           <label for="cidade">CIDADE | MUNICÍPIO:</label>
           <p>Após indicar o Estado, selecione uma das opções a seguir</p>
-          <select class="cidade" name="cidade" >
+          <select class="cidade" name="cidade" required >
             <option value="" selected  hidden>SELECIONE UMA OPÇÃO</option>
           </select>
         </div>
@@ -921,7 +921,7 @@
     <section class="section section-1" id="granulado">
       <div class="apresentacao-section-1">
         <div class="texto-1-section-1">
-          <p>MOVIMENTO QUE BUSCA TRANSFORMAR A ESTRUTURA FINANCEIRA DA COMUNIDADE NEGRA NO BRASIL</p>
+          <p>MOVIMENTO QUE BUSCA TRANSFORMAR <br>A ESTRUTURA FINANCEIRA DA COMUNIDADE NEGRA NO BRASIL</p>
         </div>
         <div class="texto-2-section-1">
           <h3 class="h3-1">ECOSSISTEMA</h3>
@@ -962,7 +962,7 @@
               </svg>
               </div>
             <h4>ALIADOS</h4>
-            <p>EMPREENDEDORES NEGROS EM BUSCA DE MAIOR<br>VISIBILIDADE E CRESCIMENTO PARA SEUS NEGÓCIOS</p>
+            <p>EMPREENDEDORES NEGROS EM BUSCA DE MAIOR <br>VISIBILIDADE E CRESCIMENTO PARA SEUS NEGÓCIOS</p>
           </div>
           <div class="conteiner-2-section-2">
             <div class="image"><svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -970,7 +970,7 @@
               </svg>
               </div>
             <h4>ALIANTES</h4>
-            <p>PESSOAS QUE BUSCAM CONHECER, CONSUMIR E RECOMENDAR PROPRIEDADES<br>NEGRAS</p>
+            <p>PESSOAS QUE BUSCAM CONHECER, CONSUMIR E RECOMENDAR PROPRIEDADES<br> NEGRAS</p>
           </div>
         </div>
 
@@ -1016,7 +1016,7 @@
               </defs>
               </svg>
               </div>
-            <h4>CAPITAL SOCIAL</h4>
+            <h4>CAPITAL <br class="br-desktop">SOCIAL</h4>
             <p>FORTALECIMENTO DAS RELAÇÕES E CONFIANÇA ENTRE OS ALIADOS, INCENTIVANDO A COLABORAÇÃO E APOIO MÚTUO PARA O
               DESENVOLVIMENTO ECONÔMICO DA COMUNIDADE</p>
           </div>
@@ -1053,7 +1053,7 @@
               <h4>ALIE-SE</h4>
               <p>PREENCHA O FORMULÁRIO COMO ALIADO E AGUARDE NOSSO CONTATO.</p>
               <p class="text-light">VAMOS CONVERSAR, ENTENDER SEU NEGÓCIO E ALINHAR 
-                <br>JUNTOS OS PRIMEIRPS PASSOS PRA VOCÊ OCUPAR SEU 
+                <br>JUNTOS OS PRIMEIROS PASSOS PRA VOCÊ OCUPAR SEU 
                 <br>LUGAR NA PLATAFORMA.
               </p>
               
@@ -1254,7 +1254,7 @@
             <label class="label-telefone">
               <p>TELEFONE:</p>
               <div class="campo-input">
-                <input type="text" name="campoTelefone" id="campoTelefone" class="campoTelefone" placeholder="(__) _ ____-____" required />
+                <input type="tel" name="campoTelefone" id="campoTelefone" class="campoTelefone" placeholder="(__) _ ____-____" required />
                 <i class="icone"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.87183 13.7438C2.87183 13.6349 2.91505 13.5306 2.99199 13.4537C3.06893 13.3767 3.17328 13.3335 3.28208 13.3335H6.15388C6.26268 13.3335 6.36703 13.3767 6.44397 13.4537C6.52091 13.5306 6.56413 13.6349 6.56413 13.7438C6.56413 13.8526 6.52091 13.9569 6.44397 14.0338C6.36703 14.1108 6.26268 14.154 6.15388 14.154H3.28208C3.17328 14.154 3.06893 14.1108 2.99199 14.0338C2.91505 13.9569 2.87183 13.8526 2.87183 13.7438Z" fill="#DED6CF"/>
                   <path d="M3.21641 0H6.21949C6.65846 0 7.02359 -2.29249e-08 7.32308 0.0246154C7.63487 0.0492307 7.92697 0.105026 8.20349 0.246154C8.62815 0.462499 8.9734 0.807751 9.18974 1.23241C9.33087 1.50892 9.38667 1.80103 9.41128 2.11282C9.4359 2.41231 9.4359 2.77744 9.4359 3.21641V12.7836C9.4359 13.2226 9.4359 13.5877 9.41128 13.8872C9.38667 14.199 9.33087 14.4911 9.18974 14.7676C8.97361 15.1921 8.62866 15.5374 8.20431 15.7538C7.92697 15.895 7.63487 15.9508 7.32308 15.9754C7.02359 16 6.65846 16 6.22031 16H3.21641C2.77744 16 2.41231 16 2.11282 15.9754C1.80103 15.9508 1.50892 15.895 1.23241 15.7538C0.808001 15.5379 0.462778 15.1933 0.246154 14.7692C0.105026 14.4919 0.0492309 14.1998 0.0246156 13.888C1.72701e-07 13.5885 0 13.2234 0 12.7844V3.21641C0 2.77744 1.72701e-07 2.41231 0.0246156 2.11282C0.0492309 1.80103 0.105026 1.50892 0.246154 1.23241C0.462499 0.807751 0.807751 0.462499 1.23241 0.246154C1.50892 0.105026 1.80103 0.0492307 2.11282 0.0246154C2.41231 -2.29249e-08 2.77744 0 3.21641 0ZM2.21292 1.25128C1.97744 1.27015 1.86503 1.30462 1.79118 1.34236C1.59788 1.44074 1.44074 1.59788 1.34236 1.79118C1.30462 1.86503 1.27015 1.97744 1.25128 2.21292C1.23159 2.45579 1.23077 2.77087 1.23077 3.24103V12.759C1.23077 13.2283 1.23077 13.5442 1.25128 13.7863C1.27015 14.0226 1.30462 14.135 1.34236 14.2088C1.44082 14.4025 1.59754 14.5592 1.79118 14.6576C1.86503 14.6954 1.97744 14.7298 2.21292 14.7487C2.45579 14.7684 2.77087 14.7692 3.24103 14.7692H6.19487C6.66421 14.7692 6.9801 14.7692 7.22215 14.7487C7.45846 14.7298 7.57087 14.6954 7.64554 14.6576C7.83853 14.5591 7.99537 14.402 8.09354 14.2088C8.13128 14.135 8.16574 14.0226 8.18462 13.7863C8.20431 13.5442 8.20513 13.2283 8.20513 12.759V3.24103C8.20513 2.77169 8.20513 2.45579 8.18462 2.21292C8.16574 1.97744 8.13128 1.86503 8.09354 1.79118C7.99537 1.598 7.83853 1.44088 7.64554 1.34236C7.57087 1.30462 7.45846 1.27015 7.22297 1.25128C7.04903 1.23882 6.8747 1.23253 6.70031 1.23241L6.59856 1.53846C6.51241 1.7961 6.46892 1.92574 6.38933 2.02092C6.31901 2.10504 6.22875 2.1702 6.12677 2.21046C6.01026 2.25641 5.87405 2.25641 5.60164 2.25641H3.83426C3.56185 2.25641 3.42564 2.25641 3.30913 2.21046C3.20724 2.17043 3.11698 2.10556 3.04656 2.02174C2.96697 1.92574 2.92349 1.7961 2.83733 1.53764L2.73559 1.23241C2.5612 1.23253 2.38687 1.23882 2.21292 1.25128Z" fill="#DED6CF"/>
