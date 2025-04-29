@@ -81,8 +81,6 @@ nav a {
 }
 
 /* Cores diferentes por seção (exemplo visual) */
-
-
 .section-2,
 .section-4,
 .section-6
@@ -90,7 +88,6 @@ nav a {
   background-image: url('src/img/testefundopreto.png');
   background-size: cover;
   background-position: center;
-
 }
 
 .section-1, .section-3, .section-5, .section-7, .section-carousel{
@@ -98,14 +95,11 @@ nav a {
   background-size: cover;
   background-position: center;
   background-color: rgba(222, 214, 207, 0.75);
-
 }
-
 
 .section-2 {
   padding-top: 135px !important;
 }
-
 
 .section-2,
 .section-4,
@@ -144,8 +138,6 @@ nav a {
   width: 100%;
 
 }
-
-
 
 .section-1 {
   position: relative;
@@ -219,7 +211,6 @@ nav a {
 .texto-2-section-1 h3 {
   width: 100%;
   color: #303030;
- 
 }
 
 .texto-1-section-1 {
@@ -269,7 +260,6 @@ button {
   margin-top: 50px;
 }
 
-
 .botao-fique-sabendo {
   width: 524px;
   height: 64px;
@@ -301,7 +291,6 @@ button {
   
 
 }
-
 
 .image {
   width: 100%;
@@ -632,7 +621,6 @@ button {
  
 }
 
-
 .modal-confirmacao-2 {
   display: flex;
   width: 200px;
@@ -670,8 +658,6 @@ button {
   padding: 10px 30px 10px 30px;
 
 }
-
-
 
 .label-mensagem {
   display: flex;
@@ -728,7 +714,6 @@ button {
   width: 50%;
 }
 
-
 .imagem-cabecalho {
   position: relative;
   text-align: center;
@@ -782,8 +767,6 @@ button {
   font-weight: 300;
   text-shadow: 1px 1px 2px #000;
 }
-
-
 
 .botao-fechar {
   position: absolute;
@@ -974,18 +957,15 @@ button {
   letter-spacing: 0.4rem;
 }
 
-
-
 .texto-2-section-1 p {
   display: flex;
   flex-direction: column;
   background-color: #000;
   font-size: 30px;
   width: 220px;
-  height: ;
+
   letter-spacing: 1px; /* melhor usar em vez de % */
 }
-
 
 .campo-formulario-sobre label {
   font-family: "Inconsolata", sans-serif;
@@ -1004,11 +984,6 @@ button {
   margin-bottom: 7px;
   margin-top: 7px;
 }
-
-.campo-formulario-sobre textarea {
-
-}
-
 
 .campo-formulario label {
   font-family: "Inconsolata", sans-serif;
