@@ -1633,7 +1633,7 @@ header nav.nav-mobile ul li {
 
   .section-1 {
     margin-top: 60px;
-    padding-top: 60px;
+    padding-top: 10px;
   }
 
   .btn-abrir-menu {  
@@ -1653,7 +1653,7 @@ header nav.nav-mobile ul li {
   /* SECTION 1 */
   .apresentacao-section-1 {
     flex-direction: column-reverse;
-    gap: 10px;
+
   }
 
   .texto-1-section-1,
@@ -1669,20 +1669,39 @@ header nav.nav-mobile ul li {
     margin: 0;
   }
 
-  .texto-1-section-1{
+  .texto-1-section-1 {
     font-size: 16px;
     line-height: 30px;
+
   }
 
   .texto-2-section-1 {
-
    font-size: 25px;
+  }
+
+  .texto-1-section-1 p, .texto-2-section-1 h3 {
+    width: 300px !important;
+    margin-left: 20px;
+  }
+
+  .h3-1 {
+    letter-spacing: 0.5rem;
+  }
+
+  .h3-2 {
+    letter-spacing: 0.51rem;
+    word-spacing: 2px;
+  }
+
+  .h3-3 {
+    letter-spacing: 0.6rem;
   }
 
   .texto-1-section-2 {
     padding: 50px;
   }
   
+
 
   .botao-fique-sabendo,
   .botao-seja-um-aliado {
