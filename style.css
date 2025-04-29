@@ -1417,8 +1417,8 @@ footer {
   top: 0;
   right: 0;
   z-index: 999999;
-  width: 0%;
-  overflow: hidden;
+  width: 0%; /* ou outro valor conforme o menu for aberto */
+  overflow-y: auto; /* permite rolagem interna */
   transition: .3s;
 }
 .menu-mobile.abrir-menu{
@@ -1676,11 +1676,12 @@ header nav.nav-mobile ul li {
   .texto-1-section-1 {
     font-size: 16px;
     line-height: 30px;
-
+    height: 60px;
   }
 
   .texto-2-section-1 {
    font-size: 25px;
+   height: 200px;
   }
 
   .texto-1-section-1 p, .texto-2-section-1 h3 {
@@ -1976,7 +1977,7 @@ header nav.nav-mobile ul li {
 
   .nav-mobile {
     padding: 0  0 0;
-    gap: 10px;
+    gap: 20px;
   }
 
   .navd {
