@@ -1626,8 +1626,9 @@ header nav.nav-mobile ul li {
     display: block;
   }
 
-  .modal-indicacao {
-    height: auto;
+  #modal-indicacao {
+    margin: 0 auto;
+    padding: 40px 0 0 0;
   }
   
   #form-indicacao {
@@ -1773,7 +1774,7 @@ header nav.nav-mobile ul li {
 
   .texto-2-section-3,
   .texto-2-section-4 {
-    gap: 12px;
+    gap: 30px;
     padding: 10px 9px 0px 9px;
   }
   .bloco-1-conteiner-1-section-4 {
