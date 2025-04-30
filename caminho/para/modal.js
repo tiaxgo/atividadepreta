@@ -289,45 +289,21 @@ fetch('estados-cidades.json')
  
   /* abaixo menu com overlay versao mobile*/ 
   
-  let btnMenu = document.getElementById('btn-abrir-menu');
-  let menu = document.getElementById('menu-mobile');
-  let overlay = document.getElementById('overlay-menu');
+  let btnMenu = document.getElementById('btn-abrir-menu')
+  let menu = document.getElementById('menu-mobile')
+  let overlay = document.getElementById('overlay-menu')
   
-  // Abrir menu
-  btnMenu.addEventListener('click', () => {
-      console.log('Abrindo menu...');
-      menu.classList.add('abrir-menu');
-  });
+  btnMenu.addEventListener('click',()=>{
+      menu.classList.add('abrir-menu')
+  })
   
-  // Fechar menu ao clicar nele ou no overlay
-  menu.addEventListener('click', () => {
-      console.log('Fechando menu...');
-      menu.classList.remove('abrir-menu');
-  });
+  menu.addEventListener('click',()=>{
+      menu.classList.remove('abrir-menu')
+  })
   
-  overlay.addEventListener('click', () => {
-      console.log('Fechando menu via overlay...');
-      menu.classList.remove('abrir-menu');
-  });
-  
-  // Exemplo de link no menu que abre modal
-  let linkAbrirModal = document.getElementById('link-abrir-modal');
-  let meuModal = document.getElementById('modal');
-  
-  linkAbrirModal.addEventListener('click', (e) => {
-      e.preventDefault(); // Impede navegação se for um <a href="#">
-      
-      console.log('Clicou em um link do menu que abre modal');
-      
-      // Fecha o menu primeiro
-      menu.classList.remove('abrir-menu');
-      
-      // Espera 300ms antes de abrir o modal (ajustável)
-      setTimeout(() => {
-          console.log('Abrindo modal após fechar menu...');
-          abrirModal(modal);
-      }, 300);
-  });
+  overlay.addEventListener('click',()=>{
+      menu.classList.remove('abrir-menu')
+  })
   
 
 // ==============================================
@@ -460,6 +436,13 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   // FUNÇÕES AUXILIARES (MODAIS)
   // ==============================================
   
+  function abrirModal(modal) {
+    if (modal) modal.style.display = 'block';
+  }
+  
+  function fecharModal(modal) {
+    if (modal) modal.style.display = 'none';
+  }
 
 
   document.querySelectorAll('.campoTelefone').forEach(function(input) {
