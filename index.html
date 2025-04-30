@@ -525,16 +525,18 @@
         </div>
       
 
-
         <div class="campo-formulario-sobre">
-          <label for="share">COMPARTILHE COM A GENTE:</label>
+          <label for="compartilhe">COMPARTILHE COM A GENTE:</label>
           <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
+        
           <div class="campo-input-sobre full">
-            <textarea placeholder="" rows="4"  name="compartilhe"></textarea>
+            <textarea class="textarea-limitada" rows="4" name="compartilhe" maxlength="300"></textarea>
             <i class="icone">✎</i>
+            <small class="contador-caracteres">0 / 300</small>
           </div>
         </div>
-
+        
+        
 
       <button type="submit" class="botao-enviar enviar-form-sobre">FINALIZAR CADASTRO</button>
     </form>
@@ -627,7 +629,7 @@
         <label for="share">COMPARTILHE COM A GENTE:</label>
         <p>Qual aspecto do Atividade Preta mais te inspirou a se juntar a nós?</p>
         <div class="campo-input-sobre full">
-          <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" name="compartilhe"></textarea>
+          <textarea placeholder="ESCREVA SUA MENSAGEM..." rows="4" name="compartilhe" class="textarea-limitada" maxlength="300"></textarea>
           <i class="icone">✎</i>
         </div>
       </div>
@@ -1296,7 +1298,7 @@
           <label class="label-mensagem">
             <p>MENSAGEM:</p>
             <div class="campo-input full">
-              <textarea placeholder="ESCREVA SUA MENSAGEM..." name="mensagem" rows="4" id="mensagem"></textarea>
+              <textarea placeholder="ESCREVA SUA MENSAGEM..." name="mensagem" rows="4" id="mensagem" class="textarea-limitada" maxlength="300"></textarea>
               <i class="icone"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17H4.42846L17 4.42846L13.5711 1L1 13.5715V17Z" stroke="#DED6CF" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M10.1426 4.42822L13.571 7.85668" stroke="#DED6CF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

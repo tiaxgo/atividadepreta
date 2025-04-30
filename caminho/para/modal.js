@@ -483,6 +483,18 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     });
 });
 
+const textareas = document.querySelectorAll('.textarea-limitada');
+
+textareas.forEach(textarea => {
+  const contador = textarea.parentElement.querySelector('.contador-caracteres');
+
+  textarea.addEventListener('input', () => {
+    contador.textContent = `${textarea.value.length} / ${textarea.maxLength}`;
+  });
+});
+
+
+
 
 function abrirInstagram(event) {
   event.preventDefault();
