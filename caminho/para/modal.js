@@ -355,7 +355,7 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
       body: formData
     })
     .then(response => {
-      if (!response.ok) throw new Error('Erro no servidor');
+      if (!response.ok) throw new Error('Erro no servidor, tente novamente em outro momento.');
       return response.json();
     })
     .then(data => {
@@ -370,7 +370,7 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
     })
     .catch(error => {
       console.error('Erro:', error);
-      alert('Falha ao enviar. Por favor, Tente novamente.');
+      alert('Falha ao enviar os dados. Por favor, tente novamente.');
         // Fechar todos os modais em caso de erro
         todosModais.forEach(modal => fecharModal(modal)); // Fecha todos os modais
     });
