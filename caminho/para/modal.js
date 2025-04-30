@@ -87,28 +87,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 
-    // Função para abrir modal
-    function abrirModal(modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
+// Função para abrir modal 
+function abrirModal(modal) {
+  console.log('abrirModal chamado para:', modal);
 
-    // Função para fechar modal
-    function fecharModal(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+  if (!modal) {
+      console.warn('Nenhum modal foi passado para abrirModal!');
+      return;
+  }
 
-        // Reseta o formulário quando fecha o modal de cadastro
-        if (modal === modalCadastro) {
-            formCadastro.reset();
-            document.getElementById('comunidade').classList.remove('campo-invalido');
-        }
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
 
-        // Reseta o formulário de indicação também
-        if (modal === modalIndicacao) {
-            formIndicacao.reset();
-        }
-    }
+  console.log('Modal aberto com sucesso');
+}
+
+// Função para fechar modal
+function fecharModal(modal) {
+  console.log('fecharModal chamado para:', modal);
+
+  if (!modal) {
+      console.warn('Nenhum modal foi passado para fecharModal!');
+      return;
+  }
+
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+
+  if (modal === modalCadastro) {
+      console.log('Resetando formCadastro');
+      formCadastro.reset();
+      document.getElementById('comunidade').classList.remove('campo-invalido');
+  }
+
+  if (modal === modalIndicacao) {
+      console.log('Resetando formIndicacao');
+      formIndicacao.reset();
+  }
+
+  console.log('Modal fechado com sucesso');
+}
+
 
     // ABRIR MODAL CADASTRO
     document.querySelectorAll('.abrir-form-cadastro').forEach(botao => {
@@ -270,21 +289,45 @@ fetch('estados-cidades.json')
  
   /* abaixo menu com overlay versao mobile*/ 
   
-  let btnMenu = document.getElementById('btn-abrir-menu')
-  let menu = document.getElementById('menu-mobile')
-  let overlay = document.getElementById('overlay-menu')
+  let btnMenu = document.getElementById('btn-abrir-menu');
+  let menu = document.getElementById('menu-mobile');
+  let overlay = document.getElementById('overlay-menu');
   
-  btnMenu.addEventListener('click',()=>{
-      menu.classList.add('abrir-menu')
-  })
+  // Abrir menu
+  btnMenu.addEventListener('click', () => {
+      console.log('Abrindo menu...');
+      menu.classList.add('abrir-menu');
+  });
   
-  menu.addEventListener('click',()=>{
-      menu.classList.remove('abrir-menu')
-  })
+  // Fechar menu ao clicar nele ou no overlay
+  menu.addEventListener('click', () => {
+      console.log('Fechando menu...');
+      menu.classList.remove('abrir-menu');
+  });
   
-  overlay.addEventListener('click',()=>{
-      menu.classList.remove('abrir-menu')
-  })
+  overlay.addEventListener('click', () => {
+      console.log('Fechando menu via overlay...');
+      menu.classList.remove('abrir-menu');
+  });
+  
+  // Exemplo de link no menu que abre modal
+  let linkAbrirModal = document.getElementById('link-abrir-modal');
+  let meuModal = document.getElementById('modal');
+  
+  linkAbrirModal.addEventListener('click', (e) => {
+      e.preventDefault(); // Impede navegação se for um <a href="#">
+      
+      console.log('Clicou em um link do menu que abre modal');
+      
+      // Fecha o menu primeiro
+      menu.classList.remove('abrir-menu');
+      
+      // Espera 300ms antes de abrir o modal (ajustável)
+      setTimeout(() => {
+          console.log('Abrindo modal após fechar menu...');
+          abrirModal(modal);
+      }, 300);
+  });
   
 
 // ==============================================
@@ -417,13 +460,6 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   // FUNÇÕES AUXILIARES (MODAIS)
   // ==============================================
   
-  function abrirModal(modal) {
-    if (modal) modal.style.display = 'block';
-  }
-  
-  function fecharModal(modal) {
-    if (modal) modal.style.display = 'none';
-  }
 
 
   document.querySelectorAll('.campoTelefone').forEach(function(input) {
