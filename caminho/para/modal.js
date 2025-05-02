@@ -117,7 +117,7 @@ function fecharModal(modal) {
   if (modal === modalCadastro) {
       console.log('Resetando formCadastro');
       formCadastro.reset();
-      document.getElementById('comunidade').classList.remove('campo-invalido');
+      document.getElementById('comunidade-select').classList.remove('campo-invalido');
   }
 
   if (modal === modalIndicacao) {
@@ -180,7 +180,7 @@ function fecharModal(modal) {
     formCadastro.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const comunidade = document.getElementById('comunidade');
+        const comunidade = document.getElementById('comunidade-select');
         if (!comunidade.value) {
             comunidade.classList.add('campo-invalido');
             alert('Por favor, selecione uma opção para Comunidade.');
