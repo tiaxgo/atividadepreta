@@ -62,7 +62,6 @@ nav a {
   font-weight: 400;
 }
 
-
 /* Seções principais */
 .section {
   width: 100%;
@@ -607,6 +606,10 @@ button {
   align-items: center;
 }
 
+.menu-lateral li  {
+  cursor: pointer;
+}
+
 .menu-lateral li img {
   height: 32px;
   width: auto;
@@ -995,7 +998,7 @@ button {
   margin-right: 1rem;
 }
 
-.campo-formulario input, #estado, #cidade, #comunidade {
+.campo-formulario input, #estado, #cidade, #comunidade-select {
   width: 80%;
 }
 

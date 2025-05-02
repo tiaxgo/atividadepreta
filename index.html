@@ -40,11 +40,11 @@
           <path d="M67.5856 7.75286C67.5466 5.45413 65.6728 3.58398 63.3695 3.58398C61.0662 3.58398 59.1533 5.45413 59.1533 7.79181C59.1533 10.0905 61.0272 11.9996 63.3695 11.9996C64.892 11.9996 66.2974 11.1815 67.0391 9.8178C67.0391 9.8178 67.0781 9.77884 67.0781 9.73988C67.1172 9.66196 67.1953 9.50611 67.2343 9.42819H65.2824C64.8139 9.97365 64.1112 10.3243 63.3695 10.3243C62.2374 10.3243 61.2614 9.54508 60.9491 8.49312H67.5856V7.75286ZM61.0272 6.85674C61.4176 5.92167 62.3154 5.25932 63.3695 5.25932C64.4235 5.25932 65.3604 5.92167 65.7118 6.85674H61.0272Z" fill="#DED6CF"/>
           </svg></a>
         <a href="index.html" class="navd">INÍCIO</a>
-        <a href="#section-comunidade" class="navd">COMUNIDADE</a>
-        <a href="#section-pilares" class="navd">PILARES</a>
-        <a href="#section-entenda" class="navd">ENTENDA</a>
-        <a href="#section-beneficios" class="navd">BENEFÍCIOS</a>
-        <a href="#section-alie-se" class="navd">ALIE-SE</a>
+        <a href="#comunidade" class="navd">COMUNIDADE</a>
+        <a href="#pilares" class="navd">PILARES</a>
+        <a href="#entenda" class="navd">ENTENDA</a>
+        <a href="#beneficios" class="navd">BENEFÍCIOS</a>
+        <a href="#alie-se" class="navd">ALIE-SE</a>
     </nav>
 </header>
 <div class="menudocelular">
@@ -58,11 +58,11 @@
         <nav class="nav-mobile">
             <ul>
                 <li><a href="index.html" class="navd"><strong>INÍCIO</strong></a></li>
-                <li><a href="#section-comunidade" class="navd"><strong>COMUNIDADE</strong></a></li>
-                <li><a href="#section-pilares" class="navd"><strong>PILARES</strong></a></li>
-                <li><a href="#section-entenda" class="navd"><strong>ENTENDA</strong></a></li>
-                <li><a href="#section-beneficios" class="navd"><strong>BENEFÍCIOS</strong></a></li>
-                <li><a href="#section-alie-se" class="navd" id="navd-para-margin"><strong>ALIE-SE</strong></a></li>
+                <li><a href="#comunidade" class="navd"><strong>COMUNIDADE</strong></a></li>
+                <li><a href="#pilares" class="navd"><strong>PILARES</strong></a></li>
+                <li><a href="#entenda" class="navd"><strong>ENTENDA</strong></a></li>
+                <li><a href="#beneficios" class="navd"><strong>BENEFÍCIOS</strong></a></li>
+                <li><a href="#alie-se" class="navd" id="navd-para-margin"><strong>ALIE-SE</strong></a></li>
             </ul>
   
             <ul>
@@ -208,7 +208,7 @@
 
       <div class="campo-formulario">
         <label for="comunidade">Comunidade:</label>
-        <select id="comunidade" name="comunidade" required>
+        <select id="comunidade-select" name="comunidade" required>
           <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
           <option value="ALIANTE">ALIANTE - Pessoas que buscam consumir em propriedades negras</option>
           <option value="ALIADO">ALIADO - Empreendedores negros em busca de maior visibilidade e crescimento para seus negócios.</option>
@@ -965,7 +965,7 @@
           
       </div>
     </section>
-    <section class="section section-2" id="section-comunidade">
+    <section class="section section-2" id="comunidade">
       <div class="overlay"></div>
       <div class="content">
         <div class="texto-1-section-2">
@@ -992,7 +992,7 @@
 
       </div>
     </section>
-    <section class="section section-3" id="section-pilares">
+    <section class="section section-3" id="pilares">
       <div class="texto-1-section-3">
         <h2>PILARES</h2>
         <h3>VALORES QUE GUIAM O DESENVOLVIMENTO, AS DECISÕES E A CULTURA DO ATIVIDADE PRETA</h3>
@@ -1052,7 +1052,7 @@
           </div>
         </div>
     </section>
-    <section class="section section-4" id="section-entenda">
+    <section class="section section-4" id="entenda">
       <div class="overlay"></div>
       <div class="content">
         <div class="texto-1-section-4">
@@ -1123,7 +1123,7 @@
 
         </div>
     </section>
-    <section class="section section-5" id="section-beneficios">
+    <section class="section section-5" id="beneficios">
       <div class="texto-1-section-5">
         <h2>BENEFÍCIOS</h2>
         <h3>AMPLIFIQUE SUA VISIBILIDADE, CONECTE-SE AO MERCADO E FORTALEÇA SEU NEGÓCIO COM PROPÓSITO.</h3>
@@ -1173,7 +1173,7 @@
           </div>
         </div>
     </section>
-    <section class="section section-6" id="section-alie-se">
+    <section class="section section-6" id="alie-se">
       <div class="overlay"></div>
       <div class="content">
         <div class="texto-1-section-6">
@@ -1282,7 +1282,7 @@
             <label class="label-comunidade">
               <p>COMUNIDADE:</p>
               <div class="campo-input">
-                <select name="comunidade" id="comunidade" required>
+                <select name="comunidade" id="comunidade-select" required>
                   <option value="" selected disabled hidden>SELECIONE UMA OPÇÃO</option>
                   <option value="ALIADO">ALIADO - Empreendedores negros</option>
                   <option value="ALIANTE">ALIANTE - Consumidores aliados</option>
@@ -1441,11 +1441,10 @@
       </div>
       <div class="footer-links-1">
         <a href="index.html">INÍCIO</a>
-        <a href="#section-comunidade">COMUNIDADE</a>
-        <a href="#section-pilares">PILARES</a>
-        <a href="#section-entenda">ENTENDA</a>
-        <a href="#section-beneficios">BENEFÍCIOS</a>
-        <a href="#section-alie-se">ALIE-SE</a>
+        <a href="#comunidade">COMUNIDADE</a>
+        <a href="#pilares">PILARES</a>
+        <a href="#beneficios">BENEFÍCIOS</a>
+        <a href="#alie-se">ALIE-SE</a>
       </div>
       <div class="footer-links-2">
         <a href="https://iridescent-mango-c18.notion.site/Termos-e-Condi-es-de-Uso-Atividade-Preta-707794be6ff44b6287e22b073d2e932a" target="_blank">TERMOS E CONDIÇÕES</a>
