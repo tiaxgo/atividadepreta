@@ -424,12 +424,12 @@ function configurarEnvioFormulario(nomeDoForm, scriptURL) {
   // Forms SECUNDÁRIOS (Sim/Não) - Usam a função geral
   configurarEnvioFormulario(
     'form-opcao-sim',
-    'https://script.google.com/macros/s/AKfycbwyV6VevjLpGYdMugJg7WhyRRGopXIQxfbCTzrynDUWVPrp_FGzL1P9by6R-gj9Qok/exec'
+    'https://script.google.com/macros/s/AKfycbxHd9O4wkQ96Wt2ItZPXlZhRViQMQZojsuZT05xHIbHntDsbuXbPulynYScvHzC6u-p/exec'
   );
   
   configurarEnvioFormulario(
     'form-opcao-nao',
-    'https://script.google.com/macros/s/AKfycbwyV6VevjLpGYdMugJg7WhyRRGopXIQxfbCTzrynDUWVPrp_FGzL1P9by6R-gj9Qok/exec'
+    'https://script.google.com/macros/s/AKfycbxHd9O4wkQ96Wt2ItZPXlZhRViQMQZojsuZT05xHIbHntDsbuXbPulynYScvHzC6u-p/exec'
   );
   
   // ==============================================
